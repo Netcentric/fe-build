@@ -6,11 +6,13 @@ const getArgumentValue = require('../utils/getArgumentValue');
 
 */
 // Project key for prefix and folders
-const projectKey = 'hecore';
-// root of the project
-const rootPath = path.join(process.cwd(), '../');
+const projectKey = 'myproj';
+
+// root path of the package
+const rootPath = path.resolve('../');
+
 // source files path
-const sourcesPath = path.join(rootPath, 'src/main/frontend/hecore');
+const sourcesPath = path.join(rootPath, 'src/main/frontend/myproj');
 
 // common folder for alias like import 'commons/utils/myFn';
 const common = path.join(sourcesPath, 'common');
@@ -19,10 +21,10 @@ const common = path.join(sourcesPath, 'common');
 const ignore = ['!(**/target/**)', '!(**/jcr_root/**)', '!(**/common/**)'];
 
 // where files should be compiled at
-const destinationPath = path.join(rootPath, 'src/main/jcr_root/apps/hecore/clientlibs');
+const destinationPath = path.join(rootPath, 'src/main/jcr_root/apps/myproj/clientlibs');
 
 // Node modules for alias lower case for
-const nodeModules = path.join(rootPath, 'src/main/frontend/node_modules');
+const nodeModules = path.join(rootPath, 'build/node_modules');
 
 /*
 
