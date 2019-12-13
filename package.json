@@ -1,0 +1,50 @@
+{
+  "name": "@nc/fe-build",
+  "version": "0.0.0",
+  "description": "Netcentric Frontend Build",
+  "paths": {
+    "configs": "./config",
+    "tasks": "./tasks"
+  },
+  "bin": {
+    "hecore-build": "./index.js"
+  },
+  "publishConfig": {
+    "registry": "http://repo-npm.int.netcentric.biz/repository/npm-nc/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@source.int.netcentric.biz:7999/frontend/fe-build.git"
+  },
+  "dependencies": {
+    "@babel/core": "7.4.4",
+    "@babel/plugin-transform-destructuring": "7.2.0",
+    "@babel/preset-env": "7.4.4",
+    "@nc/stylelint-config": "2.0.0",
+    "autoprefixer": "8.2.0",
+    "babel-loader": "8.0.4",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb-base": "13.0.0",
+    "eslint-loader": "2.1.0",
+    "eslint-plugin-import": "2.13.0",
+    "fast-glob": "2.2.2",
+    "node-sass": "4.11.0",
+    "postcss": "7.0.8",
+    "stylelint": "9.9.0",
+    "webpack": "4.28.1"
+  },
+  "devDependencies": {
+    "gaze": "^1.1.3",
+    "ttab": "0.5.1",
+    "webpack-bundle-analyzer": "3.0.3"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 11",
+    "iOS >= 9",
+    "Android >= 5",
+    "not dead",
+    "not OperaMini all"
+  ],
+  "license": "UNLICENSED"
+}
