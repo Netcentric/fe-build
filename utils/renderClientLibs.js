@@ -7,22 +7,19 @@ const mkFullPathSync = require('./mkFullPathSync');
 
 module.exports = function renderClientLibs(clientLibObject, config) {
   // extract from config
-  const { projectKey, destinationPath } = config.general
   const { name, folder, js, scss } = clientLibObject;
-  const { override } = config.clientlibs;
-  
-  const absolutePath = path.join(path.dirname(destinationPath), folder);
-  
-  console.log(absolutePath);
-  log(__filename, `checking ${color('cyan', `${projectKey}.${name}`)}`);
+  const { override, contentParams } = config.clientlibs;
+  const absolutePath = path.join(config.general.destinationPath, folder);
+
+  log(__filename, `checking ${color('cyan', name)}`);
   // check if the folder already exist
   if (!fs.existsSync(absolutePath)) {
     log(__filename, `Folder for ${name} does not exist creating ${folder}`);
     mkFullPathSync(absolutePath);
-    log(__filename, `Creating ${color('cyan', `${projectKey}.${name}`)}`);
+    log(__filename, `Creating ${color('cyan', name)}`);
   }
   // write .content.xml
-  const content = clientlibTemplate(name, projectKey);
+  const content = clientlibTemplate(name, contentParams);
   writeFile(path.join(absolutePath, '.content.xml'), content, override);
 
   // if there is a scss or js we write the css.txt

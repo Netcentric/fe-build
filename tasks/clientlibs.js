@@ -1,4 +1,3 @@
-const path = require('path');
 const { log } = require('../utils/log');
 const generateEntries = require('../utils/generateEntries');
 const getClientlib = require('../utils/getClientlib');
@@ -16,9 +15,7 @@ module.exports = (config) => {
   const clientLibs = {};
   // get parse to check if it has css or js or both.
   Object.keys(entries).forEach((entryKey) => {
-    const source = path.relative(path.join(config.general.sourcesPath,'../'), entries[entryKey]);
-    const { name, folder, fileName } = getClientlib(source, config);
-    
+    const { name, folder, fileName } = getClientlib(entryKey, config);
     const extension = entryKey.split('.').pop();
 
     if (!clientLibs[folder]) {
