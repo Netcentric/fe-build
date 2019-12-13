@@ -27,7 +27,7 @@ module.exports = function renderSass(dest, file, config, cb, write = false) {
         if (failOnError) {
           process.exit(1);
         } else {
-          log(__filename, `Sass file not renderd - ${path.basename(destFile)}`, ` (Duration ${result.stats.duration}ms)`, 'error', true);
+          log(__filename, `Sass file not renderd - ${path.basename(destFile)}`, ``, 'error', true);
           // skip the rest
           return;
         }
