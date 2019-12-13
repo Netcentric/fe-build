@@ -7,7 +7,7 @@
     "tasks": "./tasks"
   },
   "bin": {
-    "hecore-build": "./index.js"
+    "nc-fe-build": "./index.js"
   },
   "publishConfig": {
     "registry": "http://repo-npm.int.netcentric.biz/repository/npm-nc/"
