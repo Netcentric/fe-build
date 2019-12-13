@@ -8,7 +8,7 @@ const getArgumentValue = require('../utils/getArgumentValue');
 // Project key for prefix and folders
 const projectKey = 'hecore';
 // root of the project
-const rootPath = path.resolve('../../../');
+const rootPath = path.join(process.cwd, '../');
 // source files path
 const sourcesPath = path.join(rootPath, 'src/main/frontend/hecore');
 
