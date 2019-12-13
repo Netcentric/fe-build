@@ -26,6 +26,10 @@ module.exports = function renderSass(dest, file, config, cb, write = false) {
         // if set to exit on error, you might not want to exit on all cases
         if (failOnError) {
           process.exit(1);
+        } else {
+          log(__filename, `Sass file not renderd - ${path.basename(destFile)}`, ` (Duration ${result.stats.duration}ms)`, 'error', true);
+          // skip the rest
+          return;
         }
     } 
     // create folder if it does not exist
