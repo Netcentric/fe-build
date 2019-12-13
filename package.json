@@ -1,6 +1,6 @@
 {
   "name": "@nc/fe-build",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Netcentric Frontend Build",
   "paths": {
     "configs": "./config",
