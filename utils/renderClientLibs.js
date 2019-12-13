@@ -13,7 +13,7 @@ module.exports = function renderClientLibs(clientLibObject, config) {
   
   const absolutePath = path.join(path.dirname(destinationPath), folder);
   
-
+  console.log(absolutePath);
   log(__filename, `checking ${color('cyan', `${projectKey}.${name}`)}`);
   // check if the folder already exist
   if (!fs.existsSync(absolutePath)) {
