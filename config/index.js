@@ -10,7 +10,6 @@ const stylelint = require('./stylelint.config');
 const resolve = require('./resolve.config');
 const postcss = require('./postcss.config');
 const templates = require('./templates.config');
-const sourcemap = require('./sourcemap.config')
 const modules = general.modules;
 
 module.exports = {
@@ -26,6 +25,5 @@ module.exports = {
   stylelint,
   resolve,
   postcss,
-  templates,
-  sourcemap
+  templates
 };
