@@ -23,25 +23,31 @@ module.exports = (config) => {
   // extract from flatten configs to webpack
   const { output, plugins, optimization, resolve, externals } = config;
   const { mode, watch, devtool } = config.general;
-  // run webpack
-  webpack({
-    mode,
-    watch,
-    entry,
-    output,
-    module,
-    plugins,
-    optimization,
-    devtool,
-    resolve,
-    ...externals && { externals }
-  }, (err, stats) => {
-    // output the resulting stats.
-    console.log(stats.toString({ colors: true }));
-    if (!watch && (err || stats.hasErrors())) {
-      process.exit(1);
-    }
-    // log completion
-    log(__filename, 'Webpack transpile ended', '', 'success', true);
-  });
+
+  if (Object.keys(entry) > 0) {
+    // run webpack
+    webpack({
+      mode,
+      watch,
+      entry,
+      output,
+      module,
+      plugins,
+      optimization,
+      devtool,
+      resolve,
+      ...externals && { externals }
+    }, (err, stats) => {
+      // output the resulting stats.
+      console.log(stats.toString({ colors: true }));
+      if (!watch && (err || stats.hasErrors())) {
+        process.exit(1);
+      }
+      // log completion
+      log(__filename, 'Webpack transpile ended', '', 'success', true);
+    });
+    
+  } else {
+    log(__filename, 'No entries for webpack, nothing found', '', 'info', true);
+  }
 };
