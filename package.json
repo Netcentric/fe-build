@@ -17,26 +17,27 @@
     "url": "ssh://git@source.int.netcentric.biz:7999/frontend/fe-build.git"
   },
   "dependencies": {
-    "@babel/core": "7.4.4",
-    "@babel/plugin-transform-destructuring": "7.2.0",
-    "@babel/preset-env": "7.4.4",
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-transform-destructuring": "^7.9.5",
+    "@babel/preset-env": "^7.9.6",
     "@nc/stylelint-config": "2.0.0",
-    "autoprefixer": "8.2.0",
-    "babel-loader": "8.0.4",
-    "eslint": "4.19.1",
-    "eslint-config-airbnb-base": "13.0.0",
-    "eslint-loader": "2.1.0",
-    "eslint-plugin-import": "2.13.0",
-    "fast-glob": "2.2.2",
-    "node-sass": "4.11.0",
-    "postcss": "7.0.8",
-    "stylelint": "9.9.0",
-    "webpack": "4.28.1"
+    "autoprefixer": "^9.7.6",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.0.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.20.2",
+    "fast-glob": "^3.2.2",
+    "node-sass": "^4.14.1",
+    "postcss": "^7.0.30",
+    "source-map-loader": "^0.2.4",
+    "stylelint": "^13.3.3",
+    "webpack": "^4.43.0"
   },
   "devDependencies": {
     "gaze": "^1.1.3",
     "ttab": "0.5.1",
-    "webpack-bundle-analyzer": "3.0.3"
+    "webpack-bundle-analyzer": "^3.7.0"
   },
   "browserslist": [
     "last 2 versions",

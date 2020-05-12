@@ -3,7 +3,7 @@ module.exports = {
   test: /\.js$/,
   exclude: /node_modules\/(?!@nc|@henkel)/,
   use: {
-    loader: 'babel-loader?cacheDirectory',
+    loader: 'babel-loader',
     options: {
       cacheDirectory: true,
       presets: [

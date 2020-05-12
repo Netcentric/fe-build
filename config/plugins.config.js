@@ -9,12 +9,6 @@ const enviroment = new webpack.DefinePlugin({
 // default plugins
 const plugins = [enviroment];
 
-// docs https://webpack.js.org/plugins/source-map-dev-tool-plugin/
-if (!isProduction) {
-  const sourceMap = new webpack.SourceMapDevToolPlugin();
-  plugins.push(sourceMap);
-}
-
 // check each files / dependencies sizes
 // src https://www.npmjs.com/package/webpack-bundle-analyzer
 if (analyse) {

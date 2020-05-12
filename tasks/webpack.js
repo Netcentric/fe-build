@@ -22,7 +22,7 @@ module.exports = (config) => {
 
   // extract from flatten configs to webpack
   const { output, plugins, optimization, resolve, externals } = config;
-  const { mode, watch } = config.general;
+  const { mode, watch, devtool } = config.general;
   // run webpack
   webpack({
     mode,
@@ -32,6 +32,7 @@ module.exports = (config) => {
     module,
     plugins,
     optimization,
+    devtool,
     resolve,
     ...externals && { externals }
   }, (err, stats) => {

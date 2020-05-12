@@ -17,9 +17,9 @@ module.exports = function renderSass(dest, file, config, cb, write = false) {
     outputStyle,
     includePaths,
     outFile,
-    sourceMap: !config.general.isProduction,
-    sourceMapContents: !config.general.isProduction
+    sourceMap: !config.general.isProduction
   }, (error, result) => {
+    console.log(result);
     // log if there are any errors
     if (error) {
         log(__filename, `${destFile} ${error.message}!`, '', 'error', true);

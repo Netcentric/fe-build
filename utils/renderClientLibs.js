@@ -1,7 +1,6 @@
 const path = require('path');
 const fs = require('fs');
 const { log, color } = require('./log');
-const { clientlibTemplate } = require('./templates');
 const writeFile = require('./writeFile');
 const mkFullPathSync = require('./mkFullPathSync');
 
@@ -11,6 +10,7 @@ module.exports = function renderClientLibs(clientLibObject, config) {
   const { projectKey, destinationPath } = config.general;
   const { name, folder, js, scss } = clientLibObject;
   const { override } = config.clientlibs;
+  const { clientlibTemplate } = config.templates;
   const absolutePath = path.join(destinationPath, folder);
 
   log(__filename, `checking ${color('cyan', `${projectKey}.${name}`)}`);
