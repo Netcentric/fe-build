@@ -1,7 +1,7 @@
 module.exports = {
   enforce: 'post',
   test: /\.js$/,
-  exclude: /node_modules\/(?!@nc|@henkel)/,
+  exclude: /node_modules\/(?!@nc)/,
   use: {
     loader: 'babel-loader',
     options: {
