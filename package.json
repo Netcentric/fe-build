@@ -1,6 +1,6 @@
 {
   "name": "@nc/fe-build",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Netcentric Frontend Build",
   "paths": {
     "configs": "./config",
@@ -24,6 +24,7 @@
     "autoprefixer": "^9.7.6",
     "babel-loader": "^8.1.0",
     "eslint": "^7.0.0",
+    "core-js": "^3.6.5",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.20.2",
     "fast-glob": "^3.2.2",

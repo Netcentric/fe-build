@@ -24,7 +24,7 @@ module.exports = (config) => {
   const { output, plugins, optimization, resolve, externals } = config;
   const { mode, watch, devtool } = config.general;
 
-  if (Object.keys(entry) > 0) {
+  if (Object.keys(entry).length > 0) {
     // run webpack
     webpack({
       mode,

@@ -45,9 +45,6 @@ symbols.svg
 .tmp/
 .cache-loader
 
-# Temp
-package-lock.json
-
 # Svg Icons Temp folder
 tmp/
 
