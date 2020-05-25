@@ -5,21 +5,8 @@ module.exports = {
   use: {
     loader: 'babel-loader',
     options: {
-      cacheDirectory: true,
-      presets: [
-        [
-          '@babel/preset-env',
-          {
-            modules: false,
-            useBuiltIns: 'usage',
-            corejs: '3'
-          }
-        ]
-      ],
-      plugins: [
-        '@babel/plugin-proposal-object-rest-spread',
-        '@babel/plugin-transform-destructuring'
-      ]
+      presets: [['@babel/preset-env', { useBuiltIns: 'usage', corejs: 3 }]],
+      plugins: ['@babel/plugin-transform-runtime', '@babel/plugin-proposal-object-rest-spread']
     }
   }
 };

@@ -78,11 +78,16 @@ const quiet = getArgumentValue('--quiet');
 const analyzerPort = getArgumentValue('--port=') || 8888;
 
 
-// devtool
-const devtool = isProduction ? 'none' : `inline-source-map`;
+
+// general webpack
+const devtool = isProduction ? 'none' : 'inline-source-map';
+// general optimization
+const excludedFromVendors = ['@nc', 'babel', 'core-js'];
+
 /*
   flatten config + webpack options like what configs are modules.rules
 */
+
 // modules to run on webpack rules (each config module.config.js)
 const modules = ['eslint', 'babel'];
 
@@ -113,5 +118,6 @@ module.exports = {
   multiple,
   nodeModules,
   defaultTasks,
-  devtool
+  devtool,
+  excludedFromVendors
 };
