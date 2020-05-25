@@ -9,7 +9,7 @@ const sass = require('./sass.config');
 const stylelint = require('./stylelint.config');
 const resolve = require('./resolve.config');
 const postcss = require('./postcss.config');
-
+const templates = require('./templates.config');
 const modules = general.modules;
 
 module.exports = {
@@ -24,5 +24,6 @@ module.exports = {
   clientlibs,
   stylelint,
   resolve,
-  postcss
+  postcss,
+  templates
 };

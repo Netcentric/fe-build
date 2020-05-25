@@ -1,25 +1,12 @@
 module.exports = {
   enforce: 'post',
   test: /\.js$/,
-  exclude: /node_modules\/(?!@nc|@henkel)/,
+  exclude: /node_modules\/(?!@nc)/,
   use: {
-    loader: 'babel-loader?cacheDirectory',
+    loader: 'babel-loader',
     options: {
-      cacheDirectory: true,
-      presets: [
-        [
-          '@babel/preset-env',
-          {
-            modules: false,
-            useBuiltIns: 'usage',
-            corejs: '3'
-          }
-        ]
-      ],
-      plugins: [
-        '@babel/plugin-proposal-object-rest-spread',
-        '@babel/plugin-transform-destructuring'
-      ]
+      presets: [['@babel/preset-env', { useBuiltIns: 'usage', corejs: 3 }]],
+      plugins: ['@babel/plugin-transform-runtime', '@babel/plugin-proposal-object-rest-spread']
     }
   }
 };
