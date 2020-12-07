@@ -8,7 +8,7 @@ const { log } = require('../utils/log');
 log(__filename, 'looking for other configurations', ' if it finds its runs ', 'info');
 
 // check if there is a params sent to run a single config file
-if (config.general.configFile) {
+if (config && config.general && config.general.configFile) {
   log(__filename, ' One configuration sent, running only it');
 
   // load the configuration

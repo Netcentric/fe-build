@@ -17,6 +17,7 @@ if (analyse) {
   const analyzer = new BundleAnalyzer({
     analyzerPort
   });
+
   plugins.push(analyzer);
 }
 

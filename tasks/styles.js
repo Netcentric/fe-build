@@ -1,12 +1,11 @@
 const path = require('path');
-
 const { log } = require('../utils/log');
 const generateEntries = require('../utils/generateEntries');
 const renderStyles = require('../utils/renderStyles');
 
 // extend log to proper say what file is running
 module.exports = (config) => {
-  if (config.general.watch) {
+  if (config && config.general && config.general.watch) {
     try {
       log(__filename, 'Watcher Sass / autoprefixer running....', '', 'info', true);
 

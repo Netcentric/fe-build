@@ -8,7 +8,7 @@ module.exports = (config) => {
   const entry = generateEntries(config);
 
   // make sure destination path is the same config as output
-  if (config.general.destinationPath) {
+  if (config && config.general && config.general.destinationPath) {
     config.output.path = config.general.destinationPath;
   }
 
@@ -24,7 +24,7 @@ module.exports = (config) => {
   const { output, plugins, optimization, resolve, externals } = config;
   const { mode, watch, devtool } = config.general;
 
-  if (Object.keys(entry).length > 0) {
+  if (entry && Object.keys(entry).length > 0) {
     // run webpack
     webpack({
       mode,

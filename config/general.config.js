@@ -78,7 +78,6 @@ const quiet = getArgumentValue('--quiet');
 const analyzerPort = getArgumentValue('--port=') || 8888;
 
 
-
 // general webpack
 const devtool = isProduction ? 'none' : 'inline-source-map';
 // general optimization
