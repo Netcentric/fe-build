@@ -7,10 +7,13 @@ const { log } = require('./log');
 module.exports = function renderSass(dest, file, config, cb, write = false) {
   // extract sass only configs
   const { outputStyle, includePaths, failOnError } = config.sass;
+
   // proper extension
   const destFile = dest.replace('.scss', '.css');
+
   // url of the saved file
   const outFile = path.join(config.general.destinationPath, destFile);
+
   // extract from config
   sass.render({
     file,
@@ -33,17 +36,21 @@ module.exports = function renderSass(dest, file, config, cb, write = false) {
     } 
     // create folder if it does not exist
     mkFullPathSync(path.dirname(outFile));
+
     // write the css file, overriding it if write is enabled
     // its better to skip this so we only write the css once reducing I/O
     if (write) {
       writeFile(outFile, result.css, true);
     }
+
     // if is dev add source maps
     if (!config.general.isProduction && write) {
       writeFile(`${outFile}.map`, result.map, true);
     }
+
     // pass the destination relative for map
     result.destFile = destFile;
+
     // log and call back
     log(__filename, `Sass rendered - ${path.basename(destFile)}`, ` (Duration ${result.stats.duration}ms)`, 'success', true);
     return cb(result, outFile);

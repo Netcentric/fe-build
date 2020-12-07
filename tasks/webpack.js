@@ -40,13 +40,14 @@ module.exports = (config) => {
     }, (err, stats) => {
       // output the resulting stats.
       console.log(stats.toString({ colors: true }));
+
       if (!watch && (err || stats.hasErrors())) {
         process.exit(1);
       }
+
       // log completion
       log(__filename, 'Webpack transpile ended', '', 'success', true);
     });
-    
   } else {
     log(__filename, 'No entries for webpack, nothing found', '', 'info', true);
   }
