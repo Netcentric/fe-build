@@ -17,5 +17,5 @@ module.exports = function generateEntries(config, extension = 'js') {
     return sources;
   }
 
-  return sources;
+  return sourcesFiles;
 };
