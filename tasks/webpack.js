@@ -8,7 +8,7 @@ module.exports = (config) => {
   const entry = generateEntries(config);
 
   // make sure destination path is the same config as output
-  if (config.general.destinationPath) {
+  if (config && config.general && config.general.destinationPath) {
     config.output.path = config.general.destinationPath;
   }
 
@@ -24,7 +24,7 @@ module.exports = (config) => {
   const { output, plugins, optimization, resolve, externals } = config;
   const { mode, watch, devtool } = config.general;
 
-  if (Object.keys(entry).length > 0) {
+  if (entry && Object.keys(entry).length > 0) {
     // run webpack
     webpack({
       mode,
@@ -40,13 +40,14 @@ module.exports = (config) => {
     }, (err, stats) => {
       // output the resulting stats.
       console.log(stats.toString({ colors: true }));
+
       if (!watch && (err || stats.hasErrors())) {
         process.exit(1);
       }
+
       // log completion
       log(__filename, 'Webpack transpile ended', '', 'success', true);
     });
-    
   } else {
     log(__filename, 'No entries for webpack, nothing found', '', 'info', true);
   }

@@ -3,6 +3,7 @@
 module.exports = function merge(original = {}, newObject) {
   const copy = Object.assign({}, original);
   const keys = Object.keys(newObject);
+
   keys.forEach((prop) => {
     if (newObject[prop]
       && typeof newObject[prop] === 'object'
@@ -13,5 +14,6 @@ module.exports = function merge(original = {}, newObject) {
       copy[prop] = newObject[prop] ? newObject[prop] : original[prop];
     }
   });
+
   return copy;
 };

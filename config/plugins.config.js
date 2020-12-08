@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 
-const { mode, isProduction, analyse, analyzerPort } = require('./general.config');
+const { mode, analyse, analyzerPort } = require('./general.config');
+
 // pass the mode foward
 const enviroment = new webpack.DefinePlugin({
   'process.env.NODE_ENV': JSON.stringify(mode)
@@ -16,6 +17,7 @@ if (analyse) {
   const analyzer = new BundleAnalyzer({
     analyzerPort
   });
+
   plugins.push(analyzer);
 }
 

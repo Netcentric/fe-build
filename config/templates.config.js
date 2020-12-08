@@ -5,6 +5,7 @@ const clientlibTemplate = (category, prefix) => `<?xml version="1.0" encoding="U
     allowProxy="{Boolean}true"
     categories="[${prefix}.${category}]"/>
 `;
+
 module.exports = { 
   clientlibTemplate
 };

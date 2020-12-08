@@ -4,9 +4,11 @@ module.exports = function moduleIsVendor(module, excluded) {
   if (!module) {
     return false;
   }
+
   // Only node_modules are needed
-  if (module.includes('node_modules')) {
+  if (module && module.includes('node_modules')) {
     return excluded.filter(part => module.includes(part)).length === 0;
   }
+
   return false;
 };
