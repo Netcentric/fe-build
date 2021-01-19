@@ -1,6 +1,6 @@
 {
   "name": "@nc/fe-build",
-  "version": "1.0.6",
+  "version": "2.0.0",
   "description": "Netcentric Frontend Build",
   "paths": {
     "configs": "./config",
@@ -40,9 +40,9 @@
   },
   "browserslist": [
     "last 2 versions",
-    "ie >= 11",
-    "iOS >= 9",
+    "iOS >= 10",
     "Android >= 5",
+    "not ie all",
     "not dead",
     "not OperaMini all"
   ],
