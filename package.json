@@ -1,7 +1,7 @@
 {
-  "name": "@companynamespace/npm-package-template",
+  "name": "@netcentric/fe-build",
   "version": "1.0.0",
-  "description": "<Package description>",
+  "description": "Frontend build tools for AEM projects.",
   "license": "Apache-2.0",
   "private": false,
   "publishConfig": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/companynamespace/npm-package-template"
+    "url": "https://github.com/netcentric/fe-build"
   },
   "main": "src/index.js",
   "scripts": {
