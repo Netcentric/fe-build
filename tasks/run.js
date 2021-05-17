@@ -24,15 +24,17 @@ if (config && config.general && config.general.configFile) {
   // log what is happening
   if (availableBuilds.length === 0) {
     log(__filename, ' No other configurations, running default configurations');
+
+    taskVerification(config);
   } else {
     log(__filename, ' Found local configurations', ' - Running it instead', 'warning');
+
+    // extending every found build options
+    availableBuilds.forEach((configPath) => {
+      const configuration = extendConfig(configPath, config);
+
+      // check if a specific task was sent
+      taskVerification(configuration);
+    });
   }
-
-  // extending every found build options
-  availableBuilds.forEach((configPath) => {
-    const configuration = extendConfig(configPath, config);
-
-    // check if a specific task was sent
-    taskVerification(configuration);
-  });
 }
