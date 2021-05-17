@@ -1,20 +1,28 @@
 {
-  "name": "@nc/fe-build",
-  "version": "2.0.1",
-  "description": "Netcentric Frontend Build",
-  "paths": {
-    "configs": "./config",
-    "tasks": "./tasks"
-  },
-  "bin": {
-    "nc-fe-build": "./index.js"
-  },
+  "name": "@netcentric/fe-build",
+  "version": "1.0.0",
+  "description": "Frontend build tools for AEM projects.",
+  "license": "Apache-2.0",
+  "private": false,
   "publishConfig": {
-    "registry": "http://repo-npm.int.netcentric.biz/repository/npm-nc/"
+    "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@source.int.netcentric.biz:7999/frontend/fe-build.git"
+    "url": "https://github.com/netcentric/fe-build"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "keywords": [
+    "keyword"
+  ],
+  "bin": {
+    "nc-fe-build": "./index.js"
+  },
+  "paths": {
+    "configs": "./config",
+    "tasks": "./tasks"
   },
   "dependencies": {
     "@babel/core": "^7.9.6",
@@ -45,6 +53,5 @@
     "not ie > 0",
     "not dead",
     "not OperaMini all"
-  ],
-  "license": "UNLICENSED"
+  ]
 }
