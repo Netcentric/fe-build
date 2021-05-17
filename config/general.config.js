@@ -9,10 +9,10 @@ const getArgumentValue = require('../utils/getArgumentValue');
 const projectKey = 'myproj';
 
 // root path of the package
-const rootPath = path.resolve('../');
+const rootPath = path.resolve('./');
 
 // source files path
-const sourcesPath = path.join(rootPath, 'src/main/frontend/myproj');
+const sourcesPath = path.join(rootPath, 'src');
 
 // common folder for alias like import 'commons/utils/myFn';
 const common = path.join(sourcesPath, 'common');
@@ -21,10 +21,10 @@ const common = path.join(sourcesPath, 'common');
 const ignore = ['!(**/target/**)', '!(**/jcr_root/**)', '!(**/common/**)'];
 
 // where files should be compiled at
-const destinationPath = path.join(rootPath, 'src/main/jcr_root/apps/myproj/clientlibs');
+const destinationPath = path.join(rootPath, 'dist');
 
 // Node modules for alias lower case for
-const nodeModules = path.join(rootPath, 'build/node_modules');
+const nodeModules = path.join(rootPath, 'node_modules');
 
 /*
 
@@ -77,15 +77,11 @@ const quiet = getArgumentValue('--quiet');
 // analyzerPort
 const analyzerPort = getArgumentValue('--port=') || 8888;
 
-
 // general webpack
 const devtool = isProduction ? 'none' : 'inline-source-map';
-// general optimization
-const excludedFromVendors = ['@nc', 'babel', 'core-js'];
 
-/*
-  flatten config + webpack options like what configs are modules.rules
-*/
+// general optimization
+const excludedFromVendors = ['babel', 'core-js'];
 
 // modules to run on webpack rules (each config module.config.js)
 const modules = ['eslint', 'babel'];
