@@ -1,31 +1,16 @@
-# npm-package-template
+# @netcentric/fe-build
 
-Description
+Frontend build tools for AEM projects.
 
-[![Version](https://img.shields.io/npm/v/@companynamespace/npm-package-template.svg)](https://npmjs.org/package/@companynamespace/npm-package-template)
-[![Build Status](https://github.com/companynamespace/npm-package-template/workflows/CI/badge.svg?branch=main)](https://github.com/companynamespace/npm-package-template/actions)
-[![CodeQL Analysis](https://github.com/companynamespace/npm-package-template/workflows/CodeQL/badge.svg?branch=main)](https://github.com/companynamespace/npm-package-template/actions)
+[![Version](https://img.shields.io/npm/v/@netcentric/fe-build.svg)](https://npmjs.org/package/@netcentric/fe-build)
+[![Build Status](https://github.com/netcentric/fe-build/workflows/CI/badge.svg?branch=main)](https://github.com/netcentric/fe-build/actions)
+[![CodeQL Analysis](https://github.com/netcentric/fe-build/workflows/CodeQL/badge.svg?branch=main)](https://github.com/netcentric/fe-build/actions)
 [![semver: semantic-release](https://img.shields.io/badge/semver-semantic--release-blue.svg)](https://github.com/semantic-release/semantic-release)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-## TLDR;
+## Usage
 
-1. Create new repo from this Template
-   [![Template repo](https://docs.github.com/assets/images/help/repository/use-this-template-button.png)](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
-2. Update Readme
-    - replace `@companynamespace/npm-package-template`  with new package_name
-3. Update package.json
-    - replace "name" `@companynamespace/npm-package-template`  with new package_name
-    - replace "repo" `companynamespace/npm-package-template`  with new package_name repo
-    - Add description, and other fields if needed
-4. Update LICENSE
-    - Update `[COMPANY` name
-    - Update year `[yyyy]`
-5. Update docs/CODE_OF_CONDUCT.md
-    - Update `<COMPANY>` name
-6. Activate automatic release
-    - Add `NPM_TOKEN` secret to the repo
-    - disable `dry_run` in Release step in .github/workflows/release.yml. 
+TODO
 
 ## Content
 
