@@ -1,36 +1,26 @@
+# Logs
+logs
+*.log
 
-# Maven
-target/
-
-# File Vault (VLT) / Sync
-.vlt
-.vlt-sync*
-
-# Eclipse
+# IDE
 .project
 .classpath
 .settings
-
-# IntelliJ
 .idea/
 *.iml*
 *.ipr
-
-# Brackets
 .brackets.json
-
-# VSCode
-.history
-.favorites.json
 .vscode/
+.history
 
-# Mac OS X
+# OS
 .DS_Store
 *.swp
 
 # Node related files
 node_modules/
 node/
+bin/
 typings
 npm-debug.log*
 yarn-debug.log*
@@ -38,15 +28,5 @@ yarn-error.log*
 .stylelintcache
 .eslintcache
 
-# bundle css and js files and maps
-*.bundle.*
-*.chunk.*
-symbols.svg
-.tmp/
-.cache-loader
-
-# Svg Icons Temp folder
-tmp/
-
-# Bundle Analyser
-frontend/stats.json
+# env
+\.env

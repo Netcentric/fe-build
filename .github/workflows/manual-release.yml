@@ -1,0 +1,44 @@
+name: Manual Release
+on:
+  workflow_dispatch:
+    inputs:
+      dryrun:
+        description: 'DryRUn'
+        required: true
+        default: 'false'
+jobs:
+  release:
+    name: Test, Build and Release
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+        node-version: [ 14.x ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix['node-version'] }}
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Library
+        run: npm run build --if-present
+      - name: Run Tests
+        run: npm test --if-present
+      - name: Release
+        uses: cycjimmy/semantic-release-action@v2
+        with:
+          dry_run: ${{ github.event.inputs.dryrun == 'true' }}
+          extra_plugins: |
+            @semantic-release/changelog@3.0.0
+            @semantic-release/git
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GIT_AUTHOR_NAME: github-actions
+          GIT_AUTHOR_EMAIL: github-actions@github.com
+          GIT_COMMITTER_NAME: github-actions
+          GIT_COMMITTER_EMAIL: github-actions@github.com
+          CI: true
