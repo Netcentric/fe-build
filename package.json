@@ -1,0 +1,21 @@
+{
+  "name": "@companynamespace/npm-package-template",
+  "version": "1.0.0",
+  "description": "<Package description>",
+  "license": "Apache-2.0",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/companynamespace/npm-package-template"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "keywords": [
+    "keyword"
+  ]
+}

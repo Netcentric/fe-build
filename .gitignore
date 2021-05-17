@@ -1,0 +1,32 @@
+# Logs
+logs
+*.log
+
+# IDE
+.project
+.classpath
+.settings
+.idea/
+*.iml*
+*.ipr
+.brackets.json
+.vscode/
+.history
+
+# OS
+.DS_Store
+*.swp
+
+# Node related files
+node_modules/
+node/
+bin/
+typings
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.stylelintcache
+.eslintcache
+
+# env
+\.env
