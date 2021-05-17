@@ -32,7 +32,7 @@ const nodeModules = path.join(rootPath, 'node_modules');
 
 */
 // what is the source files key sufix to compile
-const sourceKey = 'clientlibs';
+const sourceKey = 'source';
 
 // what is the compiled bundle key
 const bundleKey = 'bundle';
