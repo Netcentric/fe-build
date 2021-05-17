@@ -13,7 +13,14 @@ logs
 .vscode/
 .history
 
-# OS
+# Maven
+target/
+
+# File Vault (VLT) / Sync
+.vlt
+.vlt-sync*
+
+# Mac OS X
 .DS_Store
 *.swp
 
@@ -30,3 +37,16 @@ yarn-error.log*
 
 # env
 \.env
+
+# bundle css and js files and maps
+*.bundle.*
+*.chunk.*
+symbols.svg
+.tmp/
+.cache-loader
+
+# Svg Icons Temp folder
+tmp/
+
+# Bundle Analyser
+frontend/stats.json
