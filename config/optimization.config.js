@@ -4,6 +4,9 @@ const moduleIsVendor = require('../utils/moduleIsVendor');
 module.exports = {
   minimize: isProduction,
   usedExports: isProduction,
+  runtimeChunk: {
+    name: 'commons/treeshaking.bundle.js'
+  },
   splitChunks: {
     cacheGroups: {
       // this treeshake vendors (but keep unique vendors at the clientlibs it belongs )
