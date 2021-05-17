@@ -45,7 +45,7 @@ const extendConfigurations = '.febuild';
 
 // default tasks to run
 // optional clientlibs
-const defaultTasks = ['styles', 'webpack', 'clientlibs'];
+const defaultTasks = ['styles', 'webpack'];
 
 /*
 
