@@ -1,7 +1,7 @@
-// sintax to validated
-const sintax = 'scss';
+// syntax to validate
+const syntax = 'scss';
 
 // break the build or not?
 const failOnError = true;
 
-module.exports = { sintax, failOnError };
+module.exports = { syntax, failOnError };
