@@ -26,7 +26,13 @@ module.exports = function runStylelint(files, projectConfig, cb) {
     if (failOnError) {
       process.exit(1);
     }
-  
+
     return fileError;
-  }).catch(err => log(__filename, 'error', err.message, 'error', true));
+  }).catch(({ code, message }) => {
+    log(__filename, 'error', message, 'error', true);
+    // If config file not provided, continue
+    if (code === 78) {
+      cb();
+    }
+  });
 };
