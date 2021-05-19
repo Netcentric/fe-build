@@ -3,7 +3,7 @@ const { log } = require('./log');
 const merge = require('./merge');
 
 module.exports = (configPath, config) => {
-  const dir = `${config.general.rootPath}/${configPath}`;
+  const dir = path.join(config.general.rootPath, configPath);
 
   /* eslint-disable */
   // usually this is not a good options to have dynamic require, here is a exception
@@ -21,6 +21,15 @@ module.exports = (configPath, config) => {
     override.general = override.general || {};
     override.general.sourcesPath = path.dirname(dir);
   }
+
+  if (!general.destinationPath) {
+    const parts = override.general.sourcesPath.split(config.general.rootPath)[1].split('/');
+    parts[1] = 'dist';
+    const dest = path.join(config.general.rootPath, ...parts);
+    override.general = override.general || {};
+    override.general.destinationPath = dest;
+  }
+
   // config merge
   const extendedConfig = merge(config, override);
   return extendedConfig;
