@@ -17,7 +17,14 @@
   "keywords": [
     "keyword"
   ],
-  "files": ["/config", "/utils", "/tasks", "./index.js", "./README.md", "LICENSE"],
+  "files": [
+    "/config",
+    "/utils",
+    "/tasks",
+    "./index.js",
+    "./README.md",
+    "LICENSE"
+  ],
   "bin": {
     "nc-fe-build": "./index.js"
   },
