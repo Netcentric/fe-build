@@ -15,6 +15,12 @@ module.exports = (configPath, config) => {
   log(__filename, `Extending Fe build config for ${path.dirname(configPath)}`);
 
   // this allows our .febuild create its own config per folder
+  // if sourcesPath is not provided, .febuild file location is used
+  const { general = {} } = override;
+  if (!general.sourcesPath) {
+    override.general = override.general || {};
+    override.general.sourcesPath = path.dirname(dir);
+  }
   // config merge
   const extendedConfig = merge(config, override);
   return extendedConfig;
