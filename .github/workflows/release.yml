@@ -30,7 +30,7 @@ jobs:
       - name: Release
         uses: cycjimmy/semantic-release-action@v2
         with:
-          dry_run: true
+          dry_run: false
           extra_plugins: |
             @semantic-release/changelog@3.0.0
             @semantic-release/git
