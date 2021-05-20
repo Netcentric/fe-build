@@ -8,6 +8,9 @@ Frontend build tools for AEM projects.
 [![semver: semantic-release](https://img.shields.io/badge/semver-semantic--release-blue.svg)](https://github.com/semantic-release/semantic-release)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
+## Intro
+All in one solution for modern Frontend projects, with special focus on AEM (Adobe Experience Manager)
+
 ## Installation
 
 ```
@@ -25,20 +28,24 @@ npm i @netcentric/fe-build
 ```
 npm run build
 ```
-Output:
-
-![task-webpack](docs/images/task-webpack.png)
 
 ### JavaScript
-1. Lint sourcecode with Eslint [TODO: links to: config | defaults]
-2. Transpile with Babel [config | defaults]
+
+1. Lint sourcecode with Eslint
+2. Transpile with Babel
 3. Bundle and optimize with Webpack
 4. Analyze bundles with webpack-bundle-analyzer
 
 ### CSS
-1. Lint sourcecode with Stylelint [config]
-2. Compile with node-sass [config]
-3. Transform with Autoprefixer [config]
+
+1. Lint sourcecode with Stylelint
+2. Compile with node-sass
+3. Transform with Autoprefixer
+
+### ClientLibraries
+
+1. Automatically create clientLibrary based on source file
+2. Include all bundled files
 
 ## Configuration file
 
@@ -78,6 +85,5 @@ module.exports = {
 };
 ```
 
-## Examples
-// TODO
--  Add example projects
+Configuration details: [CONFIG](./docs/configuration.md)
+NPM tasks: [TASKS](./docs/tasks.md)
