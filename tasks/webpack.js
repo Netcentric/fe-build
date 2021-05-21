@@ -18,7 +18,7 @@ module.exports = (config) => {
   };
 
   // log at the beginning
-  log(__filename, 'Webpack transpile running....', '', 'info', true);
+  log(__filename, 'Webpack transpile running...', '', 'info', true);
 
   // extract from flatten configs to webpack
   const { output, plugins, optimization, resolve, externals } = config;
