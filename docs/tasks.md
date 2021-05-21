@@ -21,37 +21,33 @@ Output:
 
 ### `styles`: Compile Sass
 
-1.1. Add `nc-fe-build --task=styles` task in package.json scripts
-
 ```
   "scripts": {
     "build:css": "nc-fe-build --task=styles"
   },
 ```
 
-1.2. Add `stylelint` configuration
-
-- Any valid stylelint configuration, eg package.json
+### `clientlibs`: Create ClientLibrary files
 
 ```
-  "stylelint": {
-    "rules": {
-      "max-empty-lines": 2
-    }
+  "scripts": {
+    "build:clientlibs": "hecore-build --task=clientlibs"
   }
 ```
 
-
-1.3. Run npm task
+### `watch`: Watch css and js
 
 ```
-npm run build:css
+  "scripts": {
+    "watch:js": "hecore-build --task=webpack --watch",
+    "watch:css": "hecore-build --task=styles --watch",
+  }
 ```
 
-Output:
+### `analyse`: Watch css and js
 
-![task-webpack](docs/images/task-styles.png)
-
-### Watchers
-## TODO
-- other tasks
+```
+  "scripts": {
+    "analyse": "hecore-build --task=webpack --analyse"
+  }
+```
