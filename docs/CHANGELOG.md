@@ -1,3 +1,10 @@
+# 1.0.0 (2021-05-21)
+
+
+### Bug Fixes
+
+* remove broken image ([db009d1](https://github.com/netcentric/fe-build/commit/db009d1582d952f848fc79bec5df2072a78b2b73))
+
 # 1.0.0 (2021-05-12)
 
 
