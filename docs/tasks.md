@@ -35,8 +35,8 @@ npm run build:js
 
 ```
   "scripts": {
-    "watch:js": "hecore-build --task=webpack --watch",
-    "watch:css": "hecore-build --task=styles --watch",
+    "watch:js": "nc-fe-build --task=webpack --watch",
+    "watch:css": "nc-fe-build --task=styles --watch",
   }
 ```
 
@@ -44,6 +44,6 @@ npm run build:js
 
 ```
   "scripts": {
-    "analyse": "hecore-build --task=webpack --analyse"
+    "analyse": "nc-fe-build --task=webpack --analyse"
   }
 ```
