@@ -9,5 +9,5 @@ module.exports = function writeFile(filepath, content, override = false) {
   fs.writeFileSync(filepath, content,
     err => log(__filename, 'error', `could not write file: ${err.Error},'\n ${err.path}`, 'error'));
 
-  log(__filename, `write file....${filepath}`, '', 'info', true);
+  log(__filename, `write file...${filepath}`, '', 'info', true);
 };
