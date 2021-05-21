@@ -31,6 +31,12 @@ npm run build:js
   }
 ```
 
+## Dev task
+For Dev tasks you need to install dependencies manually:
+```
+npm i -D gaze webpack-bundle-analyzer
+```
+
 ### `watch`: Watch css and js
 
 ```
@@ -40,7 +46,7 @@ npm run build:js
   }
 ```
 
-### `analyse`: Watch css and js
+### `analyse`: Analyse js bundles
 
 ```
   "scripts": {

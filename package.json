@@ -47,10 +47,6 @@
     "stylelint": "^13.13.1",
     "webpack": "^4.46.0"
   },
-  "devDependencies": {
-    "gaze": "^1.1.3",
-    "webpack-bundle-analyzer": "^4.4.2"
-  },
   "browserslist": [
     "last 2 versions",
     "iOS >= 10",
