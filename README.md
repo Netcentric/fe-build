@@ -86,4 +86,84 @@ module.exports = {
 ```
 
 Configuration details: [CONFIG](./docs/configuration.md)
+
 NPM tasks: [TASKS](./docs/tasks.md)
+
+
+## Quick start
+
+Check default settings for specific parts in: [CONFIG](./docs/configuration.md)
+
+First config that you need to adapt are probably Source and Bundle paths.
+Default values are `src` and `dist` directories. I f you have different structure, override this values in `.febuild` file.
+Default source file suffix is `*.souorce.*`
+
+eg. Your project
+
+```
+--package.json
+--projectSrcDir
+  |-- component
+    |--file.scss
+```
+
+On first run of NPM build task, no files will be processed, because there is no match with default settings.
+
+To update default settings add `.febuild` file in your `projectSrcDir` dir.
+
+### Custom source dir 
+
+Two updates are needed:
+  1. Add `source` suffix to all files that needs to be processed
+    - `file.scss` --> `file.source.scss`
+  2. Change source dir to `projectSrcDir`, in `.febuild`  
+     ```
+     module.exports = {
+      general: {
+        sourcesPath: 'path/to/projectSrcDir',
+      }
+     }
+     ```
+     - if sourcePath is not provided, path to `.febuild` will be used. For this simple example, this is enough.
+      ```
+      module.exports = {}
+      ```
+
+After running build task:
+```
+--package.json
+--projectSrcDir
+  |-- component
+    |--file.source.scss
+--dist
+  |-- component
+    |--file.bundle.scss
+```
+
+### Custom dist dir 
+
+Add custom `dist` dir path in `.febuild`
+
+```
+module.exports = {
+    general: {
+        destinationPath: path.resolve(__dirname, '..', 'custom', 'dist', 'path')
+    }
+}
+```
+
+Results:
+
+```
+--package.json
+--projectSrcDir
+  |-- component
+    |--file.source.scss
+--custom
+  |--dist
+    |--path
+      |-- component
+        |--file.bundle.scss
+```
+
+For more customizations, check Configuration details: [CONFIG](./docs/configuration.md)
