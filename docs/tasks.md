@@ -15,10 +15,6 @@
 npm run build:js
 ```
 
-Output:
-
-![task-webpack](docs/images/task-webpack.png)
-
 ### `styles`: Compile Sass
 
 ```
