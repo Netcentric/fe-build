@@ -10,7 +10,10 @@ module.exports = function generateEntries(config, extension = 'js') {
     const sources = {};
 
     sourcesFiles.forEach((file) => {
-      const destFile = file.replace(config.general.sourceKey, config.general.bundleKey);
+      const dir = path.dirname(file);
+      const fileName = path.basename(file);
+      const destFileName = fileName.replace(config.general.sourceKey, config.general.bundleKey);
+      const destFile = path.join(dir, destFileName);
       sources[destFile] = path.join(config.general.sourcesPath, file);
     });
 
