@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/netcentric/fe-build/compare/v1.0.0...v1.0.1) (2021-05-26)
+
+
+### Bug Fixes
+
+* dist path replace ([51d720c](https://github.com/netcentric/fe-build/commit/51d720ce0b80c6a8d77b64b248a47e2367e8d4d5))
+
 # 1.0.0 (2021-05-21)
 
 
