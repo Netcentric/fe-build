@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/netcentric/fe-build/compare/v1.0.1...v1.0.2) (2021-07-09)
+
+
+### Bug Fixes
+
+* add package.json to automated release updates ([7c1515e](https://github.com/netcentric/fe-build/commit/7c1515e9a2dce6be182aca0333335e64350ac859))
+
 ## [1.0.1](https://github.com/netcentric/fe-build/compare/v1.0.0...v1.0.1) (2021-05-26)
 
 
