@@ -231,7 +231,7 @@ You can identify possible additions to externals (removing it completely from ou
 
 treeshaking.bundle.js
 
-This is intended to optimise the code base of the project, and modules code that are the building blocks of it, like core-js, babel and @nc or @henkel modules.
+This is intended to optimise the code base of the project, and modules code that are the building blocks of it, like core-js, babel and @other modules.
 
 ### @babel/preset-env
 

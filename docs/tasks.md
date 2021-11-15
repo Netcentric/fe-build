@@ -27,7 +27,7 @@ npm run build:js
 
 ```
   "scripts": {
-    "build:clientlibs": "hecore-build --task=clientlibs"
+    "build:clientlibs": "nc-fe-build --task=clientlibs"
   }
 ```
 
