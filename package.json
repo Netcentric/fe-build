@@ -45,7 +45,7 @@
     "fast-glob": "^3.2.2",
     "postcss": "^8.2.10",
     "sass": "^1.44.0",
-    "stylelint": "^14.1.0",
+    "stylelint": "^13.13.1",
     "webpack": "^4.46.0"
   },
   "devDependencies": {
