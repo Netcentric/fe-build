@@ -1,5 +1,5 @@
 const path = require('path');
-const sass = require('node-sass');
+const sass = require('sass');
 const mkFullPathSync = require('./mkFullPathSync');
 const writeFile = require('./writeFile');
 const { log } = require('./log');
@@ -33,7 +33,7 @@ module.exports = function renderSass(dest, file, config, cb, write = false) {
           // skip the rest
           return;
         }
-    } 
+    }
     // create folder if it does not exist
     mkFullPathSync(path.dirname(outFile));
 
