@@ -39,7 +39,7 @@ npm run build
 ### CSS
 
 1. Lint sourcecode with Stylelint
-2. Compile with node-sass
+2. Compile with sass (ex dart-sass)
 3. Transform with Autoprefixer
 
 ### ClientLibraries
