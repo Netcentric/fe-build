@@ -43,7 +43,7 @@
     "eslint-loader": "4.0.2",
     "eslint-plugin-import": "2.20.2",
     "fast-glob": "3.2.2",
-    "postcss": "8.2.10",
+    "postcss": "8.2.13",
     "sass": "1.44.0",
     "stylelint": "13.13.1",
     "webpack": "4.46.0"
