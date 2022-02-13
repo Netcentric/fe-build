@@ -1,3 +1,17 @@
+# [1.1.0](https://github.com/netcentric/fe-build/compare/v1.0.2...v1.1.0) (2022-02-13)
+
+
+### Bug Fixes
+
+* move to node v16, update package-lock with v2 ([fd1fafc](https://github.com/netcentric/fe-build/commit/fd1fafc37c6e8372002314a74ccc47d3eae846e5))
+* update actions for node v16 ([7c21f6c](https://github.com/netcentric/fe-build/commit/7c21f6c7d8cd7bc1c71da3f42ade5bd3053a8f59))
+* update eslint ([14698c0](https://github.com/netcentric/fe-build/commit/14698c019455d926ff249e546051d220a4f14acc))
+
+
+### Features
+
+* fix dependencies versions ([18a5c9d](https://github.com/netcentric/fe-build/commit/18a5c9d948e3f9f1b20b9b77c815b81f72f43c84))
+
 ## [1.0.2](https://github.com/netcentric/fe-build/compare/v1.0.1...v1.0.2) (2021-07-09)
 
 
