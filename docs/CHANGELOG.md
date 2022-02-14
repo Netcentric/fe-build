@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/netcentric/fe-build/compare/v1.1.0...v1.1.1) (2022-02-14)
+
+
+### Bug Fixes
+
+* include index.js ([81cef07](https://github.com/netcentric/fe-build/commit/81cef07e3e38aa1a20dab0da51e651c1e0b85c24))
+
 # [1.1.0](https://github.com/netcentric/fe-build/compare/v1.0.2...v1.1.0) (2022-02-13)
 
 
