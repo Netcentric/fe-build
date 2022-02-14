@@ -21,12 +21,12 @@
     "/config",
     "/utils",
     "/tasks",
-    "./index.js",
+    "/cli",
     "./README.md",
     "LICENSE"
   ],
   "bin": {
-    "nc-fe-build": "./index.js"
+    "nc-fe-build": "./cli/index.js"
   },
   "paths": {
     "configs": "./config",
