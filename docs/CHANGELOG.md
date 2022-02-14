@@ -1,3 +1,11 @@
+## [1.1.2](https://github.com/netcentric/fe-build/compare/v1.1.1...v1.1.2) (2022-02-14)
+
+
+### Bug Fixes
+
+* change cli path ([ab31b00](https://github.com/netcentric/fe-build/commit/ab31b00266cd71c7b2f5a38778767a083aea9ad7))
+* update missing changelog plugin version ([151c1ea](https://github.com/netcentric/fe-build/commit/151c1ea2c90308ffdb0cabeb35e8d15a568932af))
+
 ## [1.1.1](https://github.com/netcentric/fe-build/compare/v1.1.0...v1.1.1) (2022-02-14)
 
 
