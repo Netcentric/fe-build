@@ -57,6 +57,7 @@
     "iOS >= 10",
     "Android >= 5",
     "not ie > 0",
+    "not ie_mob > 0",
     "not dead",
     "not OperaMini all"
   ],
