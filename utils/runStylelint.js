@@ -11,7 +11,6 @@ module.exports = function runStylelint(files, projectConfig, cb) {
 
   stylelint.lint({
     files,
-    syntax,
     configBasedir: rootPath
   }).then((data) => {
     if (!data.errored) return cb();

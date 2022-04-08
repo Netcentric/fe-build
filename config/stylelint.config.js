@@ -1,4 +1,4 @@
 module.exports = {
-  syntax: 'scss',
+  // Stops build if a linter error is found
   failOnError: true
 };
