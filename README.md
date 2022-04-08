@@ -8,55 +8,55 @@ Frontend build tools for AEM projects.
 [![semver: semantic-release](https://img.shields.io/badge/semver-semantic--release-blue.svg)](https://github.com/semantic-release/semantic-release)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-## Intro
-All in one solution for modern Frontend projects, with special focus on AEM (Adobe Experience Manager)
+## Abstract
+All-in-one solution for modern Frontend projects, with special focus on [Adobe Experience Manager](https://business.adobe.com/products/experience-manager/adobe-experience-manager.html) development (AEM). It compiles your SCSS and JS source files and creates the appropriate [clientLibs](https://experienceleague.adobe.com/docs/experience-manager-65/developing/introduction/clientlibs.html?lang=en) to be included by AEM.
 
-## Installation
-
+## Getting started
+Use [npm](https://docs.npmjs.com/about-npm/) to install fe-build:
 ```
 npm i @netcentric/fe-build
 ```
 
 ## Usage
-1.1. Add `nc-fe-build` task in package.json scripts
+Add `nc-fe-build` task in the scripts section of your package.json file:
 ```
   "scripts": {
     "build": "nc-fe-build"
   },
 ```
-1.2. Run npm task
+Run the npm task:
 ```
-npm run build
+  npm run build
 ```
 
+## Features
 ### JavaScript
 
-1. Lint sourcecode with Eslint
-2. Transpile with Babel
-3. Bundle and optimize with Webpack
-4. Analyze bundles with webpack-bundle-analyzer
+- Lint source code with [ESLint](https://eslint.org/).
+- Transpilation with [Babel](https://babeljs.io/).
+- Bundled and optimized with [Webpack](https://webpack.js.org/).
+- Analyze bundles with [Webpack Bundle Analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer).
 
 ### CSS
 
-1. Lint sourcecode with Stylelint
-2. Compile with sass (ex dart-sass)
-3. Transform with Autoprefixer
+- Lint source code with [Stylelint](https://stylelint.io/).
+- [SASS](https://sass-lang.com/) compilation.
+- Add vendor prefixes with [Autoprefixer](https://github.com/postcss/autoprefixer).
 
 ### ClientLibraries
 
-1. Automatically create clientLibrary based on source file
-2. Include all bundled files
+1. Automatically create [clientLibrary resources](https://experienceleague.adobe.com/docs/experience-manager-65/developing/introduction/clientlibs.html?lang=en) based on the source files.
+2. Include all generated CSS and JS files in the css.txt and js.txt files.
 
-## Configuration file
+## Configuration
 
-Default configuration can be extended via `.febuild` file.
-Config file is loaded and executed as JavaScript module.
-Custom configuration is used for all files located in the same directory as `.febuild`
-and in subdirectory tree.
+The default configuration can be extended via a `.febuild` file.
+This configuration file is loaded and executed as a JavaScript module.
+It is used for all files located in the same directory as the `.febuild` file and in the subdirectory tree.
 
-Add `.febuild` whenever you need group of files to use separate build options.
+You can add multiple `.febuild` whenever you need to run a separate build with other options.
 
-Configuration that can be extended:
+These are the configurations that can be extended:
 - general
 - output
 - resolve
@@ -70,7 +70,7 @@ Configuration that can be extended:
 - templates
 - clientlibs
 
-Eg, to override default babel config:
+E.g., to override the default Babel configuration:
 `.febuild`:
 ```
 module.exports = {
@@ -85,85 +85,86 @@ module.exports = {
 };
 ```
 
-Configuration details: [CONFIG](./docs/configuration.md)
-
-NPM tasks: [TASKS](./docs/tasks.md)
+Configuration details: [CONFIG](./docs/configuration.md).  
+Available npm tasks: [TASKS](./docs/tasks.md).
 
 
 ## Quick start
 
-Check default settings for specific parts in: [CONFIG](./docs/configuration.md)
+The first configurations that you need to adapt are probably the source and destination paths.
+The default paths are `src` for the source path and `dist` for the destination path. If you have a different structure, you can override these values in your `.febuild` file.
 
-First config that you need to adapt are probably Source and Bundle paths.
-Default values are `src` and `dist` directories. I f you have different structure, override this values in `.febuild` file.
-Default source file suffix is `*.souorce.*`
-
-eg. Your project
+e.g. In your project:
 
 ```
---package.json
---projectSrcDir
+-- package.json
+-- projectSrcDir
   |-- component
-    |--file.scss
+    |-- file.scss
 ```
 
-On first run of NPM build task, no files will be processed, because there is no match with default settings.
+Note that on the first run of the npm build task, no files will be processed, because no file matches with default settings.
 
-To update default settings add `.febuild` file in your `projectSrcDir` dir.
+To start the build and update the default settings, add a `.febuild` file in your `projectSrcDir` directory with no configuration.
+```
+module.exports = {}
+```
 
-### Custom source dir 
+You can check the default settings for each specific section in [CONFIG](./docs/configuration.md).
 
-Two updates are needed:
-  1. Add `source` suffix to all files that needs to be processed
-    - `file.scss` --> `file.source.scss`
-  2. Change source dir to `projectSrcDir`, in `.febuild`  
+### Custom source path
+
+In order to start processing your files, two updates are needed:
+  1. Add the `source` suffix to all the files that needs to be processed. This suffix value is defined in `general.sourceKey`.
+     `file.scss` --> `file.source.scss`
+  2. Change the source directory to `projectSrcDir` in the `.febuild` file.
      ```
      module.exports = {
       general: {
-        sourcesPath: 'path/to/projectSrcDir',
+        sourcesPath: './projectSrcDir',
       }
      }
      ```
-     - if sourcePath is not provided, path to `.febuild` will be used. For this simple example, this is enough.
-      ```
-      module.exports = {}
-      ```
+     if `sourcePath` is not provided, the path to `.febuild` file will be used instead. For this simple example, that is enough.
 
-After running build task:
+After running again the npm build task, this will be the output the destination folder:
 ```
---package.json
---projectSrcDir
+-- package.json
+-- .febuild
+-- projectSrcDir
   |-- component
-    |--file.source.scss
---dist
+    |-- file.source.scss
+-- dist
   |-- component
-    |--file.bundle.scss
+    |-- file.bundle.scss
 ```
 
-### Custom dist dir 
+### Custom destination path
 
-Add custom `dist` dir path in `.febuild`
+To add a custom destination path, add to the `.febuild` file the property `general.destinationPath` with the desired path.
 
 ```
 module.exports = {
     general: {
+        sourcesPath: './projectSrcDir',
         destinationPath: path.resolve(__dirname, '..', 'custom', 'dist', 'path')
     }
 }
 ```
 
-Results:
+Run the npm build task and check the results:
 
 ```
---package.json
---projectSrcDir
+-- package.json
+-- .febuild
+-- projectSrcDir
   |-- component
-    |--file.source.scss
---custom
-  |--dist
-    |--path
+    |-- file.source.scss
+-- custom
+  |-- dist
+    |-- path
       |-- component
-        |--file.bundle.scss
+        |-- file.bundle.scss
 ```
 
-For more customizations, check Configuration details: [CONFIG](./docs/configuration.md)
+For more customizations, please check the [Configuration document](./docs/configuration.md).
