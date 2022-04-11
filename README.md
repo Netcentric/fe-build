@@ -169,6 +169,7 @@ Results:
 For more customizations, check Configuration details: [CONFIG](./docs/configuration.md)
 
 ## Migrating to 2.0.0
+
 This release contains breaking changes. We know these can be disruptive, but they were needed to keep the dependencies updated.
 
 [Stylelint v14](https://stylelint.io/migration-guide/to-14/) does not no longer includes the syntaxes that parse CSS-like languages like SCSS. You will need to install and configure these syntaxes in your project. We recommend extending a shared config like [@netcentric/stylelint-config](https://github.com/Netcentric/stylelint-config) that includes the appropriate syntax to lint SCSS.
