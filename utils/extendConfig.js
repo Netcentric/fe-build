@@ -23,7 +23,7 @@ module.exports = (configPath, config) => {
   }
 
   if (!general.destinationPath) {
-    const parts = override.general.sourcesPath.split(config.general.rootPath)[1].split('/');
+    const parts = override.general.sourcesPath.split(config.general.rootPath)[1].split(path.sep);
     parts[1] = 'dist';
     const dest = path.join(config.general.rootPath, ...parts);
     override.general = override.general || {};
