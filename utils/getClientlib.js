@@ -6,7 +6,7 @@ module.exports = function getClientlib(original, config) {
   const folder = path.dirname(original);
   const fileName = path.basename(original);
   const clear = new RegExp([...sourceTypes, sourceKey, bundleKey].join('|'), 'gi');
-  const name = folder.replace(clear, '').split('/').join('.');
+  const name = folder.replace(clear, '').split(path.sep).join('.');
 
   return {
     folder,
