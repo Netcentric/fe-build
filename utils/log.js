@@ -30,8 +30,7 @@ const colorOptions = {
 const color = (c, str, bg = colorOptions.reset) => `${colorOptions[c]}${str}${bg}`;
 
 const emojis = {
-  // sense of humor?
-  error: [' 😐 🖕 '],
+  error: [' ❌ '],
   success: [' 💪 ']
 };
 
