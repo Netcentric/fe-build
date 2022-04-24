@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/netcentric/fe-build/compare/v1.1.2...v1.1.3) (2022-04-24)
+
+
+### Bug Fixes
+
+* Changes values defined in `SourceMapOptions` to match PostCSS v8 API ([d65132f](https://github.com/netcentric/fe-build/commit/d65132fb69b781c643ae5761f9ae5cc415025b9c))
+
 ## [1.1.2](https://github.com/netcentric/fe-build/compare/v1.1.1...v1.1.2) (2022-02-14)
 
 
