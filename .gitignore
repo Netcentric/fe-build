@@ -44,6 +44,7 @@ yarn-error.log*
 symbols.svg
 .tmp/
 .cache-loader
+dist/
 
 # Svg Icons Temp folder
 tmp/

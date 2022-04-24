@@ -1,0 +1,3 @@
+{
+  "extends": ["@netcentric/stylelint-config"]
+}

@@ -12,7 +12,7 @@
     "url": "https://github.com/netcentric/fe-build"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "test": "node ./cli/index.js"
   },
   "keywords": [
     "keyword"

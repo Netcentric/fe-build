@@ -1,0 +1,64 @@
+const path = require('path');
+
+module.exports = function (defaultConfig) {
+  const rootPath = __dirname;
+  const sourcesPath = path.join(rootPath, 'src');
+  const common = path.join(sourcesPath, 'common');
+  const includePaths = [path.join(common, 'styles'), defaultConfig.general.nodeModules];
+
+  return {
+    general: {
+      projectKey: 'febuild',
+      rootPath,
+      sourcesPath,
+      destinationPath: path.join(rootPath, 'dist'),
+      common,
+      sourceKey: 'src',
+      bundleKey: 'dist'
+    },
+    sass: {
+      includePaths
+    },
+    resolve: {
+      alias: {
+        common
+      }
+    },
+    babel: {
+      use: {
+        options: {
+          plugins: [
+            [
+              '@babel/plugin-transform-runtime', {
+                useESModules: true
+              }
+            ],
+            '@babel/plugin-proposal-object-rest-spread'
+          ]
+        }
+      }
+    },
+    eslint: {
+      exclude: /node_modules/,
+      use: {
+        options: {
+          cache: false
+        }
+      }
+    },
+    clientlibs: {
+      override: true,
+      skipCategories: ['febuild.author']
+    },
+    templates: {
+      clientlibTemplate: (category, prefix) => `<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:ClientLibraryFolder"
+    allowProxy="{Boolean}true"
+    categories="[${prefix}.${category}]"
+    cssProcessor="[default:none, min:none]"
+    jsProcessor="[default:none, min:none]" />
+`
+    }
+  };
+}
