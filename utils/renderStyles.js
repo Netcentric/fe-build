@@ -9,7 +9,6 @@ module.exports = function renderStyles(file, dest, config) {
       renderSass(
         dest, file, config, (result, outFile) =>
           renderPostcss(
-            // autoprefix does not need map
             result, outFile, config, postCssResult =>
               // only write file at the end
               writeFile(outFile, postCssResult.css, true)
