@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/netcentric/fe-build/compare/v1.1.3...v1.2.0) (2022-05-05)
+
+
+### Features
+
+* replaces hardcoded path separator with `path.sep`in order to make the build work in any OS ([a4f58a8](https://github.com/netcentric/fe-build/commit/a4f58a84f05abad4e6692a1167959b7cedaf16e4))
+
 ## [1.1.3](https://github.com/netcentric/fe-build/compare/v1.1.2...v1.1.3) (2022-04-24)
 
 
