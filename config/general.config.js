@@ -9,7 +9,7 @@ const getArgumentValue = require('../utils/getArgumentValue');
 const projectKey = 'myproj';
 
 // root path of the package
-const rootPath = path.resolve('./');
+const rootPath = path.resolve('.');
 
 // source files path
 const sourcesPath = path.join(rootPath, 'src');
