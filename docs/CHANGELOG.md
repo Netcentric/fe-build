@@ -1,3 +1,46 @@
+# [2.0.0](https://github.com/netcentric/fe-build/compare/v1.2.0...v2.0.0) (2022-05-05)
+
+
+### Bug Fixes
+
+* Removes IE Mobile from browserlist ([344d97e](https://github.com/netcentric/fe-build/commit/344d97e3e1af3839b1a2d30b742006ab998b87c3))
+* Updates eslint-plugin-import because current version is not supported by eslint v7 ([2b6aeff](https://github.com/netcentric/fe-build/commit/2b6aeff713840c97a3fdb1c2f67b0911ab01575e))
+
+
+### Feat
+
+* Bump major version number ([c8ca422](https://github.com/netcentric/fe-build/commit/c8ca42259f659626a65ca55568262563dfb7f968))
+
+
+### Features
+
+* Adds migration guide ([e537ab1](https://github.com/netcentric/fe-build/commit/e537ab1f2ac12ecfb370459af66f98d9b4a38576))
+* Adds supported node.js versions ([31e9371](https://github.com/netcentric/fe-build/commit/31e93719b3c6263b42bed86545e8a70782fb77f0))
+* Updates stylelint to v14.6.1 and removes obsolete `syntax` option ([18742aa](https://github.com/netcentric/fe-build/commit/18742aadba82e5b83c7995e6a5c6b145101bf490))
+
+
+### BREAKING CHANGES
+
+* Stylelint v14 does not include syntaxes by default
+
+Stylelint no longer includes the syntaxes to parse CSS-like languages like SCSS.
+Migration guide:
+- In your Stylelint configuration object extend a shared config like @netcentric/stylelint-config
+
+# [1.2.0](https://github.com/netcentric/fe-build/compare/v1.1.3...v1.2.0) (2022-05-05)
+
+
+### Features
+
+* replaces hardcoded path separator with `path.sep`in order to make the build work in any OS ([a4f58a8](https://github.com/netcentric/fe-build/commit/a4f58a84f05abad4e6692a1167959b7cedaf16e4))
+
+## [1.1.3](https://github.com/netcentric/fe-build/compare/v1.1.2...v1.1.3) (2022-04-24)
+
+
+### Bug Fixes
+
+* Changes values defined in `SourceMapOptions` to match PostCSS v8 API ([d65132f](https://github.com/netcentric/fe-build/commit/d65132fb69b781c643ae5761f9ae5cc415025b9c))
+
 ## [1.1.2](https://github.com/netcentric/fe-build/compare/v1.1.1...v1.1.2) (2022-02-14)
 
 
