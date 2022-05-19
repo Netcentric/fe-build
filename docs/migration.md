@@ -14,7 +14,7 @@ Then, update your [Stylelint configuration object](https://stylelint.io/user-gui
 {
   "extends": "@netcentric/stylelint-config",
   "rules": {
-    ..
+    ...
   }
 }
 ```
