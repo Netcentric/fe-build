@@ -1,3 +1,4 @@
+// Webpack configuration
 module.exports = {
   enforce: 'pre',
   test: /\.js$/,

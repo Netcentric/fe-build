@@ -31,7 +31,7 @@ const nodeModules = path.join(rootPath, 'node_modules');
   files entries configurations
 
 */
-// what is the source files key sufix to compile
+// what is the source files key suffix to compile
 const sourceKey = 'source';
 
 // what is the compiled bundle key
@@ -40,11 +40,11 @@ const bundleKey = 'bundle';
 // source file types ['js', 'scss']
 const sourceTypes = ['js', 'scss'];
 
-// project local configutaions for subfolders so it compile as a bundle
+// project local configurations for sub folders so it compile as a bundle
 const extendConfigurations = '.febuild';
 
 // default tasks to run
-// optional clientlibs
+// optional clientLibs
 const defaultTasks = ['styles', 'webpack', 'clientlibs'];
 
 /*
