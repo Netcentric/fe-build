@@ -1,49 +1,57 @@
-## Tasks
+# Available NPM Tasks
+The following npm tasks are available by default after installing fe-build, but you need to add them manually to your package.json file.
 
-### `webpack`: Compile ES6
+## Compile JavaScript/ECMAScript
 
-1.1. Add `nc-fe-build --task=webpack` task in package.json scripts
-```
+Add `nc-fe-build --task=webpack` task in package.json scripts
+```json
   "scripts": {
     "build:js": "nc-fe-build --task=webpack"
   },
 ```
+To execute it, open the terminal and run `npm run build:js` from the same folder where the file package.json is.
 
-1.2. Run npm task
+## Compile Sass
 
-```
-npm run build:js
-```
-
-### `styles`: Compile Sass
-
-```
+```json
   "scripts": {
     "build:css": "nc-fe-build --task=styles"
   },
 ```
 
-### `clientlibs`: Create ClientLibrary files
+## Create ClientLibrary Files
 
-```
+```json
   "scripts": {
     "build:clientlibs": "nc-fe-build --task=clientlibs"
   }
 ```
 
-### `watch`: Watch css and js
+## Run an Specific Config File
 
+You can run the build from a single configuration file:
+
+```json
+  "scripts": {
+    "build:config": "nc-fe-build --config-file=path/to/configFile"
+  }
 ```
+
+## Watch Sass and JS
+
+```json
   "scripts": {
     "watch:js": "nc-fe-build --task=webpack --watch",
     "watch:css": "nc-fe-build --task=styles --watch",
   }
 ```
 
-### `analyse`: Watch css and js
+## Analyze JS
 
-```
+Analyze the bundles with [Webpack Bundle Analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer).
+
+```json
   "scripts": {
-    "analyse": "nc-fe-build --task=webpack --analyse"
+    "analyze": "nc-fe-build --task=webpack --analyse --development"
   }
 ```

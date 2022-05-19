@@ -2,7 +2,7 @@ const webpack = require('webpack');
 
 const { mode, analyse, analyzerPort } = require('./general.config');
 
-// pass the mode foward
+// pass the mode forward
 const environment = new webpack.DefinePlugin({
   'process.env.NODE_ENV': JSON.stringify(mode)
 });

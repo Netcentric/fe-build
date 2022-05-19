@@ -1,3 +1,4 @@
+// Webpack configuration
 module.exports = {
   enforce: 'post',
   test: /\.js$/,
