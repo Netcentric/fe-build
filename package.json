@@ -22,6 +22,7 @@
     "/utils",
     "/tasks",
     "/cli",
+    "/docs",
     "./README.md",
     "LICENSE"
   ],
