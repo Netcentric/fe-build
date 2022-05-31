@@ -69,7 +69,7 @@ Defaults:
       bundleKey: "bundle",
       // The path to the directory with your source files
       sourcesPath: "src",
-      // Path to the dir with the code shared among SCSS and JS files
+      // Path to the dir with the code shared among Scss and JS files
       common: "common",
       // Paths to ignore when the build looks for files to compile
       ignore: ["!(**/target/**)", "!(**/jcr_root/**)", "!(**/common/**)"],
@@ -138,7 +138,7 @@ Hence **you don't need to import core-js in your project**, or code duplication 
 
 ### Stylelint
 
-Stylelint is a CSS linter which can also lint SCSS files.
+Stylelint is a CSS linter which can also lint Scss files.
 
 Default configuration:
 
@@ -151,7 +151,7 @@ Default configuration:
 }
 ```
 
-Please note that you need a [Stylelint configuration object]((https://stylelint.io/user-guide/configure/)) to parse CSS-like languages like SCSS. We recommend extending a shared configuration like [@netcentric/stylelint-config](https://github.com/Netcentric/stylelint-config).
+Please note that you need a [Stylelint configuration object]((https://stylelint.io/user-guide/configure/)) to parse CSS-like languages like Scss. We recommend extending a shared configuration like [@netcentric/stylelint-config](https://github.com/Netcentric/stylelint-config).
 
 You can add your own linter rules in the [Stylelint configuration object](https://stylelint.io/user-guide/configure/#rules).
 ### ESlint

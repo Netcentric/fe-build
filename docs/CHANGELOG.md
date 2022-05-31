@@ -23,7 +23,7 @@
 
 * Stylelint v14 does not include syntaxes by default
 
-Stylelint no longer includes the syntaxes to parse CSS-like languages like SCSS.
+Stylelint no longer includes the syntaxes to parse CSS-like languages like Scss.
 Migration guide:
 - In your Stylelint configuration object extend a shared config like @netcentric/stylelint-config
 
