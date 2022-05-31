@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 
-const { mode, analyse, analyzerPort } = require('./general.config');
+const { mode, analyze, analyzerPort } = require('./general.config');
 
 // pass the mode forward
 const environment = new webpack.DefinePlugin({
@@ -12,7 +12,7 @@ const plugins = [environment];
 
 // check each files / dependencies sizes
 // src https://www.npmjs.com/package/webpack-bundle-analyzer
-if (analyse) {
+if (analyze) {
   const BundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
   const analyzer = new BundleAnalyzer({
     analyzerPort

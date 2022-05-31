@@ -9,7 +9,7 @@ Frontend build tools for AEM projects.
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Abstract
-All-in-one solution for modern Frontend projects, with special focus on [Adobe Experience Manager](https://business.adobe.com/products/experience-manager/adobe-experience-manager.html) development (AEM). It compiles your SCSS and JS source files and creates the appropriate [clientLibs](https://experienceleague.adobe.com/docs/experience-manager-65/developing/introduction/clientlibs.html?lang=en) to be included by AEM.
+All-in-one solution for modern Frontend projects, with special focus on [Adobe Experience Manager](https://business.adobe.com/products/experience-manager/adobe-experience-manager.html) development (AEM). It compiles your Scss and JS source files and creates the appropriate [clientLibs](https://experienceleague.adobe.com/docs/experience-manager-65/developing/introduction/clientlibs.html?lang=en) to be included by AEM.
 
 ## Getting started
 Use [npm](https://docs.npmjs.com/about-npm/) to install fe-build:

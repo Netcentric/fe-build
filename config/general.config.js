@@ -62,8 +62,8 @@ const mode = isProduction ? 'production' : 'development';
 // check watchers flag
 const watch = getArgumentValue('--watch');
 
-// bundle analyse flag
-const analyse = getArgumentValue('--analyse');
+// bundle analyze flag
+const analyze = getArgumentValue('--analyze');
 
 // task to execute via command line
 const task = getArgumentValue('--task=');
@@ -103,7 +103,7 @@ module.exports = {
   isProduction,
   mode,
   watch,
-  analyse,
+  analyze,
   analyzerPort,
   task,
   quiet,

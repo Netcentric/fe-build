@@ -52,6 +52,6 @@ Analyze the bundles with [Webpack Bundle Analyzer](https://www.npmjs.com/package
 
 ```json
   "scripts": {
-    "analyze": "nc-fe-build --task=webpack --analyse --development"
+    "analyze": "nc-fe-build --task=webpack --analyze --development"
   }
 ```
