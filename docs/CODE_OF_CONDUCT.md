@@ -1,4 +1,4 @@
-# Netcentric, a Cognizant Digital Business Code of Conduct
+# Cognizant Netcentric Code of Conduct
 
 ## Our Pledge
 
