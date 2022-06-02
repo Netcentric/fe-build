@@ -1,8 +1,8 @@
-import { random } from 'common/utils/math';
+import { randomInt } from 'common/utils/math';
 
 class Author {
   constructor() {
-    this.value = random(1, 10);
+    this.value = randomInt(1, 10);
     this.init();
   }
 

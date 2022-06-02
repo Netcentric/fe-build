@@ -12,7 +12,16 @@
     "url": "https://github.com/netcentric/fe-build"
   },
   "scripts": {
-    "test": "node ./cli/index.js"
+    "clean": "del ./test/dist",
+    "build": "npm run clean && node ./cli/index.js --development",
+    "build:config": "npm run build -- --config-file=./test/.febuild",
+    "build:js": "npm run clean && node ./cli/index.js --task=webpack",
+    "build:css": "npm run clean && node ./cli/index.js --task=styles",
+    "build:clientlibs": "npm run clean && node ./cli/index.js --task=clientlibs",
+    "analyze": "node ./cli/index.js --task=webpack --analyze --development",
+    "watch:js": "node ./cli/index.js --task=webpack --watch",
+    "watch:css": "node ./cli/index.js --task=styles --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "keyword"
@@ -50,6 +59,8 @@
     "webpack": "4.46.0"
   },
   "devDependencies": {
+    "@netcentric/stylelint-config": "^1.2.1",
+    "del-cli": "^4.0.1",
     "gaze": "^1.1.3",
     "webpack-bundle-analyzer": "^3.7.0"
   },

@@ -57,8 +57,7 @@ module.exports = function (defaultConfig) {
     allowProxy="{Boolean}true"
     categories="[${prefix}.${category}]"
     cssProcessor="[default:none, min:none]"
-    jsProcessor="[default:none, min:none]" />
-`
+    jsProcessor="[default:none, min:none]" />`
     }
   };
 }

@@ -1,8 +1,8 @@
-import { ramdonInt } from 'common/utils/math';
+import { randomInt } from 'common/utils/math';
 
 class Main {
   constructor() {
-    this.value = ramdonInt(1, 10);
+    this.value = randomInt(1, 10);
     this.init();
   }
 
