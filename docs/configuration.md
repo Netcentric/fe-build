@@ -7,24 +7,26 @@ It is used for all files located in the same directory as the `.febuild` file an
 You can add multiple `.febuild` whenever you need to run a separate build with other options.
 
 These are the configurations that can be extended:
--  general
--  output
--  optimization
--  plugins
--  eslint
--  babel
--  sass
--  clientlibs
--  stylelint
--  resolve
--  postcss
--  templates
+
+- general
+- output
+- optimization
+- plugins
+- eslint
+- babel
+- sass
+- clientlibs
+- stylelint
+- resolve
+- postcss
+- templates
 
 ## Overriding a Default Configuration
 
 To override a configuration, add a new entry in the object exported in your `.febuild` with the name of the configuration you want to override, which value is an object whith entries that matches the existing options you want to override.
 
 E.g., to override the default Babel configuration with new `exclude` paths and plugins, you can do the following in your `.febuild` file:
+
 ```javascript
 module.exports = {
     babel: {
@@ -53,13 +55,14 @@ module.exports = (defaultConfig) => ({
 ```
 
 ## Configurations
+
 ### General
 
-This configuration part is used for basic project setup. You will find an explanation of each key as a comment next to it.  
+This configuration part is used for basic project setup. You will find an explanation of each key as a comment next to it.
 Defaults:
 
 ```javascript
-{
+module.exports = {
   general: {
       // Your project name with which ClientLibs category are prefixed
       projectKey: "myproj",
@@ -86,9 +89,12 @@ Defaults:
 ```
 
 Example of overriding the `defaultTasks` to exclude the 'clientlibs' task:
+
 ```javascript
-general: {
-    defaultTasks: ['styles', 'webpack']
+module.exports = {
+  general: {
+      defaultTasks: ['styles', 'webpack']
+  }
 }
 ```
 
@@ -116,7 +122,7 @@ For more information about the configuration options check [babel-loader](https:
 
 #### @babel/preset-env
 
-By default `@babel/preset-env` will use [`browserslist` config sources](https://github.com/browserslist/browserslist) _unless_ either the `targets` or `ignoreBrowserslistConfig` options are set.  
+By default `@babel/preset-env` will use [`browserslist` config sources](https://github.com/browserslist/browserslist) _unless_ either the `targets` or `ignoreBrowserslistConfig` options are set.
 
 > When no browser targets are specified, Babel will assume the oldest browsers possible, which will increase the output code size.
 
@@ -127,8 +133,8 @@ We recommend using a [.browserslistrc](https://github.com/browserslist/browsersl
 This option configures how Babel [handles the polyfills](https://babeljs.io/docs/en/babel-preset-env#usebuiltins), by adding the specific imports only when the polyfill is used in each file.
 
 What is the advantages over "entry"?
-+ It allows proper tree-shaking the polyfills
-+ Reduce the size of the JavaScript file entrypoint
+- It allows proper tree-shaking the polyfills
+- Reduce the size of the JavaScript file entrypoint
 
 #### Core JS 3
 
@@ -143,10 +149,12 @@ Stylelint is a CSS linter which can also lint Scss files.
 Default configuration:
 
 ```javascript
-{
-  stylelint: { 
-    // Stops the build if a linter error is found
-    failOnError: true 
+module.exports = {
+  {
+    stylelint: {
+      // Stops the build if a linter error is found
+      failOnError: true
+    }
   }
 }
 ```
@@ -154,25 +162,27 @@ Default configuration:
 Please note that you need a [Stylelint configuration object]((https://stylelint.io/user-guide/configure/)) to parse CSS-like languages like Scss. We recommend extending a shared configuration like [@netcentric/stylelint-config](https://github.com/Netcentric/stylelint-config).
 
 You can add your own linter rules in the [Stylelint configuration object](https://stylelint.io/user-guide/configure/#rules).
+
 ### ESlint
 
-ESLint statically analyzes your code to quickly find problems. 
+ESLint statically analyzes your code to quickly find problems.
 
 For more information about the configuration options check [eslint-loader](https://github.com/webpack-contrib/eslint-loader).
 
-
 ```javascript
-{
-  eslint: {
-    enforce: 'pre',
-    test: /\.js$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'eslint-loader',
-      options: {
-        cache: true,
-        failOnError: true,
-        fix: true
+module.exports = {
+  {
+    eslint: {
+      enforce: 'pre',
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'eslint-loader',
+        options: {
+          cache: true,
+          failOnError: true,
+          fix: true
+        }
       }
     }
   }
@@ -196,16 +206,17 @@ For more information about the configuration options check [eslint-loader](https
 
 ### PostCSS
 
-[PostCSS](https://postcss.org/) is used to transform the CSS code generated after the Sass compilation.  
+[PostCSS](https://postcss.org/) is used to transform the CSS code generated after the Sass compilation.
 
 Default configuration:
+
 ```javascript
 {
   postcss: {
     // Default plugins
     plugins: ['autoprefixer'],
     // Stops the build if an error is found
-    failOnError: true 
+    failOnError: true
   }
 }
 ```
@@ -223,6 +234,7 @@ postcss: {
 This configuration part refers to [Webpack plugins](https://webpack.js.org/plugins/define-plugin/).
 
 Default configuration:
+
 ```javascript
 {
   plugins: [
@@ -279,8 +291,8 @@ Default configuration:
 If a module is imported into more than 2 files, it's extracted to a common file.
 There are 2 main common files:
 
-+ `treeshaking.bundle.js`: common code that reside in the project.
-+ `vendors.bundle.js`: common code that is outside of the scope your project.
+- `treeshaking.bundle.js`: common code that reside in the project.
+- `vendors.bundle.js`: common code that is outside of the scope your project.
 
 **vendors.bundle.js**
 
@@ -288,8 +300,8 @@ This is intended to extract reused third-party scripts that are imported in two 
 Also it is good to separate those third-party from the regular tree shaking since this vendors sometimes might be best suited as an external option.
 
 Advantages of having a separated vendor:
-+ Clear view of the impact of third-party on your code base.
-+ You can identify possible additions to externals (removing it completely from your code).
+- Clear view of the impact of third-party on your code base.
+- You can identify possible additions to externals (removing it completely from your code).
 
 **treeshaking.bundle.js**
 

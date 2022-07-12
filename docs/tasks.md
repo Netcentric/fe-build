@@ -1,14 +1,17 @@
 # Available NPM Tasks
+
 The following npm tasks are available by default after installing fe-build, but you need to add them manually to your package.json file.
 
 ## Compile JavaScript/ECMAScript
 
 Add `nc-fe-build --task=webpack` task in package.json scripts
+
 ```json
   "scripts": {
     "build:js": "nc-fe-build --task=webpack"
   },
 ```
+
 To execute it, open the terminal and run `npm run build:js` from the same folder where the file package.json is.
 
 ## Compile Sass

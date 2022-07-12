@@ -15,6 +15,7 @@ e.g. In your project:
 Note that on the first execution of the `npm run build` task, probably no files will be processed, because no file will match with default settings.
 
 To start the build and change the default settings, add a `.febuild` file one level up from where your `projectSrcDir` directory is with the following content:
+
 ```javascript
 module.exports = {}
 ```
@@ -24,9 +25,11 @@ You can check the default settings for each specific section in the [configurati
 ## Custom Source Path
 
 In order to start processing the files in your project, two updates are needed:
-  1. Add the `source` suffix to all the files that needs to be processed. This suffix value is defined in `general.sourceKey`.  
+
+  1. Add the `source` suffix to all the files that needs to be processed. This suffix value is defined in `general.sourceKey`.
      e.g.: `file.scss` --> `file.source.scss`
   2. In the `.febuild` file, change the source directory `projectSrcDir` configuration to the path to where your source code is.
+
      ```javascript
      module.exports = {
        general: {
@@ -34,9 +37,11 @@ In order to start processing the files in your project, two updates are needed:
        }
      }
      ```
+
      if `sourcePath` is not provided, the path where the `.febuild` file is will be used instead. For this example it will be enough.
 
 After running again the `npm run build` task, this will be the output the destination folder:
+
 ```
 -- package.json
 -- .febuild
