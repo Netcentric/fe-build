@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/netcentric/fe-build/compare/v2.0.0...v2.0.1) (2022-07-12)
+
+
+### Bug Fixes
+
+* Move gaze to regular depedencies ([165c90b](https://github.com/netcentric/fe-build/commit/165c90b4665c941b3a223d7ec2b75bb380147910)), closes [#65](https://github.com/netcentric/fe-build/issues/65)
+
 # [2.0.0](https://github.com/netcentric/fe-build/compare/v1.2.0...v2.0.0) (2022-05-05)
 
 
