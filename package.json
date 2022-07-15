@@ -48,10 +48,10 @@
     "postcss": "8.4.6",
     "sass": "1.44.0",
     "stylelint": "14.6.1",
-    "webpack": "4.46.0"
+    "webpack": "^5.73.0"
   },
   "devDependencies": {
-    "webpack-bundle-analyzer": "^3.7.0"
+    "webpack-bundle-analyzer": "^4.5.0"
   },
   "browserslist": [
     "last 2 versions",
