@@ -61,7 +61,7 @@
   "devDependencies": {
     "@netcentric/stylelint-config": "^1.2.1",
     "del-cli": "^4.0.1",
-    "webpack-bundle-analyzer": "^3.7.0"
+    "webpack-bundle-analyzer": "^4.5.0"
   },
   "browserslist": [
     "last 2 versions",
