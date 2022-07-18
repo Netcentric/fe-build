@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/netcentric/fe-build/compare/v2.0.1...v2.0.2) (2022-07-18)
+
+
+### Bug Fixes
+
+* **utils:** adjust custom missing destination basePath when custom sourcesPath defined ([97ed7d4](https://github.com/netcentric/fe-build/commit/97ed7d4de64da146866c625a1d9cabad26099129))
+
 ## [2.0.1](https://github.com/netcentric/fe-build/compare/v2.0.0...v2.0.1) (2022-07-12)
 
 
