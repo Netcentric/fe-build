@@ -3,6 +3,9 @@
   "rules": {
     "declaration-property-unit-allowed-list": {
       "font-size": ["rem", "em", "px"]
-    }
+    },
+    "plugin/no-unsupported-browser-features": [true, {
+      "ignore": ["css-media-resolution"]
+    }]
   }
 }

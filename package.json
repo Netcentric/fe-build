@@ -3,6 +3,7 @@
   "version": "2.0.2",
   "description": "Frontend build tools for AEM projects.",
   "license": "Apache-2.0",
+  "author": "Cognizant Netcentric (https://www.netcentric.biz)",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -14,16 +15,18 @@
   "scripts": {
     "clean": "del ./test/dist",
     "build": "npm run clean && node ./cli/index.js --development",
+    "build:prod": "npm run clean && node ./cli/index.js --production",
     "build:config": "npm run build -- --config-file=./test/.febuild",
     "build:js": "npm run clean && node ./cli/index.js --task=webpack",
     "build:css": "npm run clean && node ./cli/index.js --task=styles",
     "build:clientlibs": "npm run clean && node ./cli/index.js --task=clientlibs",
     "analyze": "node ./cli/index.js --task=webpack --analyze --development",
     "watch:js": "node ./cli/index.js --task=webpack --watch",
-    "watch:css": "node ./cli/index.js --task=styles --watch"
+    "watch:css": "node ./cli/index.js --task=styles --watch",
+    "test": "npm run build"
   },
   "keywords": [
-    "keyword"
+    "build"
   ],
   "files": [
     "/config",

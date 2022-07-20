@@ -27,14 +27,19 @@ module.exports = function (defaultConfig) {
     babel: {
       use: {
         options: {
-          plugins: [
-            [
-              '@babel/plugin-transform-runtime', {
-                useESModules: true
-              }
-            ],
-            '@babel/plugin-proposal-object-rest-spread'
-          ]
+          presets: [['@babel/preset-env', { useBuiltIns: 'usage', corejs: 3, debug: true }]]
+        }
+      }
+    },
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          vendors: {
+            minChunks: 1
+          },
+          treeshaking: {
+            minChunks: 1
+          }
         }
       }
     },

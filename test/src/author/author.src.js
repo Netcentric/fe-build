@@ -11,4 +11,4 @@ class Author {
   }
 }
 
-export default Author
+export default Author;
