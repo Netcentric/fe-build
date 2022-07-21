@@ -10,7 +10,7 @@ module.exports = {
   splitChunks: {
     cacheGroups: {
       // this treeshake vendors (but keep unique vendors at the clientlibs it belongs )
-      vendors: {
+      defaultVendors: {
         test: mod => moduleIsVendor(mod.context, excludedFromVendors),
         name: 'commons/vendors.bundle.js',
         chunks: 'all',
