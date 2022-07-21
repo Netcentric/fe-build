@@ -17,13 +17,16 @@ module.exports = (configPath, config) => {
   // this allows our .febuild create its own config per folder
   // if sourcesPath is not provided, .febuild file location is used
   const { general = {} } = override;
+  let basePath = general.sourcesPath;
+
   if (!general.sourcesPath) {
     override.general = override.general || {};
     override.general.sourcesPath = path.dirname(dir);
+    basePath = override.general.sourcesPath.split(config.general.rootPath)[1];
   }
 
   if (!general.destinationPath) {
-    const parts = override.general.sourcesPath.split(config.general.rootPath)[1].split(path.sep);
+    const parts = basePath.split(path.sep);
     parts[1] = 'dist';
     const dest = path.join(config.general.rootPath, ...parts);
     override.general = override.general || {};
