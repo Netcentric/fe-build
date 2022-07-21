@@ -28,7 +28,7 @@ module.exports = (config) => {
         });
       });
     } catch (e) {
-      log(__filename, 'Something is missing did you run `ncps fe-install`?', e.message, 'error');
+      log(__filename, 'Something is missing', e.message, 'error');
     }
   } else {
     log(__filename, 'Sass / autoprefixer running...', '', 'info', true);

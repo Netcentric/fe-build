@@ -3,6 +3,7 @@
   "version": "2.0.2",
   "description": "Frontend build tools for AEM projects.",
   "license": "Apache-2.0",
+  "author": "Cognizant Netcentric (https://www.netcentric.biz)",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -12,10 +13,19 @@
     "url": "https://github.com/netcentric/fe-build"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "clean": "del ./test/dist",
+    "build:test": "npm run clean && node ./cli/index.js --development",
+    "build:prod": "npm run clean && node ./cli/index.js --production",
+    "build:config": "npm run build -- --config-file=./test/.febuild",
+    "build:js": "npm run clean && node ./cli/index.js --task=webpack",
+    "build:css": "npm run clean && node ./cli/index.js --task=styles",
+    "build:clientlibs": "npm run clean && node ./cli/index.js --task=clientlibs",
+    "analyze": "node ./cli/index.js --task=webpack --analyze --development",
+    "watch:js": "node ./cli/index.js --task=webpack --watch",
+    "watch:css": "node ./cli/index.js --task=styles --watch"
   },
   "keywords": [
-    "keyword"
+    "build"
   ],
   "files": [
     "/config",
@@ -51,6 +61,8 @@
     "webpack": "4.46.0"
   },
   "devDependencies": {
+    "@netcentric/stylelint-config": "^1.2.1",
+    "del-cli": "^4.0.1",
     "webpack-bundle-analyzer": "^4.5.0"
   },
   "browserslist": [

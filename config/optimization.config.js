@@ -9,20 +9,20 @@ module.exports = {
   },
   splitChunks: {
     cacheGroups: {
-      // this treeshake vendors (but keep unique vendors at the clientlibs it belongs )
+      // Treeshake vendors in node_modules (but keep unique vendors at the clientlibs it belongs)
       vendors: {
         test: mod => moduleIsVendor(mod.context, excludedFromVendors),
         name: 'commons/vendors.bundle.js',
         chunks: 'all',
-        // used on at least 2 module
+        // used on at least 2 modules
         minChunks: 2
       },
-      // this treeshakes common imports, if are and more than 2 clientlibs
+      // Treeshakes common imports, if used in more than 2 clientlibs
       treeshaking: {
         test: mod => !moduleIsVendor(mod.context, excludedFromVendors),
         name: 'commons/treeshaking.bundle.js',
         chunks: 'all',
-        // used on at least 2 module
+        // used on at least 2 modules
         minChunks: 2
       }
     }
