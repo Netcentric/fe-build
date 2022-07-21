@@ -14,7 +14,7 @@
   },
   "scripts": {
     "clean": "del ./test/dist",
-    "build": "npm run clean && node ./cli/index.js --development",
+    "build:test": "npm run clean && node ./cli/index.js --development",
     "build:prod": "npm run clean && node ./cli/index.js --production",
     "build:config": "npm run build -- --config-file=./test/.febuild",
     "build:js": "npm run clean && node ./cli/index.js --task=webpack",
@@ -22,8 +22,7 @@
     "build:clientlibs": "npm run clean && node ./cli/index.js --task=clientlibs",
     "analyze": "node ./cli/index.js --task=webpack --analyze --development",
     "watch:js": "node ./cli/index.js --task=webpack --watch",
-    "watch:css": "node ./cli/index.js --task=styles --watch",
-    "test": "npm run build"
+    "watch:css": "node ./cli/index.js --task=styles --watch"
   },
   "keywords": [
     "build"
