@@ -5,7 +5,7 @@ const taskVerification = require('../utils/taskVerification');
 const { log } = require('../utils/log');
 
 // start log messages
-log(__filename, ' Looking for configuration files', '', 'info');
+log(__filename, ' Looking for configuration files', ', if it finds its runs ', 'info');
 
 // check if there is a params sent to run a single config file
 if (config && config.general && config.general.configFile) {
