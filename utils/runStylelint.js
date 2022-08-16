@@ -4,8 +4,12 @@ const linterError = require('./linterError');
 
 module.exports = function runStylelint(files, projectConfig, cb) {
   // extract from config
-  const { syntax, failOnError } = projectConfig.stylelint;
+  const { failOnError } = projectConfig.stylelint;
   const { rootPath } = projectConfig.general;
+
+  if (projectConfig.general.disableStyleLint) {
+    return cb();
+  }
 
   log(__filename, 'Stylelint');
 

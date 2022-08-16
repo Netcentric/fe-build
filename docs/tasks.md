@@ -58,3 +58,13 @@ Analyze the bundles with [Webpack Bundle Analyzer](https://www.npmjs.com/package
     "analyze": "nc-fe-build --task=webpack --analyze --development"
   }
 ```
+
+To change the port number, you can append the argument `--port=` followed by a valid port number.
+
+# Additional Arguments
+You can add the following arguments to the `nc-fe-build` command in order to change its behavior.
+
+| Argument  | Description |
+| --------- | ----------- |
+| `--quiet` | Displays less messages in the output |
+| `--disable-styelint` | Disables Stylelint |
