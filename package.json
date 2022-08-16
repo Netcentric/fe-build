@@ -22,7 +22,8 @@
     "build:clientlibs": "npm run clean && node ./cli/index.js --task=clientlibs",
     "analyze": "node ./cli/index.js --task=webpack --analyze --development",
     "watch:js": "node ./cli/index.js --task=webpack --watch",
-    "watch:css": "node ./cli/index.js --task=styles --watch"
+    "watch:css": "node ./cli/index.js --task=styles --watch",
+    "test": "npm run build:prod"
   },
   "keywords": [
     "build"
