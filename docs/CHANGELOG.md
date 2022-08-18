@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/Netcentric/fe-build/compare/v2.0.2...v2.1.0) (2022-08-18)
+
+
+### Features
+
+* make Stylelint optional ([d344705](https://github.com/Netcentric/fe-build/commit/d34470560114b034f919c29ffb258710810d02a6))
+
 ## [2.0.2](https://github.com/netcentric/fe-build/compare/v2.0.1...v2.0.2) (2022-07-18)
 
 
