@@ -48,6 +48,7 @@ dist/
 
 # Svg Icons Temp folder
 tmp/
+coverage/
 
 # Bundle Analyser
 frontend/stats.json
