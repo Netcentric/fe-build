@@ -6,7 +6,7 @@ module.exports = function generateEntries(config, extension = 'js') {
   const sourcesFiles = glob.sync(sourcePattern, { cwd: config.general.sourcesPath });
 
   // if is multiple entries
-  if (config && config.general && config.general.multiple) {
+  if (config.general.multiple) {
     const sources = {};
 
     sourcesFiles.forEach((file) => {
