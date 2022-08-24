@@ -2,18 +2,18 @@ const stylelint = require('stylelint');
 const { log } = require('./log');
 const linterError = require('./linterError');
 
-module.exports = function runStylelint(files, projectConfig, cb) {
+module.exports = async function runStylelint(files, projectConfig, cb) {
   // extract from config
   const { syntax, failOnError } = projectConfig.stylelint;
   const { rootPath } = projectConfig.general;
 
   log(__filename, 'Stylelint');
 
-  stylelint.lint({
+  await stylelint.lint({
     files,
     configBasedir: rootPath
-  }).then((data) => {
-    if (!data.errored) return cb();
+  }).then(async (data) => {
+    if (!data.errored) return await cb();
 
     const fileError = JSON.parse(data.output);
 
@@ -27,11 +27,12 @@ module.exports = function runStylelint(files, projectConfig, cb) {
     }
 
     return fileError;
-  }).catch(({ code, message }) => {
-    log(__filename, 'error', message, 'error', true);
+  }).catch(async ({ code, message }) => {
+    log(__filename, 'error', message, 'error');
     // If config file not provided, continue
     if (code === 78) {
-      cb();
+      return await cb();
     }
   });
 };
+

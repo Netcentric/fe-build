@@ -4,10 +4,10 @@ const generateEntries = require('../utils/generateEntries');
 const renderStyles = require('../utils/renderStyles');
 
 // extend log to proper say what file is running
-module.exports = (config) => {
+module.exports = async (config) => {
   if (config && config.general && config.general.watch) {
     try {
-      log(__filename, 'Watcher Sass / autoprefixer running...', '', 'info', true);
+      log(__filename, 'Watcher Sass / autoprefixer running...', '', 'info');
 
       const gaze = require('gaze');
       const sassPattern = path.join(config.general.sourcesPath, `**/*.${config.general.sourceKey}.scss`);
@@ -31,10 +31,10 @@ module.exports = (config) => {
       log(__filename, 'Something is missing', e.message, 'error');
     }
   } else {
-    log(__filename, 'Sass / autoprefixer running...', '', 'info', true);
+    log(__filename, 'Sass / autoprefixer running...', '', 'info');
 
     // checking all entries at this configuration
     const entries = generateEntries(config, 'scss');
-    Object.keys(entries).forEach(file => renderStyles(entries[file], file, config));
+    return await Object.keys(entries).forEach(file => renderStyles(entries[file], file, config));
   }
 };

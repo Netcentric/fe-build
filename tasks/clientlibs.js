@@ -5,7 +5,7 @@ const renderClientLibs = require('../utils/renderClientLibs');
 
 // extend log to proper say what file is running
 module.exports = (config) => {
-  log(__filename, 'clientlibs task running...', '', 'info', true);
+  log(__filename, 'clientlibs task running...', '', 'info');
 
   // checking all entries at this configuration
   const entries = {

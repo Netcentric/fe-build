@@ -24,7 +24,7 @@ describe('Test utils/generateEntries.js', () => {
     
     it('Should find 2 SCSS entries at ./test', () => {
         const entries = generateEntries(config,'scss');
-        expect(Object.keys(entries).length).toBe(2);
+        expect(Object.keys(entries).length).toBe(3);
 
     });
 
