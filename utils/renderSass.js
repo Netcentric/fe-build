@@ -4,7 +4,7 @@ const mkFullPathSync = require('./mkFullPathSync');
 const writeFile = require('./writeFile');
 const { log } = require('./log');
 
-module.exports = async function renderSass(dest, file, config, cb, write = false) {
+module.exports = function renderSass(dest, file, config, cb, write = false) {
   // extract sass only configs
   const { outputStyle, includePaths, failOnError } = config.sass;
 
@@ -15,7 +15,7 @@ module.exports = async function renderSass(dest, file, config, cb, write = false
   const outFile = path.join(config.general.destinationPath, destFile);
 
   // extract from config
-  return await sass.render({
+  sass.render({
     file,
     outputStyle,
     includePaths,

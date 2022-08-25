@@ -15,10 +15,8 @@ let entries = {
 const { destinationPath, projectKey } = config.general;
 const { clientlibTemplate } = config.templates;
 // clear
-// fs.rmSync(destinationPath,{ recursive: true, force: true });
-
-beforeEach(async () => {
-    return await clientlibTask(config);
+beforeAll(async () => {
+    await clientlibTask(config);
 });
 
 describe('Test task/clientlibs.js', () => {

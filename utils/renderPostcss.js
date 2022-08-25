@@ -1,7 +1,7 @@
 const postcss = require('postcss');
 const { log } = require('./log');
 
-module.exports = async function renderPostcss(input, outFile, config, cb) {
+module.exports = function renderPostcss(input, outFile, config, cb) {
   const { plugins, failOnError } = config.postcss;
 
   try {
@@ -12,32 +12,31 @@ module.exports = async function renderPostcss(input, outFile, config, cb) {
 
     /* eslint-enable */
     // run postcss plugins at sass output
-    await postcss(runPlugins).process(input.css.toString(), { from: outFile, map })
-      .then(async (result) => {
+    postcss(runPlugins).process(input.css.toString(), { from: outFile, map })
+      .then((result) => {
         // check all warnings
         const warns = result.warnings();
 
         if (warns && warns.length > 0) {
           // log warnings
           return result.warnings().forEach((warn) => {
-            console.log(warn)
             log(__filename, 'error', warn.toString(), 'error');
             // exit if fail on error is defined
             if (failOnError) {
-              return process.exit(1);
+              process.exit(1);
             }
           });
         }
 
         // success and return
         log(__filename, `Postcss applied ${plugins.join(',')} - `, input.destFile, 'success');
-        return await cb(result);
+        return cb(result);
       });
   } catch (error) {
     log(__filename, 'Postcss error', error.message, 'error');
     // exit if fail on error is defined
     if (failOnError) {
-      return process.exit(1);
+      process.exit(1);
     }
   }
 };
