@@ -18,7 +18,7 @@ module.exports = (config) => {
   };
 
   // log at the beginning
-  log(__filename, 'Webpack transpile running...', '', 'info', true);
+  log(__filename, 'Webpack transpile running...', '', 'info');
 
   // extract from flatten configs to webpack
   const { output, plugins, optimization, resolve, externals } = config;
@@ -46,9 +46,9 @@ module.exports = (config) => {
       }
 
       // log completion
-      log(__filename, 'Webpack transpile ended', '', 'success', true);
+      log(__filename, 'Webpack transpile ended', '', 'success');
     });
   } else {
-    log(__filename, 'No entries for webpack, nothing found', '', 'info', true);
+    log(__filename, 'No entries for webpack, nothing found', '', 'info');
   }
 };

@@ -5,11 +5,11 @@ const taskVerification = require('../utils/taskVerification');
 const { log } = require('../utils/log');
 
 // start log messages
-log(__filename, 'looking for other configurations', ' if it finds its runs ', 'info');
+log(__filename, ' Looking for configuration files', ', if it finds its runs ', 'info');
 
 // check if there is a params sent to run a single config file
 if (config && config.general && config.general.configFile) {
-  log(__filename, ' One configuration sent, running only it');
+  log(__filename, ' Running configuration from parameter');
 
   // load the configuration
   const configuration = extendConfig(config.general.configFile, config);
@@ -23,11 +23,11 @@ if (config && config.general && config.general.configFile) {
 
   // log what is happening
   if (availableBuilds.length === 0) {
-    log(__filename, ' No other configurations, running default configurations');
+    log(__filename, ' No configuration files found, running default configuration');
 
     taskVerification(config);
   } else {
-    log(__filename, ' Found local configurations', ' - Running it instead', 'warning');
+    log(__filename, ' Found local configurations', ' - Running them instead', 'warning');
 
     // extending every found build options
     availableBuilds.forEach((configPath) => {
