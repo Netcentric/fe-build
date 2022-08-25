@@ -27,12 +27,18 @@ describe('Test task/webpack.js', () => {
     Object.keys(entries).forEach((entry) => {
         const file = path.join(destinationPath, entry);
         const source = entries[entry];
-        it(`TXT files should be created and have proper point to ${entry}`, () =>  {
+        it(`Compile ${source} file and save ${entry} at destination folder`, () =>  {
             const bundleContent = fs.readFileSync(file, { encoding:'utf8', flag:'r' });
             const sourceContent = fs.readFileSync(source, { encoding:'utf8', flag:'r' });
             expect(bundleContent).not.toBe(sourceContent);
             // should be packed 
             expect(bundleContent.length > sourceContent.length).toBe(true);
+        });
+        
+        it(`It should create treeshaking files at destination folder`, () =>  {
+            const treeshakingFile = config.optimization.splitChunks.cacheGroups.treeshaking.name;
+            const hasTreeshaking = fs.existsSync(path.join(destinationPath, treeshakingFile));
+            expect(hasTreeshaking).toBe(true);
         });
     })
 });

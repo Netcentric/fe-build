@@ -29,18 +29,20 @@ describe('Test task/clientlibs.js', () => {
         const txtContet = `${fileName.split('.').slice(0, -1).join('.')}.${ext}`;
         const txtPath = path.join(dir, `${ext}.txt`);
 
-        it(`TXT files should be created and have proper point to ${entry}`, () =>  {
+        it(`TXT files should be created and point to ${entry} file`, () =>  {
             const fileContent = fs.readFileSync(txtPath, { encoding:'utf8', flag:'r' });
             expect(fileContent).toBe(txtContet);
         });
 
-        it(`Should create .content.xml files with proper content ${entry}`, () =>  {
+        it(`Should create .content.xml files with it's category "${name}" based on template`, () =>  {
             const template = clientlibTemplate(name, projectKey);
             const fileContent = fs.readFileSync(path.join(dir,'.content.xml'), { encoding:'utf8', flag:'r' });
             expect(fileContent).toBe(template);
         });
     })
 });
+
+
 
 
 
