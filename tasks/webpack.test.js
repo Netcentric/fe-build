@@ -19,7 +19,7 @@ await new Promise(async (r) => {
     await webpackTask(config);
     setTimeout(() => {
         r()
-    },2200)
+    },3200)
 })
 );
 
