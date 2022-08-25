@@ -1,3 +1,36 @@
+# [3.0.0](https://github.com/Netcentric/fe-build/compare/v2.1.0...v3.0.0) (2022-08-25)
+
+
+### Bug Fixes
+
+* Changes values defined in `SourceMapOptions` to match PostCSS v8 API ([bf0344d](https://github.com/Netcentric/fe-build/commit/bf0344dd4f1a513e7327ccf11c147da7d9216703))
+* Move gaze to regular depedencies ([d2e71af](https://github.com/Netcentric/fe-build/commit/d2e71af7c0b35d4d1d6fd6bd7ec11eb8bece8896)), closes [#65](https://github.com/Netcentric/fe-build/issues/65)
+* Removes IE Mobile from browserlist ([389bbd4](https://github.com/Netcentric/fe-build/commit/389bbd4f625ba40e08f39853831f97cc03180b7c))
+* update missing changelog plugin version ([a58f949](https://github.com/Netcentric/fe-build/commit/a58f94932b233bad8d5f26b18a844fc7c90f490b))
+* Updates eslint-plugin-import because current version is not supported by eslint v7 ([34c4d37](https://github.com/Netcentric/fe-build/commit/34c4d373206a7650ae61a367fbc57ee79147a192))
+* **utils:** adjust custom missing destination basePath when custom sourcesPath defined ([9cd6d0f](https://github.com/Netcentric/fe-build/commit/9cd6d0fbbe3e9c28ea2b3a81ccb303f08d6c316c))
+
+
+### Feat
+
+* Bump major version number ([d06c2d4](https://github.com/Netcentric/fe-build/commit/d06c2d44da0018c76ab16891237eb2f870a5ce94))
+
+
+### Features
+
+* Adds migration guide ([59e987d](https://github.com/Netcentric/fe-build/commit/59e987d93291e0e5add95227aee829a5b58df954))
+* Adds supported node.js versions ([30ee448](https://github.com/Netcentric/fe-build/commit/30ee448973467e779bb2c6fde7019e71270fd71e))
+* Updates stylelint to v14.6.1 and removes obsolete `syntax` option ([930dc8e](https://github.com/Netcentric/fe-build/commit/930dc8e319dd3ebc7b2cf970f1c37190fcbcaf0d))
+
+
+### BREAKING CHANGES
+
+* Stylelint v14 does not include syntaxes by default
+
+Stylelint no longer includes the syntaxes to parse CSS-like languages like SCSS.
+Migration guide:
+- In your Stylelint configuration object extend a shared config like @netcentric/stylelint-config
+
 # [2.1.0](https://github.com/Netcentric/fe-build/compare/v2.0.2...v2.1.0) (2022-08-18)
 
 
