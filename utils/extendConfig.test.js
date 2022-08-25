@@ -8,11 +8,11 @@ const finalValues = json(config);
 
 
 describe('Test utils/extendConfig.js', () => {
-    it('Should throw error when not finding a .febuild file ', () => {
+    it('Should throw an error no .febuild file is found ', () => {
         expect(() => extendConfig('.febuild', config)).toThrowError();
     });
     
-    it('Should find a .febuild file, and read and extend defaults', () => {
+    it('Should find a .febuild file, read and merge into defaults values', () => {
         const newConfig = extendConfig('./test/.febuild', config);
         const reducer = (o,f) => {
             return Object.keys(o).reduce((v,k) => {
@@ -25,8 +25,7 @@ describe('Test utils/extendConfig.js', () => {
         expect(test).toBe(true);
     });
 
-
-    it('Should find a .febuild file, and have no destination path or source paths', () => {
+    it('should work even if no destination path or source paths are configured', () => {
         delete config.general.destinationPath;
         delete config.general.sourcesPath;
         const newConfig = extendConfig('./test/src/minimal/.febuild', config);

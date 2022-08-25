@@ -8,11 +8,11 @@ const generateEntries = require('./generateEntries');
 const config = extendConfig('./test/.febuild', defaults);
   
 describe('Test utils/generateEntries.js', () => {
-    it('Should throw Error without any config', () => {
+    it('Should throw an error if there is no config', () => {
         expect(generateEntries).toThrowError();
     });
 
-    it('Should find no entries with wrong key txt extension', () => {
+    it('Should find no entries if there is no files with txt extension', () => {
         const entries = generateEntries(config, 'txt');
         expect(Object.keys(entries).length).toBe(0);
     });
@@ -22,13 +22,13 @@ describe('Test utils/generateEntries.js', () => {
         expect(Object.keys(entries).length).toBe(2);
     });
     
-    it('Should find 2 SCSS entries at ./test', () => {
+    it('Should find 3 SCSS entries at ./test', () => {
         const entries = generateEntries(config,'scss');
         expect(Object.keys(entries).length).toBe(3);
 
     });
 
-    it(`Should keys shoud be destination, and values should be source and key should be based on value path`, () => {
+    it(`Destination file should be based on same name pattern as source file`, () => {
         const entries = generateEntries(config);
         const passed = Object.keys(entries).reduce((pass, key) => {
             const value = entries[key];
@@ -39,7 +39,7 @@ describe('Test utils/generateEntries.js', () => {
         expect(passed).toBe(true);
     });
 
-    it('Generate file list for sinfle bundle build entries at ./test, eg [file1,file2]', () => {
+    it('Generate file list for single bundle build at ./test, eg [file1,file2]', () => {
         config.general.multiple = false;
         const entries = generateEntries(config);
         expect(Array.isArray(entries)).toBe(true);

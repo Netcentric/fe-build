@@ -54,10 +54,8 @@ describe('Test utils/renderPostcss.js', () => {
         await renderPostcss(inputContent, outFile, config, (r) => {
             expect(r.css).toBe(outputContent);
         });
-        
     });
-
-    it(`Postcss render autoprefix plugin`, async () =>  {
+    it(`Postcss render autoprefix plugin with source maps`, async () =>  {
         config.postcss.failOnError = false;
         config.general.isProduction = false;
         console.log = jest.fn();
@@ -98,5 +96,4 @@ describe('Test utils/renderPostcss.js', () => {
         await renderPostcss(false, false, config);
         expect(mockExit).toHaveBeenCalledWith(1);
     });
-
 })

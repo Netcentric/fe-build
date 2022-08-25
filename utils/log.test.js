@@ -14,4 +14,3 @@ describe('Test utils/log.js', () => {
         });
     });
 });
-

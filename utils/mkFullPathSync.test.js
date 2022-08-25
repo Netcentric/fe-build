@@ -6,7 +6,7 @@ const folderPath = './dist/mkFullPathSync/mkFullPathSyncExample'
 
 
 describe('Test utils/mkFullPathSync.js', () => {
-    it(`It should checka and create a recursive folder even if it does not exists`, () => {
+    it(`It should check and create a recursive folder even if it does not exists`, () => {
         return new Promise((resolve) => {
             const removed = fs.rmSync(folderPath,{ recursive: true, force: true });
             const dir = mkdirSync(folderPath);

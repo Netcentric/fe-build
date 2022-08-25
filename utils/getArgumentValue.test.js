@@ -4,14 +4,14 @@ const getArgumentValue = require("./getArgumentValue");
 
 describe('Test utils/getArgumentValue.js', () => {
 
-    it('Should return false, if there a argument object ', () => {
+    it('Should return false, if argument object is empty or missing', () => {
         const lastArgs = [...process.argv];
         process.argv = false;
         const arg = getArgumentValue('--example=');
         expect(arg).toBe(false);
         process.argv = lastArgs;
     });
-    it('Should return false if there no arguments in process', () => {
+    it('Should return false if the argument is not passed', () => {
         const arg = getArgumentValue('--example');
         expect(arg).toBe(false);
     });
