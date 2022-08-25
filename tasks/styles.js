@@ -4,7 +4,7 @@ const generateEntries = require('../utils/generateEntries');
 const renderStyles = require('../utils/renderStyles');
 
 // extend log to proper say what file is running
-module.exports = async (config) => {
+module.exports = (config) => {
   if (config && config.general && config.general.watch) {
     try {
       log(__filename, 'Watcher Sass / autoprefixer running...', '', 'info');
@@ -28,13 +28,13 @@ module.exports = async (config) => {
         });
       });
     } catch (e) {
-      log(__filename, 'Something is missing', e.message, 'error');
+      log(__filename, 'Something is missing, you need install dev dependencies for this.', e.message, 'error');
     }
   } else {
     log(__filename, 'Sass / autoprefixer running...', '', 'info');
 
     // checking all entries at this configuration
     const entries = generateEntries(config, 'scss');
-    return await Object.keys(entries).forEach(file => renderStyles(entries[file], file, config));
+    Object.keys(entries).forEach(file => renderStyles(entries[file], file, config));
   }
 };

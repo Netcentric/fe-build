@@ -13,17 +13,8 @@
     "url": "https://github.com/netcentric/fe-build"
   },
   "scripts": {
-    "clean": "del ./test/dist",
-    "build:test": "npm run clean && node ./cli/index.js --development",
-    "build:prod": "npm run clean && node ./cli/index.js --production",
-    "build:config": "npm run build -- --config-file=./test/.febuild",
-    "build:js": "npm run clean && node ./cli/index.js --task=webpack",
-    "build:css": "npm run clean && node ./cli/index.js --task=styles",
-    "build:clientlibs": "npm run clean && node ./cli/index.js --task=clientlibs",
-    "analyze": "node ./cli/index.js --task=webpack --analyze --development",
-    "watch:js": "node ./cli/index.js --task=webpack --watch",
-    "watch:css": "node ./cli/index.js --task=styles --watch",
-    "test": "jest --coverage=true"
+    "clean": "rm -rf ./test/dist",
+    "test": "npm run clean && jest --coverage=true"
   },
   "keywords": [
     "build"
