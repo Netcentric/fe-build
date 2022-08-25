@@ -19,7 +19,7 @@ await new Promise(async (r) => {
     await webpackTask(config);
     setTimeout(() => {
         r()
-    },1200)
+    },2200)
 })
 );
 
@@ -34,7 +34,7 @@ describe('Test task/webpack.js', () => {
             // should be packed 
             expect(bundleContent.length > sourceContent.length).toBe(true);
         });
-        
+
         it(`It should create treeshaking files at destination folder`, () =>  {
             const treeshakingFile = config.optimization.splitChunks.cacheGroups.treeshaking.name;
             const hasTreeshaking = fs.existsSync(path.join(destinationPath, treeshakingFile));
