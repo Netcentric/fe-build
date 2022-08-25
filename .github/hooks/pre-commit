@@ -2,7 +2,7 @@
 echo "*****                                                   ******"
 echo "***** Cognizant Netcentric (https://www.netcentric.biz) ******"
 echo "*****                                                   ******"
-echo "*****              Running jest test                    ******"
+echo "*****              Running jest test  :)                ******"
 echo "*****                                                   ******"
 
 git stash -q --keep-index
