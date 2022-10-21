@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/Netcentric/fe-build/compare/v3.0.0...v3.0.1) (2022-10-21)
+
+
+### Bug Fixes
+
+* **hooks:** [#82](https://github.com/Netcentric/fe-build/issues/82) add hooks to package files ([0ef08ac](https://github.com/Netcentric/fe-build/commit/0ef08aca3ce45616160e56a27ffdcd598d94ff79))
+
 # [3.0.0](https://github.com/Netcentric/fe-build/compare/v2.1.0...v3.0.0) (2022-08-25)
 
 
