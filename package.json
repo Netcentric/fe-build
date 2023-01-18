@@ -13,7 +13,7 @@
     "url": "https://github.com/Netcentric/fe-build.git "
   },
   "scripts": {
-    "preinstall": "cp ./hooks/pre-commit ./.git/hooks/pre-commit",
+    "preinstall": "mkdir -p .git && mkdir -p .git/hooks && cp ./hooks/pre-commit ./.git/hooks/pre-commit",
     "clean": "rm -rf ./test/dist",
     "test": "npm run clean && jest --coverage=true"
   },
