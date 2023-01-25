@@ -24,7 +24,7 @@ env:
   GIT_COMMITTER_NAME: github-actions
   GIT_COMMITTER_EMAIL: github-actions@github.com
   CI: true
-  CONFIG_NODE_VERSION: '["lts/*"]'
+  CONFIG_NODE_VERSION: '["16.x"]'
   CONFIG_OS: '["ubuntu-latest"]'
 # Main Job
 jobs:
