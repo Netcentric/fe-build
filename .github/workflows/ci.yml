@@ -29,3 +29,22 @@ jobs:
         run: npm run build --if-present
       - name: Run Tests
         run: npm test --if-present
+
+  install:
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [16.x]
+
+    steps:
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Init npm
+        run: npm init -y
+      - name: Install package
+        run: npm i @netcentric/fe-build
