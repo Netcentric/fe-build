@@ -1,3 +1,10 @@
+## [3.0.4](https://github.com/Netcentric/fe-build/compare/v3.0.3...v3.0.4) (2023-10-09)
+
+
+### Bug Fixes
+
+* **contribution:** fix preinstall script that was only required to contribution and break npm i windows install ([5ca1c2a](https://github.com/Netcentric/fe-build/commit/5ca1c2a20992c651146379f967c736ac60848989))
+
 ## [3.0.2](https://github.com/Netcentric/fe-build/compare/v3.0.1...v3.0.2) (2023-01-25)
 
 
