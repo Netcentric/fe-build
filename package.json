@@ -1,6 +1,6 @@
 {
   "name": "@netcentric/fe-build",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Frontend build tools for AEM projects.",
   "license": "Apache-2.0",
   "author": "Cognizant Netcentric (https://www.netcentric.biz)",
@@ -13,7 +13,6 @@
     "url": "https://github.com/Netcentric/fe-build.git "
   },
   "scripts": {
-    "preinstall": "cp ./hooks/pre-commit ./.git/hooks/pre-commit",
     "clean": "rm -rf ./test/dist",
     "test": "npm run clean && jest --coverage=true"
   },
@@ -70,6 +69,6 @@
     "not OperaMini all"
   ],
   "engines": {
-    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+    "node": ">=16.0.0"
   }
 }

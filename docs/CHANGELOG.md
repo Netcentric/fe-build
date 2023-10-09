@@ -1,3 +1,10 @@
+## [3.0.2](https://github.com/Netcentric/fe-build/compare/v3.0.1...v3.0.2) (2023-01-25)
+
+
+### Bug Fixes
+
+* change preinstall script to account for missing .git/hooks folders ([07e8362](https://github.com/Netcentric/fe-build/commit/07e83627a1bc1026261315360da9c9e4a2e851a4))
+
 ## [3.0.1](https://github.com/Netcentric/fe-build/compare/v3.0.0...v3.0.1) (2022-10-21)
 
 
