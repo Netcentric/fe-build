@@ -14,7 +14,6 @@
   },
   "scripts": {
     "clean": "rm -rf ./test/dist",
-    "contribute": "mkdir -p .git && mkdir -p .git/hooks && cp ./hooks/pre-commit ./.git/hooks/pre-commit",
     "test": "npm run clean && jest --coverage=true"
   },
   "keywords": [
