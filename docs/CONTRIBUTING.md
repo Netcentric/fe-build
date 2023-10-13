@@ -15,6 +15,12 @@ Start by filing an issue. The existing committers on this project work to reach
 consensus around project direction and issue solutions within issue threads
 (when appropriate).
 
+## getting started
+1 - Update the git hooks for commit header and pre commit actions
+
+Start by running the follow commands to add hooks to git
+```mkdir -p .git && mkdir -p .git/hooks && cp ./hooks/pre-commit ./.git/hooks/pre-commit```
+
 ## Automated Release
 
 ### Release

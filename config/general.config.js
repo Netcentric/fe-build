@@ -77,6 +77,9 @@ const quiet = getArgumentValue('--quiet');
 // analyzerPort
 const analyzerPort = getArgumentValue('--port=') || 8888;
 
+// disable Stylelint
+const disableStyleLint = getArgumentValue('--disable-styelint');
+
 // general webpack
 const devtool = isProduction ? false : 'inline-source-map';
 
@@ -105,6 +108,7 @@ module.exports = {
   watch,
   analyze,
   analyzerPort,
+  disableStyleLint,
   task,
   quiet,
   configFile,

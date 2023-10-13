@@ -7,7 +7,7 @@ const renderStyles = require('../utils/renderStyles');
 module.exports = (config) => {
   if (config && config.general && config.general.watch) {
     try {
-      log(__filename, 'Watcher Sass / autoprefixer running...', '', 'info', true);
+      log(__filename, 'Watcher Sass / autoprefixer running...', '', 'info');
 
       const gaze = require('gaze');
       const sassPattern = path.join(config.general.sourcesPath, `**/*.${config.general.sourceKey}.scss`);
@@ -28,10 +28,10 @@ module.exports = (config) => {
         });
       });
     } catch (e) {
-      log(__filename, 'Something is missing did you run `ncps fe-install`?', e.message, 'error');
+      log(__filename, 'Something is missing, you need install dev dependencies for this.', e.message, 'error');
     }
   } else {
-    log(__filename, 'Sass / autoprefixer running...', '', 'info', true);
+    log(__filename, 'Sass / autoprefixer running...', '', 'info');
 
     // checking all entries at this configuration
     const entries = generateEntries(config, 'scss');
