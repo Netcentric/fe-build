@@ -48,5 +48,8 @@ symbols.svg
 # Svg Icons Temp folder
 tmp/
 
+# coverage folder
+coverage/
+
 # Bundle Analyser
 frontend/stats.json

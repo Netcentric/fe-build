@@ -10,6 +10,9 @@ const resolve = require('./resolve.config');
 const sass = require('./sass.config');
 const stylelint = require('./stylelint.config');
 const templates = require('./templates.config');
+const stats = require('./stats.config');
+const cache = require('./cache.config');
+const devServer = require('./devserver.config');
 
 const modules = general.modules;
 
@@ -26,5 +29,8 @@ module.exports = {
   stylelint,
   resolve,
   postcss,
-  templates
+  templates,
+  stats,
+  cache,
+  devServer
 };
