@@ -31,6 +31,7 @@ describe('Test task/webpack.js', () => {
             const bundleContent = fs.readFileSync(file, { encoding:'utf8', flag:'r' });
             const sourceContent = fs.readFileSync(source, { encoding:'utf8', flag:'r' });
             expect(bundleContent).not.toBe(sourceContent);
+            console.log(bundleContent, sourceContent);
             // should be packed 
             expect(bundleContent.length > sourceContent.length).toBe(true);
         });
@@ -38,6 +39,7 @@ describe('Test task/webpack.js', () => {
         it(`It should create treeshaking files at destination folder`, () =>  {
             const treeshakingFile = config.optimization.splitChunks.cacheGroups.treeshaking.name;
             const hasTreeshaking = fs.existsSync(path.join(destinationPath, treeshakingFile));
+            console.log(treeshakingFile, hasTreeshaking);
             expect(hasTreeshaking).toBe(true);
         });
     })

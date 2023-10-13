@@ -1,6 +1,5 @@
 process.argv.push('--quiet');
 
-const { describe } = require('eslint/lib/rule-tester/rule-tester');
 const defaults = require('../config');
 const extendConfig = require('./extendConfig');
 const generateEntries = require('./generateEntries');

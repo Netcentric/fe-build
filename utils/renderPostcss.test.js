@@ -60,6 +60,7 @@ describe('Test utils/renderPostcss.js', () => {
         config.general.isProduction = false;
         console.log = jest.fn();
         await renderPostcss({...inputContent, map:''}, outFile, config, (r) => {
+            console.log(r, r.css)
             expect(r.css).toBe(outputContent + sourceMapOutput);
         });
         // return config
