@@ -24,6 +24,9 @@ target/
 .DS_Store
 *.swp
 
+# git
+*.orig
+
 # Node related files
 node_modules/
 node/
