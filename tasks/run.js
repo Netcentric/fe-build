@@ -21,8 +21,6 @@ if (config && config.general && config.general.configFile) {
   const configPattern = `**/${config.general.extendConfigurations}`;
   const availableBuilds = glob.sync(configPattern, { cwd: config.general.rootPath, ignore: ['./node_modules/**'] });
 
-  console.log(availableBuilds, config.general.rootPath);
-
   // log what is happening
   if (availableBuilds.length === 0) {
     log(__filename, ' No configuration files found, running default configuration');
