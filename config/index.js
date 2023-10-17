@@ -13,6 +13,7 @@ const templates = require('./templates.config');
 const stats = require('./stats.config');
 const cache = require('./cache.config');
 const devServer = require('./devserver.config');
+const performance = require('./performance.config');
 
 const modules = general.modules;
 
@@ -32,5 +33,6 @@ module.exports = {
   templates,
   stats,
   cache,
-  devServer
+  devServer,
+  performance
 };

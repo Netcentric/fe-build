@@ -21,7 +21,7 @@ module.exports = (config) => {
   log(__filename, 'Webpack transpile running...', '', 'info');
 
   // extract from flatten configs to webpack
-  const { output, plugins, optimization, resolve, externals, stats } = config;
+  const { output, plugins, optimization, resolve, externals, stats, performance } = config;
   const { mode, watch, devtool } = config.general;
 
   if (entry && Object.keys(entry).length > 0) {
@@ -36,6 +36,7 @@ module.exports = (config) => {
       optimization,
       devtool,
       resolve,
+      performance,
       stats,
       ...externals && { externals }
     }, (err, stats) => {
