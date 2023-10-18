@@ -18,10 +18,7 @@ module.exports = {
     cacheGroups: {
     // Treeshake vendors in node_modules (but keep unique vendors at the clientlibs it belongs)
       vendors: {
-          test: (mod) => {
-            console.log('testing vendors', (test([nodeModules], excludedFromVendors)(mod)));
-            return (test([nodeModules], excludedFromVendors)(mod))
-          },
+          test: test([nodeModules], excludedFromVendors),
           minChunks: 2,
           enforce : true,
           name: 'commons/vendors.bundle.js',
@@ -29,10 +26,7 @@ module.exports = {
       },
       // Treeshakes common imports, if used in more than 2 clientlibs
       treeshaking: {
-          test: (mod) => {
-            console.log('testing treeshaking', (test([nodeModules])(mod)));
-            return (test([nodeModules])(mod))
-          },
+          test: test([nodeModules]),
           minChunks: 2,
           enforce : true,
           name: 'commons/treeshaking.bundle.js',
