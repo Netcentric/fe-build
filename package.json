@@ -56,7 +56,6 @@
     "webpack": "^5.88.2"
   },
   "devDependencies": {
-    "@netcentric/stylelint-config": "^2.0.0",
     "del-cli": "^4.0.1",
     "webpack-bundle-analyzer": "^4.9.1",
     "webpack-cli": "^5.1.4"

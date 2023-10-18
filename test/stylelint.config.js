@@ -1,5 +1,5 @@
 module.exports = {
-    extends: ['stylelint-config-standard-scss','./node_modules/@netcentric/stylelint-config/index.js'],
+    extends: ['stylelint-config-standard-scss'],
     ignoreFiles: [
       '**/*.css',
       '**/*.js',
@@ -12,29 +12,9 @@ module.exports = {
           'default-namespace'
         ]
       }],
+      'media-feature-range-notation': null,
       'at-rule-no-unknown': [true, {
         ignoreAtRules: ['use', 'function', 'if', 'each', 'else', 'for', 'include', 'mixin', 'return', 'warn']
-      }],
-      'plugin/no-unsupported-browser-features': [true, {
-        ignore: [
-          'intrinsic-width',
-          'css3-cursors',
-          'outline',
-          'object-fit',
-          'css-sticky',
-          'css-appearance',
-          'css-mixblendmode',
-          'word-break',
-          'user-select-none',
-          'css-resize',
-          'viewport-units',
-          'multicolumn',
-          'calc',
-          'rem',
-          'flexbox',
-          'css-filters',
-          'css-hyphens'
-        ]
       }]
     }
   };

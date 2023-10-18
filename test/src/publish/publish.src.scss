@@ -4,13 +4,9 @@ body {
   color: variables.$secondary-color;
   background-color: variables.$primary-color;
 
-  @media (resolution >= 2dppx) {
+  @media (min-resolution: 2dppx) {
     .image {
       background-image: url('image@2x.png');
-
-
-      
     }
-
   }
 }
