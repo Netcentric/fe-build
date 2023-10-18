@@ -1,13 +1,10 @@
 const webpack = require('webpack');
-
 const { mode, analyze, analyzerPort } = require('./general.config');
-const eslintConfig = require('./eslint.config');
 
 // pass the mode forward
 const environment = new webpack.DefinePlugin({
   'process.env.NODE_ENV': JSON.stringify(mode)
 });
-
 
 // default plugins
 const plugins = [environment];
@@ -22,6 +19,5 @@ if (analyze) {
 
   plugins.push(analyzer);
 }
-
 
 module.exports = plugins;
