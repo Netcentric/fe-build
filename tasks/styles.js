@@ -20,8 +20,10 @@ module.exports = (config) => {
           const fileName = path.basename(file)
             .replace(config.general.sourceKey, config.general.bundleKey);
           const destFile = path.join(relativePath, fileName);
+
           // override to keep alive
           config.stylelint.failOnError = false;
+
           renderStyles(file, destFile, config);
         });
       });
@@ -33,8 +35,6 @@ module.exports = (config) => {
 
     // checking all entries at this configuration
     const entries = generateEntries(config, 'scss');
-    Object.keys(entries).forEach(file => setTimeout(() => {
-      renderStyles(entries[file], file, config);
-    }));
+    Object.keys(entries).forEach(file => renderStyles(entries[file], file, config));
   }
 };
