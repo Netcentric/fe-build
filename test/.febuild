@@ -24,18 +24,6 @@ module.exports = function (defaultConfig) {
         common
       }
     },
-    optimization: {
-      splitChunks: {
-        cacheGroups: {
-          vendors: {
-            minChunks: 1
-          },
-          treeshaking: {
-            minChunks: 1
-          }
-        }
-      }
-    },
     clientlibs: {
       override: true,
       skipCategories: ['febuild.author']

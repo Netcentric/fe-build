@@ -1,4 +1,4 @@
-import { randomInt } from 'common/utils/math';
+import { randomInt } from "common/utils/randomInt";
 
 class MainPublish {
   constructor() {
@@ -11,5 +11,4 @@ class MainPublish {
     console.log(`Hello World ${this.value}!`);
   }
 }
-
-export default MainPublish;
+export const instace = new MainPublish();

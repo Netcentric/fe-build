@@ -5,6 +5,5 @@ module.exports = {
   filename: '[name]',
   chunkFilename: '[name]',
   publicPath: '/',
-  pathinfo: false,
-  hashFunction: "xxhash64"
+  pathinfo: false
 };
