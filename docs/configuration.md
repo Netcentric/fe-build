@@ -179,7 +179,7 @@ For more information about the configuration options check [eslint-loader](https
 ```javascript
 module.exports = {
   failOnError: true,
-  fix: true
+  fix: true // deprecated with scss only for css
 }
 ```
 

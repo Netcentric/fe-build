@@ -41,14 +41,14 @@ module.exports = (config) => {
       devtool,
       resolve,
       performance,
-      stats:'verbose',
+      stats,
       cache,
       devServer,
       ...externals && { externals }
     }, (err, stats) => {
       // output the resulting stats.
       if (stats && stats.toString) {
-        log(__filename, stats);
+        log(__filename, stats.toString({ colors: true }));
       }
 
       if (!watch && (stats && stats.hasErrors())) {

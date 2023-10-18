@@ -20,10 +20,8 @@ module.exports = (config) => {
           const fileName = path.basename(file)
             .replace(config.general.sourceKey, config.general.bundleKey);
           const destFile = path.join(relativePath, fileName);
-
           // override to keep alive
           config.stylelint.failOnError = false;
-
           renderStyles(file, destFile, config);
         });
       });
