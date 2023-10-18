@@ -30,8 +30,8 @@ const colorOptions = {
 const color = (c, str, bg = colorOptions.reset) => `${colorOptions[c]}${str}${bg}`;
 
 const emojis = {
-  error: [' ❌ '],
-  success: [' 💪 ']
+  error: [' ! '],
+  success: [' ✔ '],
 };
 
 const random = array => array[Math.floor(Math.random() * array.length)];

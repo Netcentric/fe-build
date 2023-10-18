@@ -6,6 +6,6 @@ exports[`Test utils/log.js Check formating of each error severety send to consol
 
 exports[`Test utils/log.js Check formating of each error severety send to console log [log] 1`] = `"[2m[utils/log.test.js] [0m[33m⚠  [0m[37mMy error[0m[2mExtra error information[0m"`;
 
-exports[`Test utils/log.js Check formating of each error severety send to console log [success] 1`] = `"[2m[utils/log.test.js] [0m[2m 💪  -> [0m[32mMy error[0m[2mExtra error information[0m"`;
+exports[`Test utils/log.js Check formating of each error severety send to console log [success] 1`] = `"[2m[utils/log.test.js] [0m[2m ✔  -> [0m[32mMy error[0m[2mExtra error information[0m"`;
 
 exports[`Test utils/log.js Check formating of each error severety send to console log [warning] 1`] = `"[2m[utils/log.test.js] [0m[33m⚠  [0m[33mMy error[0m[2mExtra error information[0m"`;
