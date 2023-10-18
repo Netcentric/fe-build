@@ -14,7 +14,7 @@
   },
   "scripts": {
     "clean": "rm -rf ./test/dist",
-    "test": "npm run clean && jest --coverage=true"
+    "test": "npm run clean && jest -u"
   },
   "keywords": [
     "build"
