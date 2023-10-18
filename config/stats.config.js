@@ -1,1 +1,1 @@
-module.exports = 'normal';
+module.exports = 'verbose';

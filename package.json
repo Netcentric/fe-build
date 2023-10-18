@@ -50,7 +50,9 @@
     "jest": "^28.1.3",
     "postcss": "^8.4.6",
     "sass": "^1.69.3",
+    "semver": "^7.5.3",
     "stylelint": "^15.6.1",
+    "stylelint-config-standard-scss": "^11.0.0",
     "webpack": "^5.88.2"
   },
   "devDependencies": {
@@ -58,6 +60,9 @@
     "del-cli": "^4.0.1",
     "webpack-bundle-analyzer": "^4.9.1",
     "webpack-cli": "^5.1.4"
+  },
+  "overrides": {
+    "semver": "^7.5.3"
   },
   "browserslist": [
     "last 2 versions",
@@ -67,6 +72,6 @@
     "not OperaMini all"
   ],
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   }
 }

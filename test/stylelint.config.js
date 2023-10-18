@@ -1,5 +1,5 @@
 module.exports = {
-    extends: './node_modules/@henkel/hecore-scss-commons/styling.config.js',
+    extends: ['stylelint-config-standard-scss','./node_modules/@netcentric/stylelint-config/index.js'],
     ignoreFiles: [
       '**/*.css',
       '**/*.js',

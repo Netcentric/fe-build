@@ -1,6 +1,6 @@
 import { randomInt } from 'common/utils/math';
 
-class Main {
+class MainPublish {
   constructor() {
     this.value = randomInt(1, 10);
     this.arr = [...[0, 1, 2]];
@@ -12,4 +12,4 @@ class Main {
   }
 }
 
-export default Main;
+export default MainPublish;

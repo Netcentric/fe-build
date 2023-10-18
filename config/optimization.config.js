@@ -8,22 +8,22 @@ module.exports = {
     name: 'commons/treeshaking.bundle.js'
   },
   splitChunks: {
+    chunks: 'all',
+    minChunks: 2,
     cacheGroups: {
-      // Treeshake vendors in node_modules (but keep unique vendors at the clientlibs it belongs)
+    // Treeshake vendors in node_modules (but keep unique vendors at the clientlibs it belongs)
       vendors: {
-        test: mod => moduleIsVendor(mod.context, excludedFromVendors),
-        name: 'commons/vendors.bundle.js',
-        chunks: 'all',
-        // used on at least 2 modules
-        minChunks: 2
+          test: mod => moduleIsVendor(mod.context, excludedFromVendors),
+          name: 'commons/vendors.bundle.js',
+          minChunks: 2,
+          // used on at least 2 modules
       },
       // Treeshakes common imports, if used in more than 2 clientlibs
       treeshaking: {
-        test: mod => !moduleIsVendor(mod.context, excludedFromVendors),
-        name: 'commons/treeshaking.bundle.js',
-        chunks: 'all',
-        // used on at least 2 modules
-        minChunks: 2
+          test: mod => !moduleIsVendor(mod.context, excludedFromVendors),
+          name: 'commons/treeshaking.bundle.js',
+          minChunks: 2,
+          // used on at least 2 modules
       }
     }
   }

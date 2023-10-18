@@ -35,6 +35,8 @@ module.exports = (config) => {
 
     // checking all entries at this configuration
     const entries = generateEntries(config, 'scss');
-    Object.keys(entries).forEach(file => renderStyles(entries[file], file, config));
+    Object.keys(entries).forEach(file => setTimeout(() => {
+      renderStyles(entries[file], file, config);
+    }));
   }
 };

@@ -87,7 +87,7 @@ const devtool = isProduction ? false : 'inline-source-map';
 const excludedFromVendors = ['babel', 'core-js'];
 
 // modules to run on webpack rules (each config module.config.js)
-const modules = ['eslint', 'babel'];
+const modules = ['babel'];
 
 // split all entries
 const multiple = true;

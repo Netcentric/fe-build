@@ -24,13 +24,6 @@ module.exports = function (defaultConfig) {
         common
       }
     },
-    babel: {
-      use: {
-        options: {
-          presets: [['@babel/preset-env', { useBuiltIns: 'usage', corejs: 3, debug: true }]]
-        }
-      }
-    },
     optimization: {
       splitChunks: {
         cacheGroups: {
@@ -40,14 +33,6 @@ module.exports = function (defaultConfig) {
           treeshaking: {
             minChunks: 1
           }
-        }
-      }
-    },
-    eslint: {
-      exclude: /node_modules/,
-      use: {
-        options: {
-          cache: false
         }
       }
     },

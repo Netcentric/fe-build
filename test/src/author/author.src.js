@@ -1,6 +1,6 @@
 import { randomInt } from 'common/utils/math';
 
-class Author {
+class MainAuthor {
   constructor() {
     this.value = randomInt(1, 10);
     this.init();
@@ -11,4 +11,4 @@ class Author {
   }
 }
 
-export default Author;
+export default MainAuthor;
