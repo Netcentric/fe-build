@@ -61,6 +61,6 @@ npm run build
 + [Configuration](./docs/configuration.md)
 + [Recommended NPM Tasks](./docs/tasks.md)
 + [Quick Start](./docs/quick_start.md)
-+ [Migrating to v2.0.0](./docs/migration.md)
++ [Migrating to v3.2.0](./docs/migration.md)
 + [Contributing](./docs/CONTRIBUTING.md)
 
