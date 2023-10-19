@@ -1,3 +1,13 @@
+# [4.0.0](https://github.com/Netcentric/fe-build/compare/v3.1.0...v4.0.0) (2023-10-19)
+
+
+* BREAKING CHANGE: Trigger Manual Release ([4873a27](https://github.com/Netcentric/fe-build/commit/4873a279c488fb0a7689e6676a9d494c7dc022d3))
+
+
+### BREAKING CHANGES
+
+* Forced Manual Release without code changes
+
 # [3.1.0](https://github.com/Netcentric/fe-build/compare/v3.0.4...v3.1.0) (2023-10-19)
 
 
