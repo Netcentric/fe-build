@@ -1,5 +1,5 @@
 
-# Migrating to v3.1.0
+# Migrating to v4.0.0
 
 This release contains breaking changes. We know these can be disruptive, but they were needed to keep the dependencies updated.
 
