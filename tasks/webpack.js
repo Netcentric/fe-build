@@ -1,4 +1,6 @@
 const webpack = require('webpack');
+const ESLintPlugin = require('eslint-webpack-plugin');
+
 const { log } = require('../utils/log');
 const generateEntries = require('../utils/generateEntries');
 
@@ -21,8 +23,10 @@ module.exports = (config) => {
   log(__filename, 'Webpack transpile running...', '', 'info');
 
   // extract from flatten configs to webpack
-  const { output, plugins, optimization, resolve, externals } = config;
+  const { output, plugins, optimization, resolve, externals, stats, performance, cache, devServer, eslint} = config;
   const { mode, watch, devtool } = config.general;
+  // check if there is any entry
+  plugins.push(new ESLintPlugin(eslint));
 
   if (entry && Object.keys(entry).length > 0) {
     // run webpack
@@ -36,12 +40,24 @@ module.exports = (config) => {
       optimization,
       devtool,
       resolve,
+      performance,
+      stats,
+      cache,
+      devServer,
       ...externals && { externals }
     }, (err, stats) => {
       // output the resulting stats.
-      console.log(stats.toString({ colors: true }));
+      if (stats && stats.toString) {
+        log(__filename, stats.toString({ colors: true }));
+      }
 
-      if (!watch && (err || stats.hasErrors())) {
+      if (!watch && (stats && stats.hasErrors())) {
+        log(__filename, stats.toString(), '', 'error');
+        process.exit(1);
+      }
+
+      if (err) {
+        log(__filename, err.toString(), '', 'error');
         process.exit(1);
       }
 

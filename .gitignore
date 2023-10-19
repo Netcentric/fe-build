@@ -24,6 +24,9 @@ target/
 .DS_Store
 *.swp
 
+# git
+*.orig
+
 # Node related files
 node_modules/
 node/
@@ -48,6 +51,9 @@ dist/
 
 # Svg Icons Temp folder
 tmp/
+coverage/
+
+# coverage folder
 coverage/
 
 # Bundle Analyser

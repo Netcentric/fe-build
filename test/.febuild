@@ -24,33 +24,6 @@ module.exports = function (defaultConfig) {
         common
       }
     },
-    babel: {
-      use: {
-        options: {
-          presets: [['@babel/preset-env', { useBuiltIns: 'usage', corejs: 3, debug: true }]]
-        }
-      }
-    },
-    optimization: {
-      splitChunks: {
-        cacheGroups: {
-          vendors: {
-            minChunks: 1
-          },
-          treeshaking: {
-            minChunks: 1
-          }
-        }
-      }
-    },
-    eslint: {
-      exclude: /node_modules/,
-      use: {
-        options: {
-          cache: false
-        }
-      }
-    },
     clientlibs: {
       override: true,
       skipCategories: ['febuild.author']

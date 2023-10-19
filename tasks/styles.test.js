@@ -1,4 +1,4 @@
-process.argv.push('--quiet');
+
 const fs = require('fs');
 const path = require('path');
 const styles = require('./styles');

@@ -19,7 +19,7 @@ if (config && config.general && config.general.configFile) {
 } else {
   // No configFile set then lookup for configurations files
   const configPattern = `**/${config.general.extendConfigurations}`;
-  const availableBuilds = glob.sync(configPattern, { cwd: config.general.rootPath });
+  const availableBuilds = glob.sync(configPattern, { cwd: config.general.rootPath, ignore: ['./node_modules/**'] });
 
   // log what is happening
   if (availableBuilds.length === 0) {

@@ -10,16 +10,23 @@ These are the configurations that can be extended:
 
 - general
 - output
-- optimization
-- plugins
+- [optimization](https://webpack.js.org/configuration/optimization/)
+- [plugins](https://webpack.js.org/configuration/plugins/)
 - eslint
 - babel
 - sass
 - clientlibs
 - stylelint
-- resolve
+- [resolve](https://webpack.js.org/configuration/resolve/)
 - postcss
 - templates
+
+Other webpack options
+
+- [stats](https://webpack.js.org/configuration/stats/)
+- [cache](https://webpack.js.org/configuration/cache/)
+- [devServer](https://webpack.js.org/configuration/dev-server/)
+- [performance](https://webpack.js.org/configuration/performance/)
 
 ## Overriding a Default Configuration
 
@@ -171,21 +178,8 @@ For more information about the configuration options check [eslint-loader](https
 
 ```javascript
 module.exports = {
-  {
-    eslint: {
-      enforce: 'pre',
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'eslint-loader',
-        options: {
-          cache: true,
-          failOnError: true,
-          fix: true
-        }
-      }
-    }
-  }
+  failOnError: true,
+  fix: true // deprecated with scss only for css
 }
 ```
 

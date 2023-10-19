@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-
 const { mode, analyze, analyzerPort } = require('./general.config');
 
 // pass the mode forward

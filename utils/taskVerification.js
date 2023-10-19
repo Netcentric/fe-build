@@ -31,7 +31,6 @@ module.exports = (configuration, taskFolder = '../tasks/') => {
     configuration.general.defaultTasks.forEach((taskName) => {
       /* eslint-disable */
       const task = require(`${taskFolder}${taskName}`);
-
       /* eslint-enable */
       setTimeout(() => task(configuration));
     });

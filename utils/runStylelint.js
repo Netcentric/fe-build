@@ -11,8 +11,6 @@ module.exports = function runStylelint(files, projectConfig, cb) {
     return cb();
   }
 
-  log(__filename, 'Stylelint');
-
   stylelint.lint({
     files,
     configBasedir: rootPath

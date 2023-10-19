@@ -1,6 +1,6 @@
-import { randomInt } from 'common/utils/math';
+import { randomInt } from "common/utils/randomInt";
 
-class Main {
+class MainPublish {
   constructor() {
     this.value = randomInt(1, 10);
     this.arr = [...[0, 1, 2]];
@@ -11,5 +11,4 @@ class Main {
     console.log(`Hello World ${this.value}!`);
   }
 }
-
-export default Main;
+export const instace = new MainPublish();
