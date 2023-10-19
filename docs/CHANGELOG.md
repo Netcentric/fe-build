@@ -1,3 +1,15 @@
+# [3.1.0](https://github.com/Netcentric/fe-build/compare/v3.0.4...v3.1.0) (2023-10-19)
+
+
+### Bug Fixes
+
+* update stylelint ([ddec6b5](https://github.com/Netcentric/fe-build/commit/ddec6b5464c9cda2e5e5460d286bc069516fcb40))
+
+
+### Features
+
+* **utils:** upgrade to webpack 5 ([81d28ca](https://github.com/Netcentric/fe-build/commit/81d28ca56595074e8f15e3eb2046c3e27ccae877))
+
 ## [3.0.4](https://github.com/Netcentric/fe-build/compare/v3.0.3...v3.0.4) (2023-10-09)
 
 
