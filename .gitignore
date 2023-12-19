@@ -58,3 +58,4 @@ coverage/
 
 # Bundle Analyser
 frontend/stats.json
+__snapshots__/
