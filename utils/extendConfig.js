@@ -34,6 +34,7 @@ module.exports = (configPath, config) => {
   }
 
   // config merge
-  const extendedConfig = merge(config, override);
+  const copyConfig = merge({}, config);
+  const extendedConfig = merge(copyConfig, override);
   return extendedConfig;
 };

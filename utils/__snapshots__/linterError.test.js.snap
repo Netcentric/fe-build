@@ -1,8 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Test utils/linterError.js Check formating of a error send to console log 1`] = `
-"[2m[utils/linterError.js] [0m[31m✖  [0m[31m
-    my error[0m[0m
-    [2mLintError at /Users/felipesimoes/henkel/heliux/fe-build/utils/linterError.test.js:12:10 
-[0m[0m[2m[0m"
-`;

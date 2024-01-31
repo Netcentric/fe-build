@@ -1,24 +1,24 @@
 const fs = require('fs');
 const path = require('path');
-const styles = require('./styles');
+const webpackTask = require('./webpack');
 const defaults = require('../config');
 const extendConfig = require('../utils/extendConfig');
 const generateEntries = require('../utils/generateEntries');
 
 let config = extendConfig('./test/.febuild', defaults);
 let entries = {
-    ...generateEntries(config, 'scss')
+    ...generateEntries(config, 'js')
   };
 const { destinationPath, projectKey } = config.general;
 
 beforeAll(async () =>
     await new Promise(async (r) => {
-        await styles(config);
+        await webpackTask(config);
         r();
     })
 );
 
-describe('Test task/styles.js', () => {
+describe('Test task/webpack.js', () => {
     Object.keys(entries).forEach((entry) => {
         const file = path.join(destinationPath, entry);
         const source = entries[entry];
