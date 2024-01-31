@@ -1,3 +1,11 @@
+## [4.0.1](https://github.com/Netcentric/fe-build/compare/v4.0.0...v4.0.1) (2024-01-31)
+
+
+### Bug Fixes
+
+* Add webpack tests ([aa972bc](https://github.com/Netcentric/fe-build/commit/aa972bca064553cf4bda978b143d2479a6e03241))
+* clone arrays in merge utils ([5c432f8](https://github.com/Netcentric/fe-build/commit/5c432f823455403872b1327ae50210741f53d259))
+
 # [4.0.0](https://github.com/Netcentric/fe-build/compare/v3.1.0...v4.0.0) (2023-10-19)
 
 
