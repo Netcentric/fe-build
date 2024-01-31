@@ -10,6 +10,8 @@ module.exports = function merge(original = {}, newObject) {
       && !Array.isArray(newObject[prop])
       && !(newObject[prop] instanceof RegExp)) {
       copy[prop] = merge(original[prop], newObject[prop]);
+    } else if (Array.isArray(newObject[prop])) {
+      copy[prop] = newObject[prop] ? [...newObject[prop]] : [...original[prop]];
     } else {
       copy[prop] = newObject[prop] || typeof newObject[prop] === 'boolean' ? newObject[prop] : original[prop];
     }
