@@ -1,3 +1,11 @@
+## [4.0.2](https://github.com/Netcentric/fe-build/compare/v4.0.1...v4.0.2) (2024-12-10)
+
+
+### Bug Fixes
+
+* override semver ([2358226](https://github.com/Netcentric/fe-build/commit/2358226aa1f3f652fdd011b081d0aa3fba8de187))
+* update dependencies ([93520ff](https://github.com/Netcentric/fe-build/commit/93520ff8ef5538a6927650806323ee7488a5745e))
+
 ## [4.0.1](https://github.com/Netcentric/fe-build/compare/v4.0.0...v4.0.1) (2024-01-31)
 
 
