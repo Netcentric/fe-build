@@ -60,6 +60,9 @@
     "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^5.1.4"
   },
+  "overrides": {
+    "semver": "^7.6.3"
+  },
   "browserslist": [
     "last 2 versions",
     "not ie > 0",
