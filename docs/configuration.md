@@ -115,7 +115,7 @@ For more information about the configuration options check [babel-loader](https:
   babel: {
     enforce: 'post',
     test: /\.js$/,
-    exclude: /node_modules\/(?!@nc)/,
+    exclude: /node_modules\/(?!@netcentric)/,
     use: {
       loader: 'babel-loader',
       options: {
