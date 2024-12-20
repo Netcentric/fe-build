@@ -6,7 +6,7 @@ const { log } = require('./log');
 
 module.exports = function renderSass(dest, file, config, cb, write = false) {
   // extract sass only configs
-  const { outputStyle, includePaths, failOnError } = config.sass;
+  const { outputStyle, includePaths, failOnError, ...sassConfigOptions } = config.sass;
 
   // proper extension
   const destFile = dest.replace('.scss', '.css');
@@ -20,7 +20,8 @@ module.exports = function renderSass(dest, file, config, cb, write = false) {
     outputStyle,
     includePaths,
     outFile,
-    sourceMap: !config.general.isProduction
+    sourceMap: !config.general.isProduction,
+    ...sassConfigOptions
   }, (error, result) => {
     // log if there are any errors
     if (error) {
