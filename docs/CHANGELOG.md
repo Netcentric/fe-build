@@ -1,3 +1,20 @@
+# [5.0.0](https://github.com/Netcentric/fe-build/compare/v4.0.2...v5.0.0) (2025-01-29)
+
+
+### Bug Fixes
+
+* fix tests ([3f74d3e](https://github.com/Netcentric/fe-build/commit/3f74d3eea4ddab51df1bc9a4ca098a64d0896b23))
+* update dependencies ([2108e53](https://github.com/Netcentric/fe-build/commit/2108e532eb6aaec807b4180ffa1c1da712ee0b02))
+
+
+* Merge pull request #114 from Netcentric/feature/update-stylelint ([179ca94](https://github.com/Netcentric/fe-build/commit/179ca9492e70cefba622e5cd8a03cb1ee0d35971)), closes [#114](https://github.com/Netcentric/fe-build/issues/114)
+
+
+### BREAKING CHANGES
+
+* Update stylelint to v16
+* Update stylelint to v16
+
 ## [4.0.2](https://github.com/Netcentric/fe-build/compare/v4.0.1...v4.0.2) (2024-12-10)
 
 

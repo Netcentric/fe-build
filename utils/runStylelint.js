@@ -13,7 +13,8 @@ module.exports = function runStylelint(files, projectConfig, cb) {
 
   stylelint.lint({
     files,
-    configBasedir: rootPath
+    configBasedir: rootPath,
+    quietDeprecationWarnings: true
   }).then((data) => {
     if (!data.errored) return cb();
 
