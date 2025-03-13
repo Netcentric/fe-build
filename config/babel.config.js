@@ -2,7 +2,7 @@
 module.exports = {
   enforce: 'post',
   test: /\.js$/,
-  exclude: /node_modules\/(?!@nc)/,
+  exclude: /node_modules\/(?!@netcentric)/,
   use: {
     loader: 'babel-loader',
     options: {
