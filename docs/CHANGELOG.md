@@ -1,3 +1,10 @@
+# [6.0.0](https://github.com/Netcentric/fe-build/compare/v4.0.2...v5.0.0) (2025-03-13)
+
+* Removal of SASS depracated legacy JS API.
+(breaking changes since all scss code should be soon remove depracation code)
+
+
+
 # [5.0.0](https://github.com/Netcentric/fe-build/compare/v4.0.2...v5.0.0) (2025-01-29)
 
 
