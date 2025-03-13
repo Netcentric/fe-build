@@ -1,3 +1,10 @@
+## [5.1.1](https://github.com/Netcentric/fe-build/compare/v5.1.0...v5.1.1) (2025-03-13)
+
+
+### Bug Fixes
+
+* **config:** change package namespace in babel.config exclude property ([f229c9e](https://github.com/Netcentric/fe-build/commit/f229c9e32bbf09d1492dd55a9e7fa2a857eef4c0))
+
 # [5.1.0](https://github.com/Netcentric/fe-build/compare/v5.0.0...v5.1.0) (2025-03-13)
 
 
