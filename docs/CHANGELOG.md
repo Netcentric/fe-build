@@ -5,13 +5,6 @@
 
 * ([#112](https://github.com/Netcentric/fe-build/issues/112)) update legacy-js-api, ([#69](https://github.com/Netcentric/fe-build/issues/69)) add option of .febuild.js, fix [#19](https://github.com/Netcentric/fe-build/issues/19) ([4624297](https://github.com/Netcentric/fe-build/commit/4624297b5d8df680076cceaf68e03a6175a39f05))
 
-# [6.0.0](https://github.com/Netcentric/fe-build/compare/v4.0.2...v5.0.0) (2025-03-13)
-
-* Removal of SASS depracated legacy JS API.
-(breaking changes since all scss code should be soon remove depracation code)
-
-
-
 # [5.0.0](https://github.com/Netcentric/fe-build/compare/v4.0.2...v5.0.0) (2025-01-29)
 
 
