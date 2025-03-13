@@ -45,7 +45,6 @@ module.exports = function renderSass(dest, file, config, cb, write = false) {
     return cb(result, outFile);
 
   }).catch((error) => {
-    console.log(error);
     log(__filename, `${destFile} ${error.message}!`, '', 'error');
     // if set to exit on error, you might not want to exit on all cases
     if (failOnError) {
