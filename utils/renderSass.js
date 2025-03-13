@@ -6,7 +6,7 @@ const { log } = require('./log');
 
 module.exports = function renderSass(dest, file, config, cb, write = false) {
   // extract sass only configs
-  const { outputStyle, includePaths, failOnError } = config.sass;
+  const { outputStyle, includePaths, failOnError, adicionalOptions } = config.sass;
 
   // proper extension
   const destFile = dest.replace('.scss', '.css');
@@ -19,7 +19,9 @@ module.exports = function renderSass(dest, file, config, cb, write = false) {
   const compiled = sass.compileAsync(file, {
     outputStyle,
     loadPaths:includePaths,
-    sourceMap: !config.general.isProduction
+    sourceMap: !config.general.isProduction,
+    // adicional config from https://sass-lang.com/documentation/js-api/interfaces/options/
+    ...adicionalOptions
   });
 
   compiled.then((result) => {
