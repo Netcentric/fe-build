@@ -14,26 +14,15 @@ module.exports = function renderSass(dest, file, config, cb, write = false) {
   // url of the saved file
   const outFile = path.join(config.general.destinationPath, destFile);
 
+
   // extract from config
-  sass.render({
-    file,
+  const compiled = sass.compileAsync(file, {
     outputStyle,
-    includePaths,
-    outFile,
+    loadPaths:includePaths,
     sourceMap: !config.general.isProduction
-  }, (error, result) => {
-    // log if there are any errors
-    if (error) {
-        log(__filename, `${destFile} ${error.message}!`, '', 'error');
-        // if set to exit on error, you might not want to exit on all cases
-        if (failOnError) {
-          process.exit(1);
-        } else {
-          log(__filename, `Sass file not rendered - ${path.basename(destFile)}`, ``, 'error');
-          // skip the rest
-          return;
-        }
-    }
+  });
+
+  compiled.then((result) => {
     // create folder if it does not exist
     mkFullPathSync(path.dirname(outFile));
 
@@ -52,7 +41,19 @@ module.exports = function renderSass(dest, file, config, cb, write = false) {
     result.destFile = destFile;
 
     // log and call back
-    log(__filename, `Sass rendered - ${path.basename(destFile)}`, ` (Duration ${result.stats.duration}ms)`, 'success');
+    log(__filename, `Sass rendered - ${path.basename(destFile)}`, ` -- `, 'success');
     return cb(result, outFile);
+
+  }).catch((error) => {
+    console.log(error);
+    log(__filename, `${destFile} ${error.message}!`, '', 'error');
+    // if set to exit on error, you might not want to exit on all cases
+    if (failOnError) {
+      process.exit(1);
+    } else {
+      log(__filename, `Sass file not rendered - ${path.basename(destFile)}`, ``, 'error');
+      // skip the rest
+      return;
+    }
   });
 };
