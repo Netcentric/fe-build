@@ -1,5 +1,5 @@
 const path = require('path')
-const { isProduction, excludedFromVendors } = require('./general.config');
+const { isProduction, excludedFromVendors, bundleKey } = require('./general.config');
 const checkChunk = require('../utils/checkChunk');
 const nodeModules = `node_modules`;
 
@@ -10,7 +10,7 @@ module.exports = {
   minimize: isProduction,
   usedExports: 'global',
   runtimeChunk: {
-    name: 'commons/treeshaking.bundle.js'
+    name: `commons/treeshaking.${bundleKey}.js`
   },
   splitChunks: {
     chunks: 'initial',
@@ -21,7 +21,7 @@ module.exports = {
           test: test([nodeModules], excludedFromVendors),
           minChunks: 2,
           enforce : true,
-          name: 'commons/vendors.bundle.js',
+          name: `commons/vendors.${bundleKey}.js`,
           // used on at least 2 modules
       },
       // Treeshakes common imports, if used in more than 2 clientlibs
@@ -29,7 +29,7 @@ module.exports = {
           test: test([nodeModules]),
           minChunks: 2,
           enforce : true,
-          name: 'commons/treeshaking.bundle.js',
+          name: `commons/treeshaking.${bundleKey}.js`,
       }
     }
   }
