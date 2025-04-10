@@ -1,6 +1,6 @@
 {
   "name": "@netcentric/fe-build",
-  "version": "5.1.1",
+  "version": "5.1.2",
   "description": "Frontend build tools for AEM projects.",
   "license": "Apache-2.0",
   "author": "Cognizant Netcentric (https://www.netcentric.biz)",

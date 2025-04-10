@@ -1,3 +1,10 @@
+## [5.1.2](https://github.com/Netcentric/fe-build/compare/v5.1.1...v5.1.2) (2025-04-10)
+
+
+### Bug Fixes
+
+* **utils:** Fix category name generation to prevent consecutive dots and leading dots ([8b85be7](https://github.com/Netcentric/fe-build/commit/8b85be7dee5f1af519d6d2962da25baae4d270a4))
+
 ## [5.1.1](https://github.com/Netcentric/fe-build/compare/v5.1.0...v5.1.1) (2025-03-13)
 
 
