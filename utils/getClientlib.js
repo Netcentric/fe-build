@@ -1,16 +1,16 @@
 const path = require('path');
 
-module.exports = function getClientlib(original, config) {
-  // extract from config
-  const { sourceTypes, sourceKey, bundleKey } = config.general;
+module.exports = function getClientlib(original) {
+
   const folder = path.dirname(original);
   const fileName = path.basename(original);
-  const clear = new RegExp([...sourceTypes, sourceKey, bundleKey].join('|'), 'gi');
-  const name = folder.replace(clear, '').split(path.sep).join('.');
+  const name = folder.split(path.sep).join('.');
+  const extension = original.split('.').pop();
 
   return {
     folder,
     name,
-    fileName
+    fileName,
+    extension,
   };
 };
