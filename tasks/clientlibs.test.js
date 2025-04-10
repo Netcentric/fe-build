@@ -24,7 +24,7 @@ describe('Test task/clientlibs.js', () => {
         const file = path.join(destinationPath, entry);
         const type = path.extname(file);
         const dir = path.dirname(file);
-        const { name, fileName } = getClientlib(entry, config);
+        const { name, fileName } = getClientlib(entry);
         const ext = type == '.js' ? 'js' : 'css';
         const txtContet = `${fileName.split('.').slice(0, -1).join('.')}.${ext}`;
         const txtPath = path.join(dir, `${ext}.txt`);

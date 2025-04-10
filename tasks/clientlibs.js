@@ -18,8 +18,7 @@ module.exports = (config) => {
 
   // get parse to check if it has css or js or both.
   Object.keys(entries).forEach((entryKey) => {
-    const { name, folder, fileName } = getClientlib(entryKey, config);
-    const extension = entryKey.split('.').pop();
+    const { name, folder, fileName, extension } = getClientlib(entryKey);
 
     if (!clientLibs[folder]) {
       clientLibs[folder] = { name, folder };
