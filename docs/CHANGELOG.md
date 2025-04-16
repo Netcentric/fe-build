@@ -1,3 +1,11 @@
+## [5.1.3](https://github.com/Netcentric/fe-build/compare/v5.1.2...v5.1.3) (2025-04-16)
+
+
+### Bug Fixes
+
+* [#112](https://github.com/Netcentric/fe-build/issues/112) - update jest timeout for webpack ([a34e790](https://github.com/Netcentric/fe-build/commit/a34e7903115958c224366ee48a876c92028c2d77))
+* [#112](https://github.com/Netcentric/fe-build/issues/112) - update source maps for new sass version ([2ba91fd](https://github.com/Netcentric/fe-build/commit/2ba91fd88c44a5b78bcff1a71d6fce5f59377084))
+
 ## [5.1.2](https://github.com/Netcentric/fe-build/compare/v5.1.1...v5.1.2) (2025-04-10)
 
 
