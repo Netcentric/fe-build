@@ -8,7 +8,7 @@ module.exports = function renderPostcss(input, outFile, config, cb) {
     // try to dynamic load of postcss plugins
     /* eslint-disable */
     const runPlugins = plugins.map(plugin => require(plugin));
-    const map = config.general.isProduction ? false : { inline: true, prev: input.map.toString() } ;
+    const map = config.general.isProduction ? false : { inline: true, prev: input.sourceMap } ;
 
     /* eslint-enable */
     // run postcss plugins at sass output

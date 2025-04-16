@@ -36,7 +36,7 @@ module.exports = function renderSass(dest, file, config, cb, write = false) {
 
     // if is dev add source maps
     if (!config.general.isProduction && write) {
-      writeFile(`${outFile}.map`, result.map, true);
+      writeFile(`${outFile}.map`, JSON.stringify(result.sourceMap), true);
     }
 
     // pass the destination relative for map
