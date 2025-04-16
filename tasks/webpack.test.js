@@ -11,12 +11,16 @@ let entries = {
   };
 const { destinationPath, projectKey } = config.general;
 
-beforeAll(async () =>
-    await new Promise(async (r) => {
+beforeAll(async () => {
+    return await new Promise(async (resolve, reject) => {
+      try {
         await webpackTask(config);
-        r();
-    })
-);
+        resolve();
+      } catch (e) {
+        reject(e);
+      }
+    });
+  }, 20000);
 
 describe('Test task/webpack.js', () => {
     Object.keys(entries).forEach((entry) => {

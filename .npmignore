@@ -18,3 +18,4 @@ yarn.lock
 /demos
 /src
 .github
+/test
