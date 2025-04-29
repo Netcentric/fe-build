@@ -208,7 +208,7 @@ Default configuration:
 {
   postcss: {
     // Default plugins
-    plugins: ['autoprefixer'],
+    plugins: ['autoprefixer', ['another-postcss-plugin',{ foo: 'bar'}]],
     // Stops the build if an error is found
     failOnError: true
   }
