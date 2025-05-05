@@ -1,3 +1,10 @@
+# [5.2.0](https://github.com/Netcentric/fe-build/compare/v5.1.3...v5.2.0) (2025-05-05)
+
+
+### Features
+
+* **utils:** support plugins with configuration objects ([3eeeec8](https://github.com/Netcentric/fe-build/commit/3eeeec818fb8cf49d228259b8e5eda1aec11a1be))
+
 ## [5.1.3](https://github.com/Netcentric/fe-build/compare/v5.1.2...v5.1.3) (2025-04-16)
 
 
