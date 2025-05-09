@@ -7,11 +7,20 @@ const renderClientLibs = require('../utils/renderClientLibs');
 module.exports = (config) => {
   log(__filename, 'clientlibs task running...', '', 'info');
 
+  const { extraEntries } = config.postcss;
+
   // checking all entries at this configuration
-  const entries = {
+  let entries = {
     ...generateEntries(config),
-    ...generateEntries(config, 'scss')
+    ...generateEntries(config, 'scss'),
   };
+
+  entries = {
+    ...entries,
+    ...extraEntries ? {
+      ...generateEntries(config, extraEntries.extension, extraEntries.filenamePattern, extraEntries.cwd),
+    } : null,
+  }
 
   // clientlibs to render
   const clientLibs = {};

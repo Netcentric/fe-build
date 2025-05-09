@@ -34,6 +34,12 @@ module.exports = function renderClientLibs(clientLibObject, config) {
     writeFile(path.join(absolutePath, 'js.txt'), `${js}`, override);
   }
 
+  const extensionFile = config.postcss.extraEntries?.extension;
+  const hasExtraEntries = extensionFile && clientLibObject[extensionFile];
+  if ( hasExtraEntries ) {
+    writeFile(path.join(absolutePath, `${extensionFile}.txt`), `${js}`, override);
+  }
+
   // write .content.xml
   const content = clientlibTemplate(name, projectKey);
   writeFile(path.join(absolutePath, '.content.xml'), content, override);
