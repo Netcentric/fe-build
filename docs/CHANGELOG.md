@@ -1,3 +1,10 @@
+# [5.3.0](https://github.com/Netcentric/fe-build/compare/v5.2.0...v5.3.0) (2025-05-09)
+
+
+### Features
+
+* **config:** Support clientlib metadata generation for dynamically created CSS files ([81a7229](https://github.com/Netcentric/fe-build/commit/81a7229757568abea848f9aaddb8eb055445eaf2))
+
 # [5.2.0](https://github.com/Netcentric/fe-build/compare/v5.1.3...v5.2.0) (2025-05-05)
 
 
