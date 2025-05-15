@@ -34,7 +34,7 @@ module.exports = function renderClientLibs(clientLibObject, config) {
     writeFile(path.join(absolutePath, 'js.txt'), `${js}`, override);
   }
 
-  const extensionFile = config.postcss.extraEntries?.extension;
+  const extensionFile = config.clientlibs.extraEntries?.extension;
   const hasExtraEntries = extensionFile && clientLibObject[extensionFile];
   const fileName = clientLibObject[extensionFile];
   if ( hasExtraEntries ) {
