@@ -7,7 +7,7 @@ const renderClientLibs = require('../utils/renderClientLibs');
 module.exports = (config) => {
   log(__filename, 'clientlibs task running...', '', 'info');
 
-  const { extraEntries } = config.postcss;
+  const { extraEntries } = config.clientlibs;
 
   // checking all entries at this configuration
   let entries = {
