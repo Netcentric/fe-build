@@ -1,3 +1,10 @@
+## [5.3.1](https://github.com/Netcentric/fe-build/compare/v5.3.0...v5.3.1) (2025-05-15)
+
+
+### Bug Fixes
+
+* **utils:** Fix incorrect metadata content for postcss extraEntries ([d524dce](https://github.com/Netcentric/fe-build/commit/d524dceb44799a3f92af75d06b2b453019c82993))
+
 # [5.3.0](https://github.com/Netcentric/fe-build/compare/v5.2.0...v5.3.0) (2025-05-09)
 
 
