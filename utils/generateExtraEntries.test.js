@@ -36,10 +36,6 @@ describe('Tarea clientlibs - extraEntries', () => {
     fs.writeFileSync(path.join(`${jsPaths[0]}/chunks.runtime.${suffixKey}.js`), 'console.log("runtime chunk");');
     fs.writeFileSync(path.join(`${jsPaths[1]}/chunks.vendors.${suffixKey}.js`), 'console.log("vendors chunk");');
     fs.writeFileSync(path.join(`${jsPaths[2]}/chunks.treeshaking.${suffixKey}.js`), 'console.log("treeshaking chunk");');
-
-    // (Opcional) Crear archivos "principales" CSS/JS simulando la salida estándar del build
-    fs.writeFileSync(path.join(`css.${suffixKey}.css`), '/* main CSS file */');
-    fs.writeFileSync(path.join(`js.${suffixKey}.js`), '// main JS file');
   });
 
   afterAll(() => {
