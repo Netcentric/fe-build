@@ -34,12 +34,13 @@ module.exports = function renderClientLibs(clientLibObject, config) {
     writeFile(path.join(absolutePath, 'js.txt'), `${js}`, override);
   }
 
-  const extensionFile = config.clientlibs.extraEntries?.extension;
-  const hasExtraEntries = extensionFile && clientLibObject[extensionFile];
-  const fileName = clientLibObject[extensionFile];
-  if ( hasExtraEntries ) {
-    writeFile(path.join(absolutePath, `${extensionFile}.txt`), `${fileName}`, override);
-  }
+  config.clientlibs.extraEntries?.forEach(({ extension }) => {
+    const fileName = clientLibObject[extension];
+
+    if (fileName) {
+      writeFile(path.join(absolutePath, `${extension}.txt`),`${fileName}`, override);
+    }
+  });
 
   // write .content.xml
   const content = clientlibTemplate(name, projectKey);
