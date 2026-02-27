@@ -10,24 +10,30 @@ module.exports = (config) => {
       try {
         log(__filename, 'Watcher Sass / autoprefixer running...', '', 'info');
 
-        const gaze = require('gaze');
+        const chokidar = require('chokidar')
         const sassPattern = path.join(config.general.sourcesPath, `**/*.${config.general.sourceKey}.scss`);
 
-        gaze(sassPattern, function () {
-          // simple debounce with timeout for only save the last if several events are triggered
-          this.on('all', (event, file) => {
-            // trigger a save
-            const relativePath = path.relative(config.general.sourcesPath, path.dirname(file));
-            const fileName = path.basename(file)
-              .replace(config.general.sourceKey, config.general.bundleKey);
-            const destFile = path.join(relativePath, fileName);
+        const watcher = chokidar.watch(sassPattern, {
+          ignoreInitial: true
+        })
 
-            // override to keep alive
-            config.stylelint.failOnError = false;
+        watcher.on('all', (event, file) => {
+          const relativePath = path.relative(
+            config.general.sourcesPath,
+            path.dirname(file)
+          )
 
-            renderStyles(file, destFile, config);
-          });
+          const fileName = path
+            .basename(file)
+            .replace(config.general.sourceKey, config.general.bundleKey)
+
+          const destFile = path.join(relativePath, fileName)
+
+          config.stylelint.failOnError = false
+
+          renderStyles(file, destFile, config)
         });
+
       } catch (e) {
         log(__filename, 'Something is missing, you need install dev dependencies for this.', e.message, 'error');
       }
