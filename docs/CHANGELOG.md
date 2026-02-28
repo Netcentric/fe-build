@@ -1,3 +1,10 @@
+## [5.3.2](https://github.com/Netcentric/fe-build/compare/v5.3.1...v5.3.2) (2026-02-28)
+
+
+### Bug Fixes
+
+* **vulnerability:** Replace 'gaze' with 'chokidar'; Run audit fix ([a5dbbd9](https://github.com/Netcentric/fe-build/commit/a5dbbd93d1f1af280ebf28847bf9f92571f6fce3))
+
 ## [5.3.1](https://github.com/Netcentric/fe-build/compare/v5.3.0...v5.3.1) (2025-05-15)
 
 
