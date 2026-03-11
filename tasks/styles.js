@@ -1,25 +1,19 @@
 const path = require('path');
-const glob = require('fast-glob');
 const { log } = require('../utils/log');
 const generateEntries = require('../utils/generateEntries');
 const renderStyles = require('../utils/renderStyles');
 
 // extend log to proper say what file is running
 module.exports = (config) => {
-  return new Promise(async (resolve) => {
+  return new Promise((resolve) => {
     if (config && config.general && config.general.watch) {
       try {
         log(__filename, 'Watcher Sass / autoprefixer running...', '', 'info');
 
         const chokidar = require('chokidar')
-        const pattern = `**/*.${config.general.sourceKey}.scss`
+        const sassPattern = path.join(config.general.sourcesPath, `**/*.${config.general.sourceKey}.scss`);
 
-        const files = await glob(pattern, {
-          cwd: config.general.sourcesPath,
-          absolute: true
-        })
-
-        const watcher = chokidar.watch(files, {
+        const watcher = chokidar.watch(sassPattern, {
           ignoreInitial: true
         })
 
