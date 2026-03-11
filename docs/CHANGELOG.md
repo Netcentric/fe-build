@@ -1,3 +1,10 @@
+## [5.3.3](https://github.com/Netcentric/fe-build/compare/v5.3.2...v5.3.3) (2026-03-11)
+
+
+### Bug Fixes
+
+* **tasks:** adjust styles watcher implementation & update chokidar to version 4.0.3 ([2d5249f](https://github.com/Netcentric/fe-build/commit/2d5249f485002b34d85be29c3f76e13bb1ee8944))
+
 ## [5.3.2](https://github.com/Netcentric/fe-build/compare/v5.3.1...v5.3.2) (2026-02-28)
 
 
