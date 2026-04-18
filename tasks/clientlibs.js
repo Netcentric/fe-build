@@ -2,25 +2,18 @@ const { log } = require('../utils/log');
 const generateEntries = require('../utils/generateEntries');
 const getClientlib = require('../utils/getClientlib');
 const renderClientLibs = require('../utils/renderClientLibs');
+const generateExtraEntries = require('../utils/generateExtraEntries');
 
 // extend log to proper say what file is running
 module.exports = (config) => {
   log(__filename, 'clientlibs task running...', '', 'info');
 
-  const { extraEntries } = config.postcss;
-
   // checking all entries at this configuration
-  let entries = {
+  const entries = {
     ...generateEntries(config),
     ...generateEntries(config, 'scss'),
+    ...generateExtraEntries(config),
   };
-
-  entries = {
-    ...entries,
-    ...extraEntries ? {
-      ...generateEntries(config, extraEntries.extension, extraEntries.filenamePattern, extraEntries.cwd),
-    } : null,
-  }
 
   // clientlibs to render
   const clientLibs = {};

@@ -14,7 +14,7 @@ const skipCategories = ['myproject.author'];
 // linter disabled since we are requirement to send $\{ to a template string
 
 // Object to be able to generate clientlibs for new CSS files (created in build process) in target folder
-const extraEntries = {};
+const extraEntries = [];
 
 module.exports = {
   override,
