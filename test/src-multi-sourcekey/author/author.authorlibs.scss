@@ -1,0 +1,18 @@
+@use 'media-queries' as mq;
+
+body {
+  @include mq.for-size(s) {
+    font-size: 1.5em;
+
+
+
+  }
+
+  @include mq.for-size(m) {
+    font-size: 1em;
+  }
+}
+
+::placeholder {
+  color: gray;
+}
