@@ -1,10 +1,9 @@
-const path = require('path')
 const { isProduction, excludedFromVendors, bundleKey } = require('./general.config');
 const checkChunk = require('../utils/checkChunk');
 const nodeModules = `node_modules`;
 
-// curry to pass the module to check
-const test = ( excludes, includes) => (mod) => checkChunk(mod.context, excludes, includes);
+// curry to pass the webpack module object to checkChunk
+const test = (excludes, includes) => (mod) => checkChunk(mod, excludes, includes);
 
 module.exports = {
   minimize: isProduction,
@@ -16,7 +15,7 @@ module.exports = {
     chunks: 'initial',
     minChunks: 2,
     cacheGroups: {
-    // Treeshake vendors in node_modules (but keep unique vendors at the clientlibs it belongs)
+      // Treeshake vendors in node_modules (but keep unique vendors at the clientlibs it belongs)
       vendors: {
           test: test([nodeModules], excludedFromVendors),
           minChunks: 2,

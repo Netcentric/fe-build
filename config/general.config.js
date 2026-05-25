@@ -32,10 +32,29 @@ const nodeModules = path.join(rootPath, 'node_modules');
 
 */
 // what is the source files key suffix to compile
+// can be a string (e.g. 'source') or an array (e.g. ['publishlibs', 'authorlibs', 'dialoglibs', 'editorlibs'] etc)
 const sourceKey = 'source';
 
 // what is the compiled bundle key
 const bundleKey = 'bundle';
+
+// When true, the sourceKey segment becomes an additional folder level in the
+// dist entry key and is dropped from the dist filename.
+// e.g. component.main.publishlibs.js -> dist/.../main/publishlibs/component.main.bundle.js
+const sourceKeyAsDistFolder = false;
+
+// When true, dot-separated segments between the component prefix and sourceKey
+// in the source filename are expanded into folder levels in the dist entry key.
+// e.g. component.main.publishlibs.js -> dist/.../main/component.main.bundle.js
+const fileNameDotSuffixesAsDistFolder = false;
+
+// Values excluded from folder promotion when sourceKeyAsDistFolder or
+// fileNameDotSuffixesAsDistFolder are true. Each entry may be:
+//   - a string: exact case-sensitive match  (e.g. 'clientlibs')
+//   - a RegExp: pattern match               (e.g. /^v\d+$/ to exclude v1, v2, v3 …)
+// Applies to both sourceKey values and feature segment values.
+// Empty array means no exclusions (default).
+const excludeFileNameDotSuffixes = [];
 
 // source file types ['js', 'scss']
 const sourceTypes = ['js', 'scss'];
@@ -97,6 +116,9 @@ module.exports = {
   projectKey,
   sourceKey,
   bundleKey,
+  fileNameDotSuffixesAsDistFolder,
+  excludeFileNameDotSuffixes,
+  sourceKeyAsDistFolder,
   sourceTypes,
   rootPath,
   sourcesPath,

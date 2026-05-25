@@ -48,6 +48,10 @@ symbols.svg
 .tmp/
 .cache-loader
 dist/
+dist-feature-segments/
+dist-multi-sourcekey/
+test/dist-splitchunks/
+test/dist-splitchunks-collision/
 
 # Svg Icons Temp folder
 tmp/
