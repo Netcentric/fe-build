@@ -191,7 +191,7 @@ Both flags default to `false` - existing projects are unaffected unless they opt
 
 ##### `excludeFileNameDotSuffixes`
 
-When using `sourceKeyAsDistFolder` or `fileNameDotSuffixesAsDistFolder`, every matched value is promoted to a folder by default. `excludeFileNameDotSuffixes` lets you opt specific values out of that promotion while keeping them as valid source keys.
+When using `sourceKeyAsDistFolder` or `fileNameDotSuffixesAsDistFolder`, every matched value is promoted to a folder by default. `excludeFileNameDotSuffixes` lets you opt specific values out of that promotion while keeping them as valid source keys. Each entry can be a plain string (exact match) or a `RegExp` (pattern match).
 
 **Motivating scenario:** A project migrating from `sourceKey: 'clientlibs'` to `sourceKey: ['clientlibs', 'publishlibs', 'authorlibs']` wants folder promotion only for the new values. The existing `*.clientlibs.*` files should continue producing flat dist entries without renaming:
 
@@ -200,7 +200,7 @@ module.exports = {
   general: {
       sourceKey: ['clientlibs', 'publishlibs', 'authorlibs'],
       sourceKeyAsDistFolder: true,
-      excludeFileNameDotSuffixes: ['clientlibs'],
+      excludeFileNameDotSuffixes: ['clientlibs', /^v\d+$/], // exact string or RegExp - e.g. /^v\d+$/ matches v1, v2, v10 ...
   }
 }
 ```
