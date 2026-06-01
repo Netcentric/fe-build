@@ -21,6 +21,11 @@ module.exports = async (config) => {
         absolute: true
       });
 
+      if (!files.length) {
+        log(__filename, 'No SCSS sources found to watch', '', 'warn');
+        return;
+      }
+
       const watcher = chokidar.watch(files, {
         ignoreInitial: true
       });
@@ -43,7 +48,7 @@ module.exports = async (config) => {
       });
 
     } catch (e) {
-      log(__filename, 'Something is missing, you need install dev dependencies for this.', e.message, 'error');
+      log(__filename, 'Failed to start SCSS watcher', e.message, 'error');
     }
   } else {
     log(__filename, 'Sass / autoprefixer running...', '', 'info');
