@@ -22,7 +22,7 @@ module.exports = async (config) => {
       });
 
       if (!files.length) {
-        log(__filename, 'No SCSS sources found to watch', '', 'warn');
+        log(__filename, 'No SCSS sources found to watch', '', 'warning');
         return;
       }
 
