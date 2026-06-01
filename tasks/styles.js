@@ -26,6 +26,8 @@ module.exports = async (config) => {
         return;
       }
 
+      config.stylelint.failOnError = false;
+
       const watcher = chokidar.watch(files, {
         ignoreInitial: true
       });
@@ -41,8 +43,6 @@ module.exports = async (config) => {
           .replace(config.general.sourceKey, config.general.bundleKey);
 
         const destFile = path.join(relativePath, fileName);
-
-        config.stylelint.failOnError = false;
 
         renderStyles(file, destFile, config);
       });
