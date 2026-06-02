@@ -21,14 +21,17 @@ module.exports = async (config) => {
         ignoreInitial: true
       });
 
-      watcher.on('all', (event, file) => {
+      config.stylelint.failOnError = false;
+
+      const handleChange = (file) => {
         const destFile = srcToDest[file];
         if (!destFile) return;
 
-        config.stylelint.failOnError = false;
-
         renderStyles(file, destFile, config);
-      });
+      };
+
+      watcher.on('add', handleChange);
+      watcher.on('change', handleChange);
 
     } catch (e) {
       log(__filename, 'Something is missing, you need install dev dependencies for this.', e.message, 'error');
