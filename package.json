@@ -13,7 +13,7 @@
     "url": "https://github.com/Netcentric/fe-build.git "
   },
   "scripts": {
-    "clean": "rm -rf ./test/dist ./test/dist-feature-segments ./test/dist-multi-sourcekey ./test/dist-splitchunks ./test/dist-splitchunks-collision",
+    "clean": "rm -rf ./test/dist*",
     "test": "npm run clean && npm run jest",
     "jest": "NODE_OPTIONS=\"--experimental-vm-modules --no-warnings\" jest -u --runInBand"
   },
