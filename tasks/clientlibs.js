@@ -74,11 +74,29 @@ module.exports = (config) => {
         );
       } else {
         const [chunkName] = chunks;
-        const { name, folder, fileName, extension } = getClientlib(chunkName);
-        if (!clientLibs[folder]) {
-          clientLibs[folder] = { name, folder };
+        const validExtensions = ['js', 'css'];
+        const chunkExt = chunkName.split('.').pop();
+        if (path.dirname(chunkName) === '.' || !validExtensions.includes(chunkExt)) {
+          log(
+            __filename,
+            `Skipping split chunk clientlib for "${chunkName}" - chunk name must include a subfolder and a .js/.css extension (e.g. "commons/runtime.js").`,
+            '',
+            'warning'
+          );
+        } else {
+          const { name, folder, fileName, extension } = getClientlib(chunkName);
+          if (clientLibs[folder]) {
+            log(
+              __filename,
+              `Skipping split chunk clientlib for "${chunkName}" - folder "${folder}" is already registered by a source entry.`,
+              '',
+              'warning'
+            );
+          } else {
+            clientLibs[folder] = { name, folder };
+            clientLibs[folder][extension] = fileName;
+          }
         }
-        clientLibs[folder][extension] = fileName;
       }
     });
   }

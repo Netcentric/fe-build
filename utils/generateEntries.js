@@ -42,13 +42,23 @@ module.exports = function generateEntries(config, extension = 'js', filenamePatt
   const sourcePattern = buildGlobPattern(filenamePattern, extension);
   const sourcesFiles = glob.sync(sourcePattern, { cwd: cwd });
 
-  // if is multiple entries
-  if (config && config.general && config.general.multiple) {
+  const isMultiple = config && config.general && config.general.multiple;
+
+  // The multiple: false - option doesn't have a clear implemented use case
+  if (isMultiple || extension === 'scss') {
     const sources = {};
     const { bundleKey, fileNameDotSuffixesAsDistFolder = false, sourceKeyAsDistFolder = false, excludeFileNameDotSuffixes = [] } = config.general;
 
     sourcesFiles.forEach((file) => {
       const destFile = buildDestFile(file, bundleKey, fileNameDotSuffixesAsDistFolder, sourceKeyAsDistFolder, excludeFileNameDotSuffixes);
+      if (sources[destFile]) {
+        throw new Error(
+          `generateEntries: two source files resolve to the same destination "${destFile}":\n` +
+          `  - ${sources[destFile]}\n` +
+          `  - ${path.join(cwd, file)}\n` +
+          `Enable "sourceKeyAsDistFolder: true" or check "excludeFileNameDotSuffixes" to prevent the collision.`
+        );
+      }
       sources[destFile] = path.join(cwd, file);
     });
 
