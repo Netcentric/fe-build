@@ -109,10 +109,10 @@ describe('Array sourceKey [test/src-multi-sourcekey]', () => {
         expect(entries.length).toBe(4);
     });
 
-    it('Without sourceKeyAsDistFolder, files with different sourceKeys collide on the same dist key', () => {
-        const entries = generateEntries(cfg);
-        // 4 source files but only 2 unique dist keys: author/author.dist.js, publish/publish.dist.js
-        expect(Object.keys(entries).length).toBe(2);
+    it('Without sourceKeyAsDistFolder, files with different sourceKeys collide on the same dist key and throw', () => {
+        expect(() => generateEntries(cfg)).toThrow(
+            /two source files resolve to the same destination/
+        );
     });
 
     it('With sourceKeyAsDistFolder true, each sourceKey gets its own folder, resolving key collisions', () => {

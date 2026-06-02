@@ -197,6 +197,49 @@ describe('generateSplitChunksClientlibs - unique subfolders generate metadata', 
     });
 });
 
+// -- generateSplitChunksClientlibs - dirless chunk (no subfolder) is skipped (Issue 4)
+const cfgDirlessChunk = extendConfig('./test/.febuild', defaults);
+cfgDirlessChunk.general.destinationPath = path.resolve('test/dist-splitchunks-dirless');
+cfgDirlessChunk.clientlibs.generateSplitChunksClientlibs = true;
+cfgDirlessChunk.optimization = {
+    ...cfgDirlessChunk.optimization,
+    runtimeChunk: { name: 'runtime' }, // no subfolder, no extension
+};
+
+describe('generateSplitChunksClientlibs - dirless chunk is skipped', () => {
+    beforeAll(async () => {
+        await clientlibTask(cfgDirlessChunk);
+    });
+
+    it('No .content.xml written to dist root for a dirless chunk', () => {
+        const xmlPath = path.join(cfgDirlessChunk.general.destinationPath, '.content.xml');
+        expect(fs.existsSync(xmlPath)).toBe(false);
+    });
+});
+
+// -- generateSplitChunksClientlibs - chunk folder collides with source entry is skipped (Issue 5)
+// source entries produce author/author.dist.js -> folder "author"; chunk author/runtime.bundle.js
+// resolves to the same folder and must be skipped, leaving js.txt untouched.
+const cfgChunkSrcCollision = extendConfig('./test/.febuild', defaults);
+cfgChunkSrcCollision.general.destinationPath = path.resolve('test/dist-splitchunks-srccollision');
+cfgChunkSrcCollision.clientlibs.generateSplitChunksClientlibs = true;
+cfgChunkSrcCollision.optimization = {
+    ...cfgChunkSrcCollision.optimization,
+    runtimeChunk: { name: 'author/runtime.bundle.js' }, // folder "author" already owned by source entry
+};
+
+describe('generateSplitChunksClientlibs - chunk folder colliding with source entry is skipped', () => {
+    beforeAll(async () => {
+        await clientlibTask(cfgChunkSrcCollision);
+    });
+
+    it('js.txt in author/ still points to the source-derived file, not the chunk', () => {
+        const txtPath = path.join(cfgChunkSrcCollision.general.destinationPath, 'author', 'js.txt');
+        const content = fs.readFileSync(txtPath, { encoding: 'utf8', flag: 'r' });
+        expect(content).toBe('author.dist.js');
+    });
+});
+
 
 
 
