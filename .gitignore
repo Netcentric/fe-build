@@ -52,6 +52,8 @@ dist-feature-segments/
 dist-multi-sourcekey/
 test/dist-splitchunks/
 test/dist-splitchunks-collision/
+dist-splitchunks-dirless/
+dist-splitchunks-srccollision/
 
 # Svg Icons Temp folder
 tmp/
