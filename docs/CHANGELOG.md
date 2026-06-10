@@ -1,3 +1,25 @@
+# [5.4.0](https://github.com/Netcentric/fe-build/compare/v5.3.3...v5.4.0) (2026-06-10)
+
+
+### Bug Fixes
+
+* **tasks:** adjust styles watcher implementation & update chokidar to version 4.0.3 ([b6f9e27](https://github.com/Netcentric/fe-build/commit/b6f9e2705ccc2d5d91b11288a16e08d66365cb2f))
+* **tasks:** Avoid overriding same property  on every file-change event ([efaf48f](https://github.com/Netcentric/fe-build/commit/efaf48f2f712a38855ca692577f1ac9e62ae4c1a))
+* **tasks:** improve SCSS watcher error handling and logging ([f96d85d](https://github.com/Netcentric/fe-build/commit/f96d85d6ff510049337f246590bea4cdbbfa3bc6))
+* **tasks:** use valid 'warning' severity in styles watcher ([70b9028](https://github.com/Netcentric/fe-build/commit/70b9028a41588b1d7cf754a7094cea46edc7a02d))
+* **utils:** refactor watcher implementation and update chokidar usage ([2feb61f](https://github.com/Netcentric/fe-build/commit/2feb61f841f72b323c45566c8df6ae6122a20095))
+
+
+### Features
+
+* **config:** add failOnError property to sass configuration ([bd2b1bc](https://github.com/Netcentric/fe-build/commit/bd2b1bcbedc5894716773f2cfa9b5be2b3d9aaa9))
+
+
+### Reverts
+
+* Revert "fix(tasks): adjust styles watcher implementation & update chokidar to version 4.0.3" ([f5df235](https://github.com/Netcentric/fe-build/commit/f5df235a735d21feb640b663453127e1f8b56568))
+* Revert "chore(release): 5.3.3 [skip ci]" ([159ef01](https://github.com/Netcentric/fe-build/commit/159ef017057e3919a149aa3969e70683efa7caa5))
+
 ## [5.3.2](https://github.com/Netcentric/fe-build/compare/v5.3.1...v5.3.2) (2026-02-28)
 
 
