@@ -1,5 +1,4 @@
 const path = require('path');
-const glob = require('fast-glob');
 const { log } = require('../utils/log');
 const generateEntries = require('../utils/generateEntries');
 const renderStyles = require('../utils/renderStyles');
