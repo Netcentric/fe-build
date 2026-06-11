@@ -1,3 +1,18 @@
+# [5.5.0](https://github.com/Netcentric/fe-build/compare/v5.4.0...v5.5.0) (2026-06-11)
+
+
+### Bug Fixes
+
+* guard against array return in generateEntries scss and malformed split chunk clientlibs ([78bcf70](https://github.com/Netcentric/fe-build/commit/78bcf7052797ff2055b746a8423be5d6d7905e76))
+* revert accidental scss typo and remove unused glob import ([f322646](https://github.com/Netcentric/fe-build/commit/f32264669369850216bf8d92bcab2c9e4fcad62f))
+* **styles:** prevent watch from triggering on unlink and non-file events ([245e7d8](https://github.com/Netcentric/fe-build/commit/245e7d842bbfa0bee5b8ec700481b3367a31bf41))
+
+
+### Features
+
+* Add file name to dist folders segments ([f7573ea](https://github.com/Netcentric/fe-build/commit/f7573ea98342b5d65192178d7e44a5d44aa81438))
+* add test source files ([88b3df5](https://github.com/Netcentric/fe-build/commit/88b3df5a456210e919ac302b152435018417874b))
+
 # [5.4.0](https://github.com/Netcentric/fe-build/compare/v5.3.3...v5.4.0) (2026-06-10)
 
 
