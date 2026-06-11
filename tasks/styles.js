@@ -1,5 +1,4 @@
 const path = require('path');
-const glob = require('fast-glob');
 const { log } = require('../utils/log');
 const generateEntries = require('../utils/generateEntries');
 const renderStyles = require('../utils/renderStyles');
@@ -11,41 +10,33 @@ module.exports = async (config) => {
       log(__filename, 'Watcher Sass / autoprefixer running...', '', 'info');
 
       const chokidar = require('chokidar');
-      const pattern = `**/*.${config.general.sourceKey}.scss`;
+      const entries = generateEntries(config, 'scss');
 
-      // Note: fast-glob resolves files once at startup, so newly created SCSS files
-      // won't be picked up by the watcher without a restart. This is an accepted
-      // tradeoff to avoid EMFILE errors with recursive directory watching.
-      const files = await glob(pattern, {
-        cwd: config.general.sourcesPath,
-        absolute: true
-      });
-
-      if (!files.length) {
+      if (!Object.values(entries).length) {
         log(__filename, 'No SCSS sources found to watch', '', 'warning');
         return;
       }
 
-      config.stylelint.failOnError = false;
+      // Build reverse map: absolute src path -> dest key
+      const srcToDest = Object.fromEntries(
+        Object.entries(entries).map(([dest, src]) => [src, dest])
+      );
 
-      const watcher = chokidar.watch(files, {
+      const watcher = chokidar.watch(Object.values(entries), {
         ignoreInitial: true
       });
 
-      watcher.on('all', (event, file) => {
-        const relativePath = path.relative(
-          config.general.sourcesPath,
-          path.dirname(file)
-        );
+      config.stylelint.failOnError = false;
 
-        const fileName = path
-          .basename(file)
-          .replace(config.general.sourceKey, config.general.bundleKey);
-
-        const destFile = path.join(relativePath, fileName);
+      const handleChange = (file) => {
+        const destFile = srcToDest[file];
+        if (!destFile) return;
 
         renderStyles(file, destFile, config);
-      });
+      };
+
+      watcher.on('add', handleChange);
+      watcher.on('change', handleChange);
 
     } catch (e) {
       log(__filename, 'Failed to start SCSS watcher', e.message, 'error');

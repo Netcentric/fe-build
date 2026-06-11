@@ -1,3 +1,4 @@
+const path = require('path');
 const { log } = require('../utils/log');
 const generateEntries = require('../utils/generateEntries');
 const getClientlib = require('../utils/getClientlib');
@@ -36,6 +37,69 @@ module.exports = (config) => {
     // set the extension
     clientLibs[folder][extension] = fileName;
   });
+
+  // generate clientlib metadata for webpack split chunks when opt-in flag is set
+  const { generateSplitChunksClientlibs = false } = config.clientlibs;
+
+  if (generateSplitChunksClientlibs && config.optimization) {
+    const chunkNames = new Set();
+    const { runtimeChunk, splitChunks } = config.optimization;
+
+    if (runtimeChunk && runtimeChunk.name) {
+      chunkNames.add(runtimeChunk.name);
+    }
+
+    if (splitChunks && splitChunks.cacheGroups) {
+      Object.values(splitChunks.cacheGroups).forEach(group => {
+        if (group.name) chunkNames.add(group.name);
+      });
+    }
+
+    // group by output folder to detect collisions
+    const byDir = {};
+    chunkNames.forEach(chunkName => {
+      const dir = path.dirname(chunkName);
+      if (!byDir[dir]) { byDir[dir] = [] };
+
+      byDir[dir].push(chunkName);
+    });
+
+    Object.entries(byDir).forEach(([dir, chunks]) => {
+      if (chunks.length > 1) {
+        log(
+          __filename,
+          `Skipping split chunk clientlib for "${dir}/" - multiple chunks share this folder:\n  ${chunks.join('\n  ')}\n  To generate clientlibs for these, give each chunk its own subfolder.`,
+          '',
+          'warning'
+        );
+      } else {
+        const [chunkName] = chunks;
+        const validExtensions = ['js', 'css'];
+        const chunkExt = chunkName.split('.').pop();
+        if (path.dirname(chunkName) === '.' || !validExtensions.includes(chunkExt)) {
+          log(
+            __filename,
+            `Skipping split chunk clientlib for "${chunkName}" - chunk name must include a subfolder and a .js/.css extension (e.g. "commons/runtime.js").`,
+            '',
+            'warning'
+          );
+        } else {
+          const { name, folder, fileName, extension } = getClientlib(chunkName);
+          if (clientLibs[folder]) {
+            log(
+              __filename,
+              `Skipping split chunk clientlib for "${chunkName}" - folder "${folder}" is already registered by a source entry.`,
+              '',
+              'warning'
+            );
+          } else {
+            clientLibs[folder] = { name, folder };
+            clientLibs[folder][extension] = fileName;
+          }
+        }
+      }
+    });
+  }
 
   Object.keys(clientLibs).forEach(lib => renderClientLibs(clientLibs[lib], config));
 };

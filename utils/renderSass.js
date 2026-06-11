@@ -18,7 +18,7 @@ module.exports = function renderSass(dest, file, config, cb, write = false) {
   // extract from config
   const compiled = sass.compileAsync(file, {
     outputStyle,
-    loadPaths:includePaths,
+    loadPaths: includePaths,
     sourceMap: !config.general.isProduction,
     // adicional config from https://sass-lang.com/documentation/js-api/interfaces/options/
     ...adicionalOptions
